@@ -4,6 +4,8 @@
 
 This document defines how we will move from public reference datasets to explicit, testable biological predictions for `Wolffia australiana`.
 
+These predictions should increasingly be supported by quantitative analyses on existing public datasets, not only by literature interpretation.
+
 ## Framework Overview
 
 ### Step 1: Define Reference Cell Programs
@@ -15,6 +17,18 @@ Outputs:
 - marker gene lists
 - summary of each reference cell state
 - evidence level for each marker set
+
+### Step 1b: Quantify Programs in Existing Data
+
+Use public reference datasets to measure how strongly each broad program is recovered and how separable it is from other programs.
+
+Example methods:
+
+- module scoring
+- logistic regression or random forest classification
+- cluster separability metrics
+- cross-dataset transfer testing
+- pseudotime summary statistics
 
 ### Step 2: Map Markers to Wolffia
 
@@ -41,6 +55,7 @@ For each candidate cell program, classify the expected status in Wolffia:
 Scoring should be based on:
 
 - presence of orthologs
+- robustness in public reference datasets
 - conservation of multiple markers in the same pathway or program
 - known morphology of Wolffia
 - known duckweed adaptations
@@ -147,3 +162,14 @@ These are the categories most likely to tell us whether Wolffia simplification r
 - retention of core programs
 - compression of canonical programs into fewer states
 - or a more continuous developmental organization than in larger model plants
+
+## Statistical Extension
+
+Prediction in this project should now be interpreted in two layers:
+
+1. biological prediction:
+   what programs we think Wolffia should retain, merge, reduce, or rework
+2. statistical prediction:
+   what structures are consistently recoverable in existing public plant single-cell data and therefore most likely to transfer to Wolffia
+
+The companion document [Statistical prediction strategy](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/docs/statistical_prediction_strategy.md>) defines the quantitative layer of this plan.

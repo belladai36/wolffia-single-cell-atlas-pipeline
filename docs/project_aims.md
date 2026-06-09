@@ -11,8 +11,9 @@ Comparative prediction of cell states and developmental programs in `Wolffia aus
 At the moment, the most realistic path is a prediction-first project:
 
 1. use public plant single-cell references and Wolffia genomic resources to generate hypotheses
-2. define candidate cell states and marker programs expected in Wolffia
-3. use future SMART-seq data to test and refine those predictions
+2. use statistical analyses on public single-cell references to quantify broad cell programs and their separability
+3. define candidate cell states and marker programs expected in Wolffia
+4. use future SMART-seq data to test and refine those predictions
 
 ## Central Question
 
@@ -30,6 +31,10 @@ Map conserved marker programs from reference species to `Wolffia australiana` us
 
 ### Aim 3
 
+Use statistical analyses on public reference data to estimate which broad cell programs are stable, transferable, and likely to remain detectable in `Wolffia australiana`.
+
+### Aim 4
+
 Generate explicit predictions about which cell states and developmental programs are likely to be:
 
 - preserved
@@ -38,7 +43,7 @@ Generate explicit predictions about which cell states and developmental programs
 - absent
 - novel or ambiguous
 
-### Aim 4
+### Aim 5
 
 Design validation experiments for future SMART-seq data and downstream follow-up assays.
 
@@ -66,6 +71,7 @@ Future single-cell data may reveal a continuum of developmental states rather th
 - a curated marker-gene reference table
 - an ortholog-mapped Wolffia candidate marker table
 - a ranked list of predicted Wolffia cell programs
+- a statistical summary of which public plant programs are most robust and transferable
 - a validation plan for SMART-seq and downstream wet-lab experiments
 
 ## Success Criteria
