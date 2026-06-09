@@ -181,3 +181,4 @@ For a first real dataset, run step by step instead of using `run_all.sh`; it is 
 - `results/scanpy/05_paga.h5ad`
 - `results/scanpy/robustness_summary.csv`
 - QC, UMAP, marker, and PAGA figures under `figures/`
+# wolffia-single-cell-atlas-pipeline
