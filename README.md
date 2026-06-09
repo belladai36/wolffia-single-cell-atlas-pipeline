@@ -181,4 +181,15 @@ For a first real dataset, run step by step instead of using `run_all.sh`; it is 
 - `results/scanpy/05_paga.h5ad`
 - `results/scanpy/robustness_summary.csv`
 - QC, UMAP, marker, and PAGA figures under `figures/`
+
+## Prediction-First Planning Docs
+
+Before Wolffia SMART-seq data arrive, the project is also organized around a prediction-first comparative biology workflow:
+
+- [Project aims](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/docs/project_aims.md>)
+- [Reference datasets](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/docs/reference_datasets.md>)
+- [Dataset inventory](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/docs/dataset_inventory.md>)
+- [Prediction framework](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/docs/prediction_framework.md>)
+- [Candidate cell programs](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/docs/candidate_cell_programs.md>)
+- [Phase 1 public-data workplan](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/docs/phase1_public_data_workplan.md>)
 # wolffia-single-cell-atlas-pipeline
