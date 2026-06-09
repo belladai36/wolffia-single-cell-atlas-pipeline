@@ -164,6 +164,40 @@ bash scripts/run_all.sh config/config.yaml
 
 For a first real dataset, run step by step instead of using `run_all.sh`; it is easier to inspect QC and catch path mistakes.
 
+## Statistical Prediction on Public References
+
+Before Wolffia data arrive, you can run a public-reference statistical workflow that:
+
+1. reads two annotated public plant `.h5ad` datasets
+2. collapses detailed labels into broad biological programs
+3. computes program scores from marker sets
+4. trains a simple classifier on one dataset
+5. tests label transfer on a second dataset
+6. writes summary figures and metrics
+
+Starter inputs live in:
+
+- [data/metadata/public_reference_program_markers.csv](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/data/metadata/public_reference_program_markers.csv>)
+- [data/metadata/public_reference_label_rules.csv](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/data/metadata/public_reference_label_rules.csv>)
+
+Configure the dataset paths under `public_reference_analysis` in [config/config.yaml](</Users/bella/Documents/Wolffia Single-Cell Atlas Pipeline Before the Data Arrive/config/config.yaml>), then run:
+
+```bash
+python scripts/10_public_reference_statistical_prediction.py --config config/config.yaml
+```
+
+Expected outputs include:
+
+- `results/public_reference/cross_dataset_metrics.json`
+- `results/public_reference/cross_dataset_classification_report.csv`
+- `results/public_reference/train_reference_scored.h5ad`
+- `results/public_reference/test_reference_scored.h5ad`
+- `figures/public_reference/train_broad_program_umap.png`
+- `figures/public_reference/test_broad_program_umap.png`
+- `figures/public_reference/train_program_score_heatmap.png`
+- `figures/public_reference/cross_dataset_confusion_matrix.png`
+- `figures/public_reference/test_predicted_broad_program_umap.png`
+
 ## Notes for Wolffia
 
 - Wolffia organelle gene names may not follow human-style `MT-` prefixes. Edit `mitochondrial_gene_prefixes` and `plastid_gene_prefixes` in `config/config.yaml` after inspecting the annotation.

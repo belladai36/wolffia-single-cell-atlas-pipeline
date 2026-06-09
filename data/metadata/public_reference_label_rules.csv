@@ -1,0 +1,8 @@
+dataset_name,label_pattern,broad_program,priority,notes
+*,meristem|dividing|cell.?cycle|proliferat,proliferative_or_meristematic,1,starter_regex_for_dividing_states
+*,mesophyll|photosynth|chlorenchyma|palisade|spongy,photosynthetic_or_assimilation,2,starter_regex_for_assimilation_states
+*,phloem|xylem|procamb|companion|sieve|vascular|stele,vascular_like_or_transport,3,starter_regex_for_transport_states
+*,transition|elongation|differentiat|auxin|trajectory,developmental_transition,4,starter_regex_for_continuum_states
+*,epiderm|non.?hair|root.?hair|trichoblast|atrichoblast|guard,epidermal_or_surface_identity,5,starter_regex_for_surface_states
+*,floral|reproductive|pollen|ovule|stamen|carpel|flower,reproductive_or_floral,6,starter_regex_for_reproductive_states
+*,stress|heat|wound|redox|oxidative|hypoxia|aquatic,aquatic_adaptation_or_stress,7,starter_regex_for_dynamic_state_labels

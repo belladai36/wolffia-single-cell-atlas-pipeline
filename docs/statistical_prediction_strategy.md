@@ -164,3 +164,17 @@ The most realistic next computational move is:
 6. summarize which programs are robustly recoverable
 
 That gives the project a real statistical prediction backbone before any Wolffia-specific single-cell data arrive.
+
+## Repository Implementation
+
+The first implementation of this plan now lives in:
+
+- `scripts/10_public_reference_statistical_prediction.py`
+
+It is configured through:
+
+- `config/config.yaml`
+- `data/metadata/public_reference_program_markers.csv`
+- `data/metadata/public_reference_label_rules.csv`
+
+And is designed to output both quantitative summaries and figures for visualization.
