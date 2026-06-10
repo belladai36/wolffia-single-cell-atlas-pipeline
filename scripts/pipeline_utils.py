@@ -6,14 +6,24 @@ from typing import Any
 
 import yaml
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+
+def _resolve_from_project_root(path_value: str | Path) -> Path:
+    path = Path(path_value).expanduser()
+    if path.is_absolute():
+        return path.resolve()
+    return (PROJECT_ROOT / path).resolve()
+
 
 def load_config(config_path: str | Path) -> dict[str, Any]:
-    with open(config_path, "r", encoding="utf-8") as handle:
+    resolved_config = _resolve_from_project_root(config_path)
+    with open(resolved_config, "r", encoding="utf-8") as handle:
         return yaml.safe_load(handle)
 
 
 def project_path(path_value: str | Path) -> Path:
-    return Path(path_value).expanduser().resolve()
+    return _resolve_from_project_root(path_value)
 
 
 def ensure_dirs(config: dict[str, Any]) -> None:
@@ -42,4 +52,3 @@ def add_gene_flags(adata, config: dict[str, Any]) -> None:
 
     adata.var["mito"] = [name.startswith(mito_prefixes) for name in gene_names]
     adata.var["plastid"] = [name.startswith(plastid_prefixes) for name in gene_names]
-

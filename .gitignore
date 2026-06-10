@@ -18,3 +18,8 @@ logs/
 # Large or local data files
 data/raw_fastq/
 data/reference/
+data/public_references/raw/
+data/public_references/processed/
+
+# Temporary local upload workspace
+github_upload/
