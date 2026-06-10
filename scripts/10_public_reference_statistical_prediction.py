@@ -2,7 +2,12 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
+
+os.environ.setdefault("NUMBA_DISABLE_JIT", "1")
+os.environ.setdefault("NUMBA_CACHE_DIR", "/private/tmp/numba-cache")
+os.environ.setdefault("MPLCONFIGDIR", "/private/tmp/mplconfig")
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -69,22 +74,48 @@ def apply_label_rules(
     return adata
 
 
+def apply_direct_labels(adata: sc.AnnData, label_column: str) -> sc.AnnData:
+    if label_column not in adata.obs.columns:
+        raise KeyError(f"Label column '{label_column}' was not found in adata.obs")
+
+    labels = adata.obs[label_column].astype(str)
+    adata = adata.copy()
+    adata.obs["original_label"] = labels.values
+    adata.obs["broad_program"] = pd.Categorical(labels)
+    return adata
+
+
+def initialize_unlabeled_dataset(adata: sc.AnnData) -> sc.AnnData:
+    adata = adata.copy()
+    adata.obs["original_label"] = pd.Series(["unlabeled"] * adata.n_obs, index=adata.obs_names, dtype="object")
+    adata.obs["broad_program"] = pd.Categorical(["unlabeled"] * adata.n_obs)
+    return adata
+
+
 def normalize_for_reference_analysis(adata: sc.AnnData) -> sc.AnnData:
     adata = adata.copy()
     if "counts" in adata.layers:
         adata.X = adata.layers["counts"].copy()
-    sc.pp.normalize_total(adata, target_sum=10000)
-    sc.pp.log1p(adata)
+    if sparse.issparse(adata.X):
+        adata.X = adata.X.tocsr().astype(np.float32)
+        counts_per_cell = np.asarray(adata.X.sum(axis=1)).ravel()
+        counts_per_cell[counts_per_cell == 0] = 1.0
+        scale = np.divide(10000.0, counts_per_cell, dtype=np.float32)
+        adata.X = sparse.diags(scale) @ adata.X
+    else:
+        adata.X = np.asarray(adata.X, dtype=np.float32)
+        counts_per_cell = adata.X.sum(axis=1, keepdims=True)
+        counts_per_cell[counts_per_cell == 0] = 1.0
+        adata.X = (adata.X / counts_per_cell) * 10000.0
+    adata.X = adata.X.log1p() if sparse.issparse(adata.X) else np.log1p(adata.X)
     return adata
 
 
-def ensure_embedding(adata: sc.AnnData, n_pcs: int, random_state: int) -> None:
-    if "X_umap" in adata.obsm:
+def ensure_pca(adata: sc.AnnData, n_pcs: int, random_state: int) -> None:
+    if "X_pca" in adata.obsm:
         return
     n_comps = min(n_pcs, adata.n_vars, max(2, adata.n_obs - 1))
     sc.pp.pca(adata, n_comps=n_comps, svd_solver="arpack", random_state=random_state)
-    sc.pp.neighbors(adata, n_pcs=min(n_pcs, adata.obsm["X_pca"].shape[1]), random_state=random_state)
-    sc.tl.umap(adata, random_state=random_state)
 
 
 def compute_program_scores(
@@ -147,12 +178,29 @@ def plot_program_boxplots(adata: sc.AnnData, program_names: list[str], output_pa
     plt.close()
 
 
-def save_umap(adata: sc.AnnData, color: str, output_path: Path, title: str, n_pcs: int, random_state: int) -> None:
-    ensure_embedding(adata, n_pcs=n_pcs, random_state=random_state)
-    sc.pl.umap(adata, color=color, show=False, title=title)
+def save_predicted_label_counts(labels: np.ndarray, output_path: Path) -> None:
+    pd.Series(labels, name="predicted_broad_program").value_counts().rename_axis("predicted_broad_program").reset_index(
+        name="n_cells"
+    ).to_csv(output_path, index=False)
+
+
+def save_pca_plot(adata: sc.AnnData, color: str, output_path: Path, title: str, n_pcs: int, random_state: int) -> None:
+    ensure_pca(adata, n_pcs=n_pcs, random_state=random_state)
+    coords = adata.obsm["X_pca"][:, :2]
+    plot_df = pd.DataFrame(
+        {
+            "PC1": coords[:, 0],
+            "PC2": coords[:, 1],
+            color: adata.obs[color].astype(str).to_numpy(),
+        }
+    )
+
+    plt.figure(figsize=(8, 6))
+    sns.scatterplot(data=plot_df, x="PC1", y="PC2", hue=color, s=10, linewidth=0)
+    plt.title(title)
     plt.tight_layout()
     plt.savefig(output_path, dpi=200)
-    plt.close("all")
+    plt.close()
 
 
 def dense_matrix(x) -> np.ndarray:
@@ -165,7 +213,7 @@ def prepare_classifier_inputs(
     train_adata: sc.AnnData,
     test_adata: sc.AnnData,
     n_top_hvgs: int,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, list[str]]:
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, list[str]]:
     shared_genes = train_adata.var_names.intersection(test_adata.var_names)
     if len(shared_genes) < 50:
         raise ValueError("Too few shared genes between train and test datasets for transfer analysis.")
@@ -184,8 +232,7 @@ def prepare_classifier_inputs(
     x_train = dense_matrix(train_selected.X)
     x_test = dense_matrix(test_selected.X)
     y_train = train_selected.obs["broad_program"].astype(str).to_numpy()
-    y_test = test_selected.obs["broad_program"].astype(str).to_numpy()
-    return x_train, x_test, y_train, y_test, selected_genes
+    return x_train, x_test, y_train, selected_genes
 
 
 def build_classifier(classifier_name: str, n_components: int, random_state: int):
@@ -213,7 +260,6 @@ def build_classifier(classifier_name: str, n_components: int, random_state: int)
                 "classifier",
                 LogisticRegression(
                     max_iter=3000,
-                    multi_class="multinomial",
                     class_weight="balanced",
                     random_state=random_state,
                 ),
@@ -259,67 +305,108 @@ def main() -> None:
     n_pcs = analysis_cfg.get("n_pcs", config.get("analysis", {}).get("n_pcs", 30))
     min_cells = analysis_cfg.get("min_cells_per_program", 20)
     classifier_name = analysis_cfg.get("classifier", "logistic_regression")
+    train_label_mode = analysis_cfg.get("train_label_mode", "rule_based")
+    test_label_mode = analysis_cfg.get("test_label_mode", "rule_based")
+    max_train_cells = analysis_cfg.get("max_train_cells")
+    max_test_cells = analysis_cfg.get("max_test_cells")
 
+    print("Loading reference datasets...")
     train_adata = sc.read_h5ad(project_path(analysis_cfg["train_h5ad"]))
     test_adata = sc.read_h5ad(project_path(analysis_cfg["test_h5ad"]))
+    print(f"Train dataset: {train_adata.n_obs} cells x {train_adata.n_vars} genes")
+    print(f"Test dataset: {test_adata.n_obs} cells x {test_adata.n_vars} genes")
 
-    rule_df = read_label_rules(project_path(analysis_cfg["label_rules_csv"]))
     markers = read_program_markers(project_path(analysis_cfg["program_markers_csv"]))
+    rule_df = None
+    if "rule_based" in {train_label_mode, test_label_mode}:
+        rule_df = read_label_rules(project_path(analysis_cfg["label_rules_csv"]))
 
-    train_adata = apply_label_rules(
-        train_adata,
-        label_column=analysis_cfg["train_label_column"],
-        rule_df=rule_df,
-        dataset_name=analysis_cfg["train_dataset_name"],
-    )
-    test_adata = apply_label_rules(
-        test_adata,
-        label_column=analysis_cfg["test_label_column"],
-        rule_df=rule_df,
-        dataset_name=analysis_cfg["test_dataset_name"],
-    )
+    if train_label_mode == "direct":
+        train_adata = apply_direct_labels(train_adata, label_column=analysis_cfg["train_label_column"])
+    elif train_label_mode == "rule_based":
+        train_adata = apply_label_rules(
+            train_adata,
+            label_column=analysis_cfg["train_label_column"],
+            rule_df=rule_df,
+            dataset_name=analysis_cfg["train_dataset_name"],
+        )
+    else:
+        raise ValueError(f"Unsupported train_label_mode: {train_label_mode}")
+
+    if test_label_mode == "direct":
+        test_adata = apply_direct_labels(test_adata, label_column=analysis_cfg["test_label_column"])
+        test_has_labels = True
+    elif test_label_mode == "rule_based":
+        test_adata = apply_label_rules(
+            test_adata,
+            label_column=analysis_cfg["test_label_column"],
+            rule_df=rule_df,
+            dataset_name=analysis_cfg["test_dataset_name"],
+        )
+        test_has_labels = True
+    elif test_label_mode == "unlabeled":
+        test_adata = initialize_unlabeled_dataset(test_adata)
+        test_has_labels = False
+    else:
+        raise ValueError(f"Unsupported test_label_mode: {test_label_mode}")
 
     train_adata = normalize_for_reference_analysis(train_adata)
     test_adata = normalize_for_reference_analysis(test_adata)
+    print("Finished normalization.")
 
     train_adata, train_marker_summary = compute_program_scores(train_adata, markers)
     test_adata, test_marker_summary = compute_program_scores(test_adata, markers)
+    print("Computed program scores.")
 
     train_marker_summary.to_csv(output_dir / "train_marker_recovery.csv", index=False)
     test_marker_summary.to_csv(output_dir / "test_marker_recovery.csv", index=False)
 
-    save_umap(
+    save_pca_plot(
         train_adata,
         "broad_program",
-        figure_dir / "train_broad_program_umap.png",
+        figure_dir / "train_broad_program_pca.png",
         "Train Broad Programs",
         n_pcs=n_pcs,
         random_state=random_state,
     )
-    save_umap(
-        test_adata,
-        "broad_program",
-        figure_dir / "test_broad_program_umap.png",
-        "Test Broad Programs",
-        n_pcs=n_pcs,
-        random_state=random_state,
-    )
     plot_program_heatmap(train_adata, list(markers), figure_dir / "train_program_score_heatmap.png")
-    plot_program_heatmap(test_adata, list(markers), figure_dir / "test_program_score_heatmap.png")
     plot_program_boxplots(train_adata, list(markers), figure_dir / "train_program_score_boxplots.png")
+    if test_has_labels:
+        save_pca_plot(
+            test_adata,
+            "broad_program",
+            figure_dir / "test_broad_program_pca.png",
+            "Test Broad Programs",
+            n_pcs=n_pcs,
+            random_state=random_state,
+        )
+        plot_program_heatmap(test_adata, list(markers), figure_dir / "test_program_score_heatmap.png")
 
     train_labeled = train_adata[train_adata.obs["broad_program"] != "unmapped"].copy()
-    test_labeled = test_adata[test_adata.obs["broad_program"] != "unmapped"].copy()
-
     valid_programs = train_labeled.obs["broad_program"].value_counts()
     valid_programs = valid_programs[valid_programs >= min_cells].index.tolist()
     train_labeled = train_labeled[train_labeled.obs["broad_program"].isin(valid_programs)].copy()
-    test_labeled = test_labeled[test_labeled.obs["broad_program"].isin(valid_programs)].copy()
 
-    if train_labeled.n_obs == 0 or test_labeled.n_obs == 0:
-        raise ValueError("No labeled cells remained after applying broad-program rules and minimum cell thresholds.")
+    if train_labeled.n_obs == 0:
+        raise ValueError("No labeled training cells remained after applying labels and minimum cell thresholds.")
 
-    x_train, x_test, y_train, y_test, selected_genes = prepare_classifier_inputs(train_labeled, test_labeled, n_top_hvgs)
+    if max_train_cells and train_labeled.n_obs > int(max_train_cells):
+        sc.pp.subsample(train_labeled, n_obs=int(max_train_cells), random_state=random_state, copy=False)
+    print(f"Training cells after filtering: {train_labeled.n_obs}")
+
+    if test_has_labels:
+        test_prediction_input = test_adata[test_adata.obs["broad_program"].isin(valid_programs)].copy()
+        if test_prediction_input.n_obs == 0:
+            raise ValueError("No labeled target cells remained after filtering target labels to training programs.")
+    else:
+        test_prediction_input = test_adata.copy()
+
+    if max_test_cells and test_prediction_input.n_obs > int(max_test_cells):
+        sc.pp.subsample(test_prediction_input, n_obs=int(max_test_cells), random_state=random_state, copy=False)
+    print(f"Target cells for prediction: {test_prediction_input.n_obs}")
+
+    x_train, x_test, y_train, selected_genes = prepare_classifier_inputs(train_labeled, test_prediction_input, n_top_hvgs)
+    print(f"Prepared classifier inputs using {len(selected_genes)} genes.")
     n_components = min(30, x_train.shape[0] - 1, x_train.shape[1])
     if n_components < 2:
         raise ValueError("Too few dimensions are available for PCA-based classifier training.")
@@ -327,11 +414,9 @@ def main() -> None:
     model = build_classifier(classifier_name, n_components=n_components, random_state=random_state)
     model.fit(x_train, y_train)
     y_pred = model.predict(x_test)
+    print("Finished classifier training and prediction.")
 
     labels = sorted(np.unique(y_train).tolist())
-    report_df = pd.DataFrame(classification_report(y_test, y_pred, output_dict=True)).transpose()
-    report_df.to_csv(output_dir / "cross_dataset_classification_report.csv")
-
     metrics = {
         "classifier": classifier_name,
         "train_dataset_name": analysis_cfg["train_dataset_name"],
@@ -340,24 +425,32 @@ def main() -> None:
         "n_test_cells": int(x_test.shape[0]),
         "n_selected_genes": int(len(selected_genes)),
         "selected_genes_preview": selected_genes[:50],
-        "accuracy": float(accuracy_score(y_test, y_pred)),
         "labels_used": labels,
+        "test_label_mode": test_label_mode,
     }
+
+    if test_has_labels:
+        y_test = test_prediction_input.obs["broad_program"].astype(str).to_numpy()
+        report_df = pd.DataFrame(classification_report(y_test, y_pred, output_dict=True)).transpose()
+        report_df.to_csv(output_dir / "cross_dataset_classification_report.csv")
+        metrics["accuracy"] = float(accuracy_score(y_test, y_pred))
+        plot_confusion_matrix(y_test, y_pred, labels, figure_dir / "cross_dataset_confusion_matrix.png")
+
     write_json(metrics, output_dir / "cross_dataset_metrics.json")
+    save_predicted_label_counts(y_pred, output_dir / "predicted_label_counts.csv")
 
-    plot_confusion_matrix(y_test, y_pred, labels, figure_dir / "cross_dataset_confusion_matrix.png")
-
-    test_labeled.obs["predicted_broad_program"] = y_pred
-    save_umap(
-        test_labeled,
+    test_prediction_input.obs["predicted_broad_program"] = y_pred
+    save_pca_plot(
+        test_prediction_input,
         "predicted_broad_program",
-        figure_dir / "test_predicted_broad_program_umap.png",
+        figure_dir / "test_predicted_broad_program_pca.png",
         "Predicted Broad Programs on Test Dataset",
         n_pcs=n_pcs,
         random_state=random_state,
     )
 
     train_adata.write_h5ad(output_dir / "train_reference_scored.h5ad")
+    test_adata.obs["predicted_broad_program"] = pd.Series(y_pred, index=test_prediction_input.obs_names)
     test_adata.write_h5ad(output_dir / "test_reference_scored.h5ad")
     print(f"Wrote outputs to {output_dir}")
 
