@@ -1,23 +1,23 @@
-dataset_id,study_accession,experiment_accession,run_accession,library_name,library_source,instrument_model,condition_or_compartment,role,notes
-PRJNA1124135_scRNA,SRP514015,SRX24931112,SRR29417746,Dawn1,TRANSCRIPTOMIC SINGLE CELL,NextSeq 2000,dawn,train_candidate,time-of-day scRNA-seq replicate 1
-PRJNA1124135_scRNA,SRP514015,SRX24931113,SRR29417745,Dawn2,TRANSCRIPTOMIC SINGLE CELL,NextSeq 2000,dawn,train_candidate,time-of-day scRNA-seq replicate 2
-PRJNA1124135_scRNA,SRP514015,SRX24931114,SRR29417744,Dusk1,TRANSCRIPTOMIC SINGLE CELL,NextSeq 2000,dusk,train_candidate,time-of-day scRNA-seq replicate 1
-PRJNA1124135_scRNA,SRP514015,SRX24931115,SRR29417743,Dusk2,TRANSCRIPTOMIC SINGLE CELL,NextSeq 2000,dusk,train_candidate,time-of-day scRNA-seq replicate 2
-PRJNA809022_snRNA,SRP360930,SRX14249874,SRR18098970,Waus_snRNA-Seq_1,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 1
-PRJNA809022_snRNA,SRP360930,SRX14249875,SRR18098969,Waus_snRNA-Seq_2,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 2
-PRJNA809022_snRNA,SRP360930,SRX14249884,SRR18098960,Waus_snRNA-Seq_3,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 3
-PRJNA809022_snRNA,SRP360930,SRX14249885,SRR18098959,Waus_snRNA-Seq_4,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 4
-PRJNA809022_snRNA,SRP360930,SRX14249886,SRR18098958,Waus_snRNA-Seq_5,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 5
-PRJNA809022_snRNA,SRP360930,SRX14249887,SRR18098957,Waus_snRNA-Seq_6,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 6
-PRJNA809022_snRNA,SRP360930,SRX14249888,SRR18098956,Waus_snRNA-Seq_7,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 7
-PRJNA809022_snRNA,SRP360930,SRX14249889,SRR18098955,Waus_snRNA-Seq_8,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 8
-PRJNA809022_snRNA,SRP360930,SRX14249890,SRR18098954,Waus_snRNA-Seq_9,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 9
-PRJNA809022_snRNA,SRP360930,SRX14249891,SRR18098953,Waus_snRNA-Seq_10,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 10
-PRJNA809022_snRNA,SRP360930,SRX14249876,SRR18098968,Waus_snRNA-Seq_11,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 11
-PRJNA809022_snRNA,SRP360930,SRX14249877,SRR18098967,Waus_snRNA-Seq_12,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 12
-PRJNA809022_snRNA,SRP360930,SRX14249878,SRR18098966,Waus_snRNA-Seq_13,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 13
-PRJNA809022_snRNA,SRP360930,SRX14249879,SRR18098965,Waus_snRNA-Seq_14,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 14
-PRJNA809022_snRNA,SRP360930,SRX14249880,SRR18098964,Waus_snRNA-Seq_15,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 15
-PRJNA809022_snRNA,SRP360930,SRX14249881,SRR18098963,Waus_snRNA-Seq_16,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 16
-PRJNA809022_snRNA,SRP360930,SRX14249882,SRR18098962,Waus_snRNA-Seq_17,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 17
-PRJNA809022_snRNA,SRP360930,SRX14249883,SRR18098961,Waus_snRNA-Seq_18,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,single-nucleus RNA-seq run 18
+dataset_id,study_accession,experiment_accession,run_accession,library_name,library_source,instrument_model,condition_or_compartment,role,ena_fastq_url,ena_fastq_bytes,notes
+PRJNA1124135_scRNA,SRP514015,SRX24931112,SRR29417746,Dawn1,TRANSCRIPTOMIC SINGLE CELL,NextSeq 2000,dawn,train_candidate,https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR294/046/SRR29417746/SRR29417746.fastq.gz,19208057551,time-of-day scRNA-seq replicate 1
+PRJNA1124135_scRNA,SRP514015,SRX24931113,SRR29417745,Dawn2,TRANSCRIPTOMIC SINGLE CELL,NextSeq 2000,dawn,train_candidate,https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR294/045/SRR29417745/SRR29417745.fastq.gz,23631536642,time-of-day scRNA-seq replicate 2
+PRJNA1124135_scRNA,SRP514015,SRX24931114,SRR29417744,Dusk1,TRANSCRIPTOMIC SINGLE CELL,NextSeq 2000,dusk,train_candidate,https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR294/044/SRR29417744/SRR29417744.fastq.gz,19802242658,time-of-day scRNA-seq replicate 1
+PRJNA1124135_scRNA,SRP514015,SRX24931115,SRR29417743,Dusk2,TRANSCRIPTOMIC SINGLE CELL,NextSeq 2000,dusk,train_candidate,https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR294/043/SRR29417743/SRR29417743.fastq.gz,20078438777,time-of-day scRNA-seq replicate 2
+PRJNA809022_snRNA,SRP360930,SRX14249874,SRR18098970,Waus_snRNA-Seq_1,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,33392667490,single-nucleus RNA-seq run 1
+PRJNA809022_snRNA,SRP360930,SRX14249875,SRR18098969,Waus_snRNA-Seq_2,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,35367213570,single-nucleus RNA-seq run 2
+PRJNA809022_snRNA,SRP360930,SRX14249884,SRR18098960,Waus_snRNA-Seq_3,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,37283575940,single-nucleus RNA-seq run 3
+PRJNA809022_snRNA,SRP360930,SRX14249885,SRR18098959,Waus_snRNA-Seq_4,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,37393045690,single-nucleus RNA-seq run 4
+PRJNA809022_snRNA,SRP360930,SRX14249886,SRR18098958,Waus_snRNA-Seq_5,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,34064467450,single-nucleus RNA-seq run 5
+PRJNA809022_snRNA,SRP360930,SRX14249887,SRR18098957,Waus_snRNA-Seq_6,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,32307866890,single-nucleus RNA-seq run 6
+PRJNA809022_snRNA,SRP360930,SRX14249888,SRR18098956,Waus_snRNA-Seq_7,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,36566639850,single-nucleus RNA-seq run 7
+PRJNA809022_snRNA,SRP360930,SRX14249889,SRR18098955,Waus_snRNA-Seq_8,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,38037877150,single-nucleus RNA-seq run 8
+PRJNA809022_snRNA,SRP360930,SRX14249890,SRR18098954,Waus_snRNA-Seq_9,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,25845916460,single-nucleus RNA-seq run 9
+PRJNA809022_snRNA,SRP360930,SRX14249891,SRR18098953,Waus_snRNA-Seq_10,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,43798340300,single-nucleus RNA-seq run 10
+PRJNA809022_snRNA,SRP360930,SRX14249876,SRR18098968,Waus_snRNA-Seq_11,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,39120908580,single-nucleus RNA-seq run 11
+PRJNA809022_snRNA,SRP360930,SRX14249877,SRR18098967,Waus_snRNA-Seq_12,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,39692872440,single-nucleus RNA-seq run 12
+PRJNA809022_snRNA,SRP360930,SRX14249878,SRR18098966,Waus_snRNA-Seq_13,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,46989039890,single-nucleus RNA-seq run 13
+PRJNA809022_snRNA,SRP360930,SRX14249879,SRR18098965,Waus_snRNA-Seq_14,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,31507992750,single-nucleus RNA-seq run 14
+PRJNA809022_snRNA,SRP360930,SRX14249880,SRR18098964,Waus_snRNA-Seq_15,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,38325159860,single-nucleus RNA-seq run 15
+PRJNA809022_snRNA,SRP360930,SRX14249881,SRR18098963,Waus_snRNA-Seq_16,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,44295134520,single-nucleus RNA-seq run 16
+PRJNA809022_snRNA,SRP360930,SRX14249882,SRR18098962,Waus_snRNA-Seq_17,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,32208718750,single-nucleus RNA-seq run 17
+PRJNA809022_snRNA,SRP360930,SRX14249883,SRR18098961,Waus_snRNA-Seq_18,TRANSCRIPTOMIC,DNBSEQ-T7,unspecified,validation_candidate,,8638372860,single-nucleus RNA-seq run 18

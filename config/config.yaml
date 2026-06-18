@@ -91,6 +91,7 @@ wolffia_public_reference_analysis:
   label_template_csv: data/metadata/wolffia_public_label_template.csv
   output_dir: data/public_references/processed
   figure_dir: figures/wolffia_public_reference
+  external_raw_root: null
   preferred_train_dataset: PRJNA1124135
   preferred_validation_dataset: PRJNA809022
   train_label_strategy: conservative_manual_or_pseudo_labels

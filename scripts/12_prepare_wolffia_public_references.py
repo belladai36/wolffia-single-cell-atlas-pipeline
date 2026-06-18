@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 
 import anndata as ad
@@ -27,6 +28,31 @@ def load_manifest(path: Path) -> pd.DataFrame:
     return df
 
 
+def resolve_external_override(config: dict) -> Path | None:
+    env_value = os.environ.get("WOLFFIA_PUBLIC_RAW_ROOT")
+    if env_value:
+        return Path(env_value).expanduser().resolve()
+    cfg_value = config.get("wolffia_public_reference_analysis", {}).get("external_raw_root")
+    if cfg_value:
+        return Path(str(cfg_value)).expanduser().resolve()
+    return None
+
+
+def resolve_manifest_input_path(raw_value: str, external_root: Path | None) -> Path:
+    if external_root is None:
+        return project_path(raw_value)
+    raw_path = Path(raw_value)
+    if raw_path.is_absolute():
+        return raw_path
+    marker = Path("data/public_references/raw")
+    parts = raw_path.parts
+    marker_parts = marker.parts
+    if parts[: len(marker_parts)] == marker_parts:
+        relative_tail = Path(*parts[len(marker_parts) :])
+        return (external_root / relative_tail).resolve()
+    return (external_root / raw_path.name).resolve()
+
+
 def read_dataset(input_path: Path, input_format: str) -> ad.AnnData:
     fmt = input_format.lower().strip()
     if fmt == "h5ad":
@@ -49,14 +75,14 @@ def read_dataset(input_path: Path, input_format: str) -> ad.AnnData:
     )
 
 
-def prepare_record(row: pd.Series) -> Path | None:
+def prepare_record(row: pd.Series, external_root: Path | None) -> Path | None:
     input_format = str(row["input_format"])
     raw_value = str(row["local_input_path"])
     if not raw_value.strip():
         print(f"SKIP {row['dataset_id']}: local_input_path not finalized yet.")
         return None
 
-    input_path = project_path(raw_value)
+    input_path = resolve_manifest_input_path(raw_value, external_root=external_root)
     if not input_path.exists():
         print(f"SKIP {row['dataset_id']}: input path does not exist -> {input_path}")
         return None
@@ -92,9 +118,12 @@ def main() -> None:
 
     manifest_path = project_path(section["manifest_csv"])
     manifest = load_manifest(manifest_path)
+    external_root = resolve_external_override(config)
+    if external_root is not None:
+        print(f"Using external raw-data root override: {external_root}")
     written: list[Path] = []
     for _, row in manifest.iterrows():
-        result = prepare_record(row)
+        result = prepare_record(row, external_root=external_root)
         if result is not None:
             written.append(result)
 

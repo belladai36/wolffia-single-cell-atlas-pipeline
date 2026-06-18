@@ -11,6 +11,14 @@ Start with the **four scRNA-seq runs** from `PRJNA1124135_scRNA` only:
 
 This is the smallest and most relevant first training set for a Wolffia-native reference.
 
+## Current storage constraint
+
+The four ENA FASTQ files together are about **82.7 GB compressed**, while the current machine has
+about **56 GB free**.
+
+That means we should **not start the full download on this machine yet** unless space is cleared or
+the destination is moved to a larger disk.
+
 ## Why not download everything first
 
 - `PRJNA1124135` also contains bulk RNA-seq runs
@@ -46,14 +54,10 @@ data/public_references/raw/PRJNA1124135/scRNA_seq/
 
 ```text
 data/public_references/raw/PRJNA1124135/scRNA_seq/
-  SRR29417743_1.fastq.gz
-  SRR29417743_2.fastq.gz
-  SRR29417744_1.fastq.gz
-  SRR29417744_2.fastq.gz
-  SRR29417745_1.fastq.gz
-  SRR29417745_2.fastq.gz
-  SRR29417746_1.fastq.gz
-  SRR29417746_2.fastq.gz
+  SRR29417743.fastq.gz
+  SRR29417744.fastq.gz
+  SRR29417745.fastq.gz
+  SRR29417746.fastq.gz
 ```
 
 ## After download

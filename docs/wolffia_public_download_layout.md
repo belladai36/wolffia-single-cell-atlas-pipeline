@@ -17,6 +17,16 @@ projects**, not downloadable processed matrices.
   - `SRR29417744` `Dusk1`
   - `SRR29417743` `Dusk2`
 
+Approximate compressed download sizes from ENA:
+
+- `SRR29417746`: `19.2 GB`
+- `SRR29417745`: `23.6 GB`
+- `SRR29417744`: `19.8 GB`
+- `SRR29417743`: `20.1 GB`
+
+Total compressed size is about **82.7 GB**, which is larger than the current free disk space in the
+workspace machine.
+
 Important note:
 
 - The same BioProject also contains additional **bulk RNA-seq** runs for whole frond, top, bottom,
@@ -47,14 +57,10 @@ Important note:
 data/public_references/raw/
   PRJNA1124135/
     scRNA_seq/
-      SRR29417743_1.fastq.gz
-      SRR29417743_2.fastq.gz
-      SRR29417744_1.fastq.gz
-      SRR29417744_2.fastq.gz
-      SRR29417745_1.fastq.gz
-      SRR29417745_2.fastq.gz
-      SRR29417746_1.fastq.gz
-      SRR29417746_2.fastq.gz
+      SRR29417743.fastq.gz
+      SRR29417744.fastq.gz
+      SRR29417745.fastq.gz
+      SRR29417746.fastq.gz
   PRJNA809022/
     snRNA_seq/
       SRR18098953_1.fastq.gz
@@ -79,8 +85,9 @@ Because these are raw sequencing runs:
 
 ## Best immediate next move
 
-1. download the four `PRJNA1124135` scRNA-seq runs only
-2. keep `PRJNA809022` as the secondary download after the first Wolffia workflow is proven
-3. generate a matrix or count object for `PRJNA1124135`
-4. update the manifest to point to that matrix
-5. run [scripts/12_prepare_wolffia_public_references.py](/Users/bella/Documents/Wolffia%20Single-Cell%20Atlas%20Pipeline%20Before%20the%20Data%20Arrive/scripts/12_prepare_wolffia_public_references.py)
+1. free additional storage or use a larger external location before download
+2. download the four `PRJNA1124135` scRNA-seq runs only
+3. keep `PRJNA809022` as the secondary download after the first Wolffia workflow is proven
+4. generate a matrix or count object for `PRJNA1124135`
+5. update the manifest to point to that matrix
+6. run [scripts/12_prepare_wolffia_public_references.py](/Users/bella/Documents/Wolffia%20Single-Cell%20Atlas%20Pipeline%20Before%20the%20Data%20Arrive/scripts/12_prepare_wolffia_public_references.py)
