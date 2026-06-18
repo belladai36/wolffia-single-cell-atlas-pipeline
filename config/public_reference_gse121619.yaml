@@ -1,0 +1,22 @@
+public_reference_analysis:
+  train_h5ad: data/public_references/processed/GSE227564_callus.h5ad
+  test_h5ad: data/public_references/processed/GSE121619_all_root.h5ad
+  train_dataset_name: GSE227564_callus
+  test_dataset_name: GSE121619_all_root
+  train_label_mode: infer_from_cluster_scores
+  test_label_mode: unlabeled
+  train_label_column: seurat_clusters
+  test_label_column: null
+  label_rules_csv: data/metadata/public_reference_label_rules.csv
+  program_markers_csv: data/metadata/public_reference_program_markers.csv
+  output_dir: results/public_reference_gse121619
+  figure_dir: figures/public_reference_gse121619
+  min_cells_per_program: 20
+  n_top_hvgs: 2000
+  n_pcs: 30
+  classifier: logistic_regression
+  random_state: 42
+  max_train_cells: 1500
+  max_test_cells: 2000
+  infer_min_score: -1.0
+  infer_min_margin: 0.0

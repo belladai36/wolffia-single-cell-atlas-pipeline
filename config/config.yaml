@@ -70,7 +70,7 @@ public_reference_analysis:
   test_h5ad: data/public_references/processed/GSE141730_root_phosphate.h5ad
   train_dataset_name: GSE227564_callus
   test_dataset_name: GSE141730_root_phosphate
-  train_label_mode: direct
+  train_label_mode: infer_from_cluster_scores
   test_label_mode: unlabeled
   train_label_column: seurat_clusters
   test_label_column: null
@@ -85,6 +85,8 @@ public_reference_analysis:
   random_state: 42
   max_train_cells: 1500
   max_test_cells: 2000
+  infer_min_score: -1.0
+  infer_min_margin: 0.0
 
 wolffia_public_reference_analysis:
   manifest_csv: data/metadata/wolffia_public_dataset_manifest.csv

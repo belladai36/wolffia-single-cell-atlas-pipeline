@@ -25,18 +25,23 @@ from sklearn.preprocessing import StandardScaler
 from pipeline_utils import load_config, project_path, write_json
 
 
-def read_program_markers(path: Path) -> dict[str, list[str]]:
+def read_program_markers(path: Path) -> dict[str, list[dict[str, str]]]:
     marker_df = pd.read_csv(path)
     required = {"program", "gene"}
     missing = required.difference(marker_df.columns)
     if missing:
         raise ValueError(f"Program marker file is missing columns: {sorted(missing)}")
 
-    markers: dict[str, list[str]] = {}
+    markers: dict[str, list[dict[str, str]]] = {}
     for program, subdf in marker_df.groupby("program"):
-        genes = [str(gene) for gene in subdf["gene"].dropna().unique()]
-        if genes:
-            markers[str(program)] = genes
+        rows: list[dict[str, str]] = []
+        for _, row in subdf.iterrows():
+            gene_symbol = str(row["gene"]).strip() if pd.notna(row["gene"]) else ""
+            gene_id = str(row.get("gene_id", "")).strip() if pd.notna(row.get("gene_id", "")) else ""
+            if gene_symbol or gene_id:
+                rows.append({"gene": gene_symbol, "gene_id": gene_id})
+        if rows:
+            markers[str(program)] = rows
     return markers
 
 
@@ -118,31 +123,127 @@ def ensure_pca(adata: sc.AnnData, n_pcs: int, random_state: int) -> None:
     sc.pp.pca(adata, n_comps=n_comps, svd_solver="arpack", random_state=random_state)
 
 
-def compute_program_scores(
-    adata: sc.AnnData,
-    markers: dict[str, list[str]],
-) -> tuple[sc.AnnData, pd.DataFrame]:
-    adata = adata.copy()
-    score_rows: list[dict[str, object]] = []
-    gene_index = pd.Index(adata.var_names.astype(str))
+def build_feature_alias_map(adata: sc.AnnData) -> dict[str, str]:
+    alias_map: dict[str, str] = {}
+    for var_name in adata.var_names.astype(str):
+        alias_map.setdefault(var_name.lower(), var_name)
 
-    for program, genes in markers.items():
-        present = [gene for gene in genes if gene in gene_index]
-        score_rows.append(
+    if "gene_ids" in adata.var.columns:
+        for var_name, gene_id in zip(adata.var_names.astype(str), adata.var["gene_ids"].astype(str), strict=False):
+            if gene_id and gene_id.lower() != "nan":
+                alias_map.setdefault(gene_id.lower(), var_name)
+    return alias_map
+
+
+def resolve_program_markers(
+    adata: sc.AnnData,
+    markers: dict[str, list[dict[str, str]]],
+) -> tuple[dict[str, list[str]], pd.DataFrame]:
+    alias_map = build_feature_alias_map(adata)
+    resolved: dict[str, list[str]] = {}
+    summary_rows: list[dict[str, object]] = []
+
+    for program, marker_rows in markers.items():
+        present: list[str] = []
+        requested: list[str] = []
+        resolved_pairs: list[str] = []
+
+        for marker_row in marker_rows:
+            candidates = [marker_row.get("gene", ""), marker_row.get("gene_id", "")]
+            requested_label = marker_row.get("gene") or marker_row.get("gene_id") or "unknown_marker"
+            requested.append(requested_label)
+
+            matched = None
+            for candidate in candidates:
+                key = str(candidate).strip().lower()
+                if key and key in alias_map:
+                    matched = alias_map[key]
+                    break
+
+            if matched is not None:
+                present.append(matched)
+                resolved_pairs.append(f"{requested_label}:{matched}")
+
+        unique_present = list(dict.fromkeys(present))
+        resolved[program] = unique_present
+        summary_rows.append(
             {
                 "program": program,
-                "n_input_markers": len(genes),
-                "n_markers_found": len(present),
-                "markers_found": ",".join(present),
+                "n_input_markers": len(marker_rows),
+                "n_markers_found": len(unique_present),
+                "markers_requested": ",".join(requested),
+                "markers_found": ",".join(unique_present),
+                "marker_resolution": ",".join(resolved_pairs),
             }
         )
+
+    return resolved, pd.DataFrame(summary_rows)
+
+
+def compute_program_scores(
+    adata: sc.AnnData,
+    markers: dict[str, list[dict[str, str]]],
+) -> tuple[sc.AnnData, pd.DataFrame]:
+    adata = adata.copy()
+    resolved_markers, score_df = resolve_program_markers(adata, markers)
+
+    for program, present in resolved_markers.items():
         if present:
             sc.tl.score_genes(adata, gene_list=present, score_name=f"{program}_score", use_raw=False)
         else:
             adata.obs[f"{program}_score"] = 0.0
 
-    score_df = pd.DataFrame(score_rows)
     return adata, score_df
+
+
+def infer_labels_from_cluster_scores(
+    adata: sc.AnnData,
+    cluster_column: str,
+    program_names: list[str],
+    min_top_score: float,
+    min_margin: float,
+) -> tuple[sc.AnnData, pd.DataFrame, pd.DataFrame]:
+    if cluster_column not in adata.obs.columns:
+        raise KeyError(f"Cluster column '{cluster_column}' was not found in adata.obs")
+
+    adata = adata.copy()
+    score_cols = [f"{program}_score" for program in program_names if f"{program}_score" in adata.obs.columns]
+    cluster_labels = adata.obs[cluster_column].astype(str)
+    summary_df = adata.obs.assign(cluster_label=cluster_labels).groupby("cluster_label", observed=True)[score_cols].mean()
+
+    assignment_rows: list[dict[str, object]] = []
+    cluster_to_program: dict[str, str] = {}
+
+    for cluster_label, row in summary_df.iterrows():
+        ordered = row.sort_values(ascending=False)
+        top_col = ordered.index[0]
+        top_score = float(ordered.iloc[0])
+        second_score = float(ordered.iloc[1]) if len(ordered) > 1 else float("-inf")
+        margin = top_score - second_score if np.isfinite(second_score) else np.inf
+        program = top_col.removesuffix("_score")
+
+        if top_score < min_top_score or margin < min_margin:
+            assigned = "unmapped"
+        else:
+            assigned = program
+
+        cluster_to_program[str(cluster_label)] = assigned
+        assignment_rows.append(
+            {
+                "cluster_label": str(cluster_label),
+                "assigned_program": assigned,
+                "top_program": program,
+                "top_score": top_score,
+                "second_score": second_score,
+                "score_margin": margin,
+            }
+        )
+
+    adata.obs["original_label"] = cluster_labels.values
+    adata.obs["broad_program"] = pd.Categorical(cluster_labels.map(cluster_to_program).fillna("unmapped"))
+    assignment_df = pd.DataFrame(assignment_rows).sort_values("cluster_label").reset_index(drop=True)
+    summary_df = summary_df.reset_index()
+    return adata, assignment_df, summary_df
 
 
 def plot_program_heatmap(adata: sc.AnnData, program_names: list[str], output_path: Path) -> None:
@@ -309,6 +410,8 @@ def main() -> None:
     test_label_mode = analysis_cfg.get("test_label_mode", "rule_based")
     max_train_cells = analysis_cfg.get("max_train_cells")
     max_test_cells = analysis_cfg.get("max_test_cells")
+    infer_min_score = float(analysis_cfg.get("infer_min_score", -1.0))
+    infer_min_margin = float(analysis_cfg.get("infer_min_margin", 0.0))
 
     print("Loading reference datasets...")
     train_adata = sc.read_h5ad(project_path(analysis_cfg["train_h5ad"]))
@@ -320,18 +423,6 @@ def main() -> None:
     rule_df = None
     if "rule_based" in {train_label_mode, test_label_mode}:
         rule_df = read_label_rules(project_path(analysis_cfg["label_rules_csv"]))
-
-    if train_label_mode == "direct":
-        train_adata = apply_direct_labels(train_adata, label_column=analysis_cfg["train_label_column"])
-    elif train_label_mode == "rule_based":
-        train_adata = apply_label_rules(
-            train_adata,
-            label_column=analysis_cfg["train_label_column"],
-            rule_df=rule_df,
-            dataset_name=analysis_cfg["train_dataset_name"],
-        )
-    else:
-        raise ValueError(f"Unsupported train_label_mode: {train_label_mode}")
 
     if test_label_mode == "direct":
         test_adata = apply_direct_labels(test_adata, label_column=analysis_cfg["test_label_column"])
@@ -360,6 +451,28 @@ def main() -> None:
 
     train_marker_summary.to_csv(output_dir / "train_marker_recovery.csv", index=False)
     test_marker_summary.to_csv(output_dir / "test_marker_recovery.csv", index=False)
+
+    if train_label_mode == "direct":
+        train_adata = apply_direct_labels(train_adata, label_column=analysis_cfg["train_label_column"])
+    elif train_label_mode == "rule_based":
+        train_adata = apply_label_rules(
+            train_adata,
+            label_column=analysis_cfg["train_label_column"],
+            rule_df=rule_df,
+            dataset_name=analysis_cfg["train_dataset_name"],
+        )
+    elif train_label_mode == "infer_from_cluster_scores":
+        train_adata, cluster_assignment_df, cluster_score_df = infer_labels_from_cluster_scores(
+            train_adata,
+            cluster_column=analysis_cfg["train_label_column"],
+            program_names=list(markers),
+            min_top_score=infer_min_score,
+            min_margin=infer_min_margin,
+        )
+        cluster_assignment_df.to_csv(output_dir / "train_cluster_program_assignments.csv", index=False)
+        cluster_score_df.to_csv(output_dir / "train_cluster_program_scores.csv", index=False)
+    else:
+        raise ValueError(f"Unsupported train_label_mode: {train_label_mode}")
 
     save_pca_plot(
         train_adata,

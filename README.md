@@ -25,6 +25,8 @@ The paths are placeholders. Replace the example FASTQ, genome, annotation, and m
 │   ├── 07_markers_annotation.py     # Marker genes and conservative annotation
 │   ├── 08_paga_trajectory.py        # PAGA trajectory graph
 │   ├── 09_robustness_checks.py      # Optional parameter sensitivity checks
+│   ├── 14_extract_gse121619_from_monocle.R  # Export GEO Monocle CellDataSet into matrix/obs/var files
+│   ├── 15_prepare_gse121619_h5ad.py         # Convert exported GSE121619 files into h5ad
 │   └── run_all.sh                   # Convenience runner
 ├── results/                         # Count matrices, AnnData files, reports
 ├── figures/                         # QC, UMAP, marker, and PAGA plots
@@ -185,6 +187,16 @@ Configure the dataset paths under `public_reference_analysis` in [config/config.
 ```bash
 python scripts/10_public_reference_statistical_prediction.py --config config/config.yaml
 ```
+
+To prepare the next Arabidopsis validation dataset `GSE121619` from its GEO Monocle object:
+
+```bash
+Rscript scripts/14_extract_gse121619_from_monocle.R All
+python scripts/15_prepare_gse121619_h5ad.py --split All
+python scripts/10_public_reference_statistical_prediction.py --config config/public_reference_gse121619.yaml
+```
+
+This keeps the main config unchanged while letting you test a second Arabidopsis validation target.
 
 Expected outputs include:
 
