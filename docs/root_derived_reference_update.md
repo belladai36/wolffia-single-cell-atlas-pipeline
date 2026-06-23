@@ -174,3 +174,59 @@ Now the best next step is to:
 1. review whether `transport_interface_or_water_balance` is still partly overlapping with vascular/transport markers
 2. strengthen vascular and epidermal separation if needed
 3. then move toward Wolffia transfer with this improved program set
+
+## Vascular-Interface Boundary Check
+
+We then tested whether strengthening vascular markers and narrowing the interface marker set would separate a clearer vascular-like program from the interface/water-balance program.
+
+Changes made:
+
+- added stronger vascular markers such as `ATHB8`, `PXY`, and `XCP1`
+- removed more generic membrane/interface markers from `transport_interface_or_water_balance`
+- kept aquaporin- and water-balance-oriented interface markers
+
+### Updated `WT -> SHR`
+
+- `abiotic_stress_response`: `53.23%`
+- `transport_interface_or_water_balance`: `37.76%`
+- `proliferative_or_meristematic`: `9.01%`
+
+### Updated `WT -> GSE121619`
+
+- `transport_interface_or_water_balance`: `45.35%`
+- `abiotic_stress_response`: `33.90%`
+- `proliferative_or_meristematic`: `20.75%`
+
+### What changed
+
+- the interface category became slightly less dominant in `WT -> SHR`
+- proliferative signal increased slightly in `WT -> GSE121619`
+- vascular markers contributed more as second-best signal in some clusters
+
+### What did not change
+
+- `vascular_like_or_transport` still did **not** emerge as a stable top-assigned broad program
+- the root-derived training clusters are still mostly partitioning into:
+  - `abiotic_stress_response`
+  - `transport_interface_or_water_balance`
+  - `proliferative_or_meristematic`
+
+## Interpretation of This Check
+
+This suggests that, in the current coarse ontology, vascular-associated biology is still not strong enough to stand on its own across these root reference transfers.
+
+That does **not** necessarily mean vascular biology is absent. It more likely means one of these is true:
+
+- vascular programs are genuinely weaker than the interface/stress axes in these particular references
+- our broad vascular marker panel is still too small or too mixed
+- vascular structure is being partially absorbed into interface/transport biology at this level of resolution
+
+## Practical Next Move Now
+
+At this point, we have probably reached diminishing returns from repeatedly tuning the same broad Arabidopsis marker table.
+
+The best next step is now:
+
+1. freeze this improved broad-program set as the current working reference
+2. use it for first-pass Wolffia-oriented transfer and interpretation
+3. treat vascular resolution as a secondary refinement question rather than blocking all forward progress
