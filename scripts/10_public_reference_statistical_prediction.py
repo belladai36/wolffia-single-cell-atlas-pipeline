@@ -123,6 +123,16 @@ def ensure_pca(adata: sc.AnnData, n_pcs: int, random_state: int) -> None:
     sc.pp.pca(adata, n_comps=n_comps, svd_solver="arpack", random_state=random_state)
 
 
+def ensure_umap(adata: sc.AnnData, n_pcs: int, random_state: int, n_neighbors: int = 15) -> None:
+    if "X_umap" in adata.obsm:
+        return
+    ensure_pca(adata, n_pcs=n_pcs, random_state=random_state)
+    usable_pcs = min(n_pcs, adata.obsm["X_pca"].shape[1])
+    usable_neighbors = min(n_neighbors, max(2, adata.n_obs - 1))
+    sc.pp.neighbors(adata, n_neighbors=usable_neighbors, n_pcs=usable_pcs)
+    sc.tl.umap(adata, random_state=random_state)
+
+
 def build_feature_alias_map(adata: sc.AnnData) -> dict[str, str]:
     alias_map: dict[str, str] = {}
     for var_name in adata.var_names.astype(str):
@@ -298,6 +308,25 @@ def save_pca_plot(adata: sc.AnnData, color: str, output_path: Path, title: str, 
 
     plt.figure(figsize=(8, 6))
     sns.scatterplot(data=plot_df, x="PC1", y="PC2", hue=color, s=10, linewidth=0)
+    plt.title(title)
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=200)
+    plt.close()
+
+
+def save_umap_plot(adata: sc.AnnData, color: str, output_path: Path, title: str, n_pcs: int, random_state: int) -> None:
+    ensure_umap(adata, n_pcs=n_pcs, random_state=random_state)
+    coords = adata.obsm["X_umap"][:, :2]
+    plot_df = pd.DataFrame(
+        {
+            "UMAP1": coords[:, 0],
+            "UMAP2": coords[:, 1],
+            color: adata.obs[color].astype(str).to_numpy(),
+        }
+    )
+
+    plt.figure(figsize=(8, 6))
+    sns.scatterplot(data=plot_df, x="UMAP1", y="UMAP2", hue=color, s=10, linewidth=0)
     plt.title(title)
     plt.tight_layout()
     plt.savefig(output_path, dpi=200)
@@ -482,6 +511,14 @@ def main() -> None:
         n_pcs=n_pcs,
         random_state=random_state,
     )
+    save_umap_plot(
+        train_adata,
+        "broad_program",
+        figure_dir / "train_broad_program_umap.png",
+        "Train Broad Programs (UMAP)",
+        n_pcs=n_pcs,
+        random_state=random_state,
+    )
     plot_program_heatmap(train_adata, list(markers), figure_dir / "train_program_score_heatmap.png")
     plot_program_boxplots(train_adata, list(markers), figure_dir / "train_program_score_boxplots.png")
     if test_has_labels:
@@ -490,6 +527,14 @@ def main() -> None:
             "broad_program",
             figure_dir / "test_broad_program_pca.png",
             "Test Broad Programs",
+            n_pcs=n_pcs,
+            random_state=random_state,
+        )
+        save_umap_plot(
+            test_adata,
+            "broad_program",
+            figure_dir / "test_broad_program_umap.png",
+            "Test Broad Programs (UMAP)",
             n_pcs=n_pcs,
             random_state=random_state,
         )
@@ -558,6 +603,14 @@ def main() -> None:
         "predicted_broad_program",
         figure_dir / "test_predicted_broad_program_pca.png",
         "Predicted Broad Programs on Test Dataset",
+        n_pcs=n_pcs,
+        random_state=random_state,
+    )
+    save_umap_plot(
+        test_prediction_input,
+        "predicted_broad_program",
+        figure_dir / "test_predicted_broad_program_umap.png",
+        "Predicted Broad Programs on Test Dataset (UMAP)",
         n_pcs=n_pcs,
         random_state=random_state,
     )

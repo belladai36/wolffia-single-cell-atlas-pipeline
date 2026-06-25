@@ -13,11 +13,11 @@ At the moment, the most realistic path is a prediction-first project:
 1. use public plant single-cell references and Wolffia genomic resources to generate hypotheses
 2. use statistical analyses on public single-cell references to quantify broad cell programs and their separability
 3. define candidate cell states and marker programs expected in Wolffia
-4. use future SMART-seq data to test and refine those predictions
+4. use future `PIP-seq` data to test and refine those predictions
 
 ## Central Question
 
-Can we predict the cellular organization of `Wolffia australiana` by integrating public plant single-cell references with Wolffia genomic and transcriptomic resources, and then test those predictions with future SMART-seq data?
+Can we predict the cellular organization of `Wolffia australiana` by integrating public plant single-cell references with Wolffia genomic and transcriptomic resources, and then test those predictions with future `PIP-seq` data?
 
 ## Specific Aims
 
@@ -45,7 +45,7 @@ Generate explicit predictions about which cell states and developmental programs
 
 ### Aim 5
 
-Design validation experiments for future SMART-seq data and downstream follow-up assays.
+Design validation experiments for future `PIP-seq` data and downstream follow-up assays.
 
 ## Biological Hypotheses
 
@@ -72,8 +72,8 @@ Future single-cell data may reveal a continuum of developmental states rather th
 - an ortholog-mapped Wolffia candidate marker table
 - a ranked list of predicted Wolffia cell programs
 - a statistical summary of which public plant programs are most robust and transferable
-- a validation plan for SMART-seq and downstream wet-lab experiments
+- a validation plan for `PIP-seq` and downstream wet-lab experiments
 
 ## Success Criteria
 
-This summer project will be successful if it produces a credible, testable hypothesis framework that can guide interpretation of future Wolffia SMART-seq data rather than waiting for the sequencing results before asking biological questions.
+This summer project will be successful if it produces a credible, testable hypothesis framework that can guide interpretation of future Wolffia `PIP-seq` data rather than waiting for the sequencing results before asking biological questions.

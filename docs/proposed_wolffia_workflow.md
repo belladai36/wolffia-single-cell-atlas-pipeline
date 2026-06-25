@@ -1,8 +1,8 @@
-# Proposed Workflow: Wolffia SMART-seq Cell Atlas Project
+# Proposed Workflow: Wolffia PIP-seq Cell Atlas Project
 
 ## Project Goal
 
-Use SMART-seq single-cell RNA-seq data from *Wolffia australiana* to identify major cell populations, propose candidate cell identities, and explore developmental relationships between cell states.
+Use `PIP-seq` single-cell RNA-seq data from *Wolffia australiana* to identify major cell populations, propose candidate cell identities, and explore developmental relationships between cell states.
 
 ## Core Biological Questions
 
@@ -13,10 +13,10 @@ Use SMART-seq single-cell RNA-seq data from *Wolffia australiana* to identify ma
 ## Suggested Computational Workflow
 
 1. **Raw data processing**
-   - Start from per-cell SMART-seq FASTQ files.
-   - Run read-level QC.
-   - Align reads to the Wolffia reference genome.
-   - Generate a gene-by-cell count matrix.
+   - Start from the lab or core facility `PIP-seq` output.
+   - If the platform returns a processed cell-by-gene matrix, begin directly with matrix-level QC and Scanpy analysis.
+   - If the platform returns raw reads, follow the official or core-supported `PIP-seq` preprocessing route to generate a gene-by-cell count matrix.
+   - Record the exact preprocessing and filtering choices used by the platform.
 
 2. **Cell-level quality control**
    - Evaluate reads per cell, detected genes, mapping rate, and organellar transcript fractions.
@@ -51,6 +51,6 @@ Use SMART-seq single-cell RNA-seq data from *Wolffia australiana* to identify ma
 
 ## Feasibility Notes
 
-- This project is strongest if new SMART-seq data will be generated in the lab.
+- This project is strongest if new `PIP-seq` data will be generated in the lab.
 - If the experimental data are not available yet, public single-cell plant datasets could still be used to practice pipeline development and analysis methods.
 - Annotation may be challenging if Wolffia reference annotations and marker knowledge are limited, so early conclusions should remain conservative.

@@ -1,8 +1,8 @@
-# Phase 1 Workplan: Public Data Before Wolffia SMART-seq
+# Phase 1 Workplan: Public Data Before Wolffia PIP-seq
 
 ## Goal
 
-Use public reference datasets and existing Wolffia resources to build a testable prediction framework before any new Wolffia SMART-seq data arrive.
+Use public reference datasets and existing Wolffia resources to build a testable prediction framework before any new Wolffia `PIP-seq` data arrive.
 
 ## Why This Phase Matters
 
@@ -13,7 +13,7 @@ This gives the project a strong scientific shape even before wet-lab data are av
 1. which broad plant cell programs are most likely to be preserved in Wolffia?
 2. which programs may be reduced, merged, or hard to separate?
 3. which candidate Wolffia states might reflect aquatic adaptation rather than standard textbook cell types?
-4. what signatures should we look for immediately once SMART-seq data arrive?
+4. what signatures should we look for immediately once `PIP-seq` data arrive?
 
 ## Immediate Deliverables
 
@@ -74,7 +74,7 @@ Each prediction should include:
 - expected status in Wolffia
 - evidence basis
 - confidence
-- expected SMART-seq outcome
+- expected `PIP-seq` outcome
 - validation experiment
 
 Output files:
@@ -110,7 +110,7 @@ Success criterion:
 
 ### Step 4: Write Testable Predictions
 
-Translate descriptive biology into statements that future SMART-seq data can support or falsify.
+Translate descriptive biology into statements that future `PIP-seq` data can support or falsify.
 
 Success criterion:
 
@@ -139,7 +139,7 @@ Even before real single-cell data, Phase 1 is successful if we can say:
 - these are the cell programs most likely to exist in Wolffia
 - these are the programs most likely to be merged or reduced
 - these are the most interesting places where Wolffia may differ from model plants
-- these are the first signatures we will test when SMART-seq data arrive
+- these are the first signatures we will test when `PIP-seq` data arrive
 
 ## Suggested Near-Term Milestone
 

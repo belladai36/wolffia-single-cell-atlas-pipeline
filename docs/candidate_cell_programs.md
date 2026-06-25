@@ -146,4 +146,4 @@ For each category, we will eventually collect:
 - confidence level
 - validation strategy
 
-The resulting marker table will support the first hypothesis-driven interpretation of future Wolffia SMART-seq data.
+The resulting marker table will support the first hypothesis-driven interpretation of future Wolffia `PIP-seq` data.

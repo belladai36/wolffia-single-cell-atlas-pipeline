@@ -1,23 +1,70 @@
-# Wolffia SMART-seq Single-Cell RNA-seq Pipeline
+# Wolffia PIP-seq Single-Cell Atlas Framework
 
-This repository is a beginner-friendly, end-to-end scaffold for a Wolffia single-cell RNA-seq project before the real data arrive. It starts from per-cell SMART-seq FASTQ files, creates a gene-by-cell count matrix, and then runs a standard Scanpy analysis through QC, normalization, clustering, marker discovery, annotation, UMAP, PAGA trajectory inference, and robustness checks.
+This repository is a beginner-friendly, prediction-first scaffold for a `Wolffia australiana` single-cell project before the real data arrive. The current planned experimental platform is `PIP-seq`. The repo therefore combines:
+
+- a comparative public-reference workflow for biological prediction and label transfer
+- Wolffia-facing planning and validation documents
+- a legacy FASTQ-level alignment-and-counting scaffold that can still be useful for full-length or custom raw-data workflows
 
 The paths are placeholders. Replace the example FASTQ, genome, annotation, and metadata paths with your project files when they are available.
+
+## Start Here
+
+If you are opening this repository for the first time, these are the most useful entry points:
+
+1. [Project progress summary](docs/project_progress_summary.md)
+2. [Project aims](docs/project_aims.md)
+3. [Docs guide](docs/README.md)
+4. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md)
+
+## Recommended Reading Order
+
+For most viewers, the easiest way through the repository is:
+
+1. [Project progress summary](docs/project_progress_summary.md) for the current state
+2. [Project aims](docs/project_aims.md) for the biological motivation
+3. [Prediction framework](docs/prediction_framework.md) for the main hypothesis logic
+4. [Root-derived reference update](docs/root_derived_reference_update.md) for the most important computational lesson so far
+5. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md) for how the model will be applied to Wolffia
+6. [Wolffia data-generation protocol](docs/wolffia_data_generation_protocol.md) for the planned experimental route
+
+## Current Status
+
+The project is currently in the **Wolffia-facing transfer preparation stage**.
+
+What that means:
+
+- the Arabidopsis reference-and-transfer framework has been built and tested
+- the broad program set has been refined into a more interpretable working ontology
+- the current reference layer is ready for a first Wolffia-facing pass
+- actual Wolffia training is waiting on download and preprocessing of public Wolffia datasets
+
+Current public Wolffia plan:
+
+- `PRJNA1124135` as the first training dataset
+- `PRJNA809022` as the validation dataset
+
+The clearest current progress summary is here:
+
+- [Project progress summary](docs/project_progress_summary.md)
 
 ## Project Layout
 
 ```text
 .
 ├── config/
-│   └── config.yaml                  # Edit paths and analysis parameters here
+│   ├── config.yaml                  # Main project config
+│   └── README.md                    # Which config file is for which workflow
 ├── data/
 │   ├── raw_fastq/                   # Put or symlink FASTQ files here
 │   ├── reference/                   # Genome FASTA, GTF/GFF, STAR index
 │   └── metadata/                    # Sample/cell metadata and marker tables
+├── docs/                            # Project narrative, plans, results, and protocols
 ├── scripts/
+│   ├── README.md                    # Script order and what each group does
 │   ├── 00_fastq_qc.sh               # FastQC + MultiQC
-│   ├── 01_align_smartseq_star.sh    # STAR alignment for SMART-seq reads
-│   ├── 02_featurecounts.sh          # Gene-level counting from BAM files
+│   ├── 01_align_pipseq_star.sh      # Legacy STAR alignment route for per-cell FASTQ workflows
+│   ├── 02_featurecounts.sh          # Legacy gene-level counting from BAM files
 │   ├── 03_build_count_matrix.py     # Merge per-cell counts into one matrix
 │   ├── 04_cell_qc.py                # Cell QC and filtering flags
 │   ├── 05_normalize_hvg_pca.py      # Normalize, log transform, HVGs, PCA
@@ -31,8 +78,17 @@ The paths are placeholders. Replace the example FASTQ, genome, annotation, and m
 ├── results/                         # Count matrices, AnnData files, reports
 ├── figures/                         # QC, UMAP, marker, and PAGA plots
 ├── logs/                            # Tool logs
-└── notebooks/                       # Optional exploratory notebooks
+├── notebooks/                       # Optional exploratory notebooks
+└── output/                          # Shareable PDF and DOCX exports
 ```
+
+## Folder Guide
+
+- [docs/README.md](docs/README.md): best entry point for understanding the project
+- [scripts/README.md](scripts/README.md): best entry point for running code in the right order
+- [config/README.md](config/README.md): best entry point for choosing config files
+- [notebooks/README.md](notebooks/README.md): optional exploratory analysis notes
+- [output/README.md](output/README.md): generated summary and protocol exports
 
 ## Install
 
@@ -43,7 +99,7 @@ mamba env create -f environment.yml
 conda activate wolffia-scrna
 ```
 
-The upstream FASTQ steps expect these command-line tools in your `PATH`:
+The legacy FASTQ steps expect these command-line tools in your `PATH`:
 
 - `fastqc`
 - `multiqc`
@@ -55,15 +111,23 @@ The upstream FASTQ steps expect these command-line tools in your `PATH`:
 
 Edit [config/config.yaml](config/config.yaml) before running.
 
-Minimum inputs:
+For the current prediction-first and transfer workflow, the key inputs are:
 
-- Paired-end or single-end SMART-seq FASTQ files, one library per cell.
+- processed public reference `.h5ad` files
+- marker tables and label-collapse rules under `data/metadata/`
+- later, a processed Wolffia matrix or `.h5ad` derived from the lab's `PIP-seq` output
+
+If you want to run the legacy FASTQ scaffold, the minimum inputs are:
+
+- Paired-end or single-end per-cell FASTQ files, one library per cell.
 - A Wolffia genome FASTA file.
 - A gene annotation GTF file. Convert GFF3 to GTF first if needed.
 - A sample sheet like [data/metadata/samples.csv](data/metadata/samples.csv).
 - Optional known marker genes like [data/metadata/marker_genes.csv](data/metadata/marker_genes.csv).
 
 ## Run Step by Step
+
+The commands below describe the **legacy FASTQ-to-count-matrix route**. They remain useful if the lab or core provides raw per-cell FASTQs or if we need a custom alignment workflow.
 
 ### 1. FASTQ Quality Control
 
@@ -76,9 +140,9 @@ Outputs:
 - FastQC HTML reports in `results/fastqc/`
 - MultiQC report in `results/multiqc/`
 
-### 2. Align SMART-seq Reads
+### 2. Align Per-Cell Reads
 
-SMART-seq data usually do not have 10x-style cell barcodes. This scaffold assumes each FASTQ pair is one cell, aligns each cell independently with STAR, then counts genes per cell.
+This scaffold assumes each FASTQ pair is one cell, aligns each cell independently with STAR, then counts genes per cell.
 
 Build a STAR index first if you do not already have one:
 
@@ -95,7 +159,7 @@ STAR \
 Then align:
 
 ```bash
-bash scripts/01_align_smartseq_star.sh config/config.yaml
+bash scripts/01_align_pipseq_star.sh config/config.yaml
 ```
 
 ### 3. Count Genes
@@ -238,7 +302,8 @@ Expected outputs include:
 ## Notes for Wolffia
 
 - Wolffia organelle gene names may not follow human-style `MT-` prefixes. Edit `mitochondrial_gene_prefixes` and `plastid_gene_prefixes` in `config/config.yaml` after inspecting the annotation.
-- SMART-seq has full-length transcript coverage and no UMIs. Counts are read counts, not molecule counts, so doublet detection and QC heuristics differ from droplet scRNA-seq.
+- If the lab's `PIP-seq` workflow returns a processed matrix or `.h5ad` rather than per-cell FASTQs, start from the downstream Scanpy and transfer-analysis stages instead of forcing the legacy STAR and featureCounts route.
+- Because the planned experimental platform is `PIP-seq`, future wet-lab success will depend heavily on low-debris, low-clump sample preparation and on matching the core facility's loading requirements.
 - Plant cells can have strong chloroplast/plastid signal. This pipeline computes plastid fractions when prefixes are provided, but does not hard-filter on plastid percentage by default.
 - Marker-based annotation is only as good as the marker table. Keep early labels coarse, especially for an under-annotated organism.
 
@@ -255,7 +320,7 @@ Expected outputs include:
 
 ## Prediction-First Planning Docs
 
-Before Wolffia SMART-seq data arrive, the project is also organized around a prediction-first comparative biology workflow:
+Before Wolffia `PIP-seq` data arrive, the project is organized around a prediction-first comparative biology workflow:
 
 - [Project aims](docs/project_aims.md)
 - [Reference datasets](docs/reference_datasets.md)
@@ -266,4 +331,3 @@ Before Wolffia SMART-seq data arrive, the project is also organized around a pre
 - [First-pass Wolffia mapping notes](docs/wolffia_mapping_notes.md)
 - [Phase 1 public-data workplan](docs/phase1_public_data_workplan.md)
 - [Validation experiment plan](docs/validation_experiment_plan.md)
-# wolffia-single-cell-atlas-pipeline

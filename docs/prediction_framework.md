@@ -68,7 +68,7 @@ Example structure:
 
 - predicted state or process
 - supporting evidence
-- expected SMART-seq signature
+- expected `PIP-seq` signature
 - possible alternative explanation
 - proposed validation experiment
 
@@ -106,7 +106,7 @@ Examples to evaluate:
 
 ## Validation Logic
 
-When SMART-seq data arrive, predictions will be checked by asking:
+When `PIP-seq` data arrive, predictions will be checked by asking:
 
 1. do clusters or gradients support the predicted states?
 2. do predicted marker genes co-occur in the same cells or states?
@@ -131,7 +131,7 @@ The final product of this framework should be a prediction table with columns su
 - reference evidence
 - Wolffia support
 - prediction confidence
-- expected SMART-seq outcome
+- expected `PIP-seq` outcome
 - validation experiment
 - interpretation if prediction fails
 
@@ -139,20 +139,20 @@ The final product of this framework should be a prediction table with columns su
 
 The table below converts the current reference panel and Wolffia mapping notes into explicit, testable predictions.
 
-| predicted_program | expected_status_in_wolffia | supporting_evidence | prediction_confidence | expected_smart_seq_outcome | alternative_explanation | proposed_validation |
+| predicted_program | expected_status_in_wolffia | supporting_evidence | prediction_confidence | expected_pip_seq_outcome | alternative_explanation | proposed_validation |
 |---|---|---|---|---|---|---|
 | Proliferative / meristematic program | preserved | core cell-cycle machinery is broadly conserved across flowering plants; Wolffia must retain actively growing cells | high | one cluster or small group of cells enriched for cell-cycle, DNA replication, and histone-associated genes | sampled tissue lacked actively dividing cells, or sequencing depth was too shallow to separate a proliferative population | qRT-PCR for division-associated markers and microscopy focused on actively growing regions |
 | Photosynthetic / assimilation program | preserved | Wolffia is a photosynthetic plant and should retain chloroplast- and carbon-fixation-associated transcriptional programs | high | a large assimilation-associated state enriched for LHCB-, RBCS-, and plastid-related expression | photosynthetic signal is broad across most cells and does not resolve into a distinct cluster because the plant body is highly reduced | targeted expression assay for photosynthesis-related genes across growth conditions and microscopy of chloroplast-rich tissues |
 | Vascular-like / transport program | partially preserved or merged | transport genes are likely present, but morphology suggests reduced specialization relative to larger angiosperms | medium | transport-associated markers appear either in a weak subcluster or as a mixed signature embedded within another major state | transport functions are distributed across multifunctional cells rather than specialized cell identities | qRT-PCR panel for transporter candidates plus anatomical imaging or section-based localization if feasible |
 | Developmental transition program | preserved as a continuum rather than discrete cell type | developmental trajectory references suggest transitional states may be more informative than strict labels | medium to high | gradual expression shifts, pseudotime structure, or partially overlapping marker programs rather than many sharply separated clusters | limited cell number or technical noise may blur true discrete states | trajectory re-analysis, hormone perturbation experiments, and follow-up marker testing across induced developmental conditions |
 | Epidermal / surface identity program | reduced or weakly separable | surface-associated programs may still exist, but Wolffia body-plan reduction may weaken layer-specific specialization | medium | subtle enrichment of surface markers, possibly without a clean standalone cluster | surface functions may be merged with photosynthetic or stress-responsive states | targeted marker assay for surface-identity candidates and microscopy-based surface characterization |
-| Reproductive / floral program | condition-specific or absent in baseline samples | floral regulators are biologically relevant but unlikely to be active in ordinary vegetative sampling | low | no strong reproductive cluster in baseline SMART-seq, or only rare cells with floral-transition markers | flowering may require specific induction conditions not represented in the sampled material | repeat sampling under flowering-induction conditions and targeted assays for floral regulators |
+| Reproductive / floral program | condition-specific or absent in baseline samples | floral regulators are biologically relevant but unlikely to be active in ordinary vegetative sampling | low | no strong reproductive cluster in baseline `PIP-seq`, or only rare cells with floral-transition markers | flowering may require specific induction conditions not represented in the sampled material | repeat sampling under flowering-induction conditions and targeted assays for floral regulators |
 | Transport / interface / water-balance program | present as a broad interface-associated program | Wolffia aquatic lifestyle likely requires strong membrane, aquaporin, and water-balance regulation that does not map neatly to standard organ labels | medium to high | one broad state or gradient enriched for aquaporin-like, membrane-interface, or water-flux-associated signatures | interface-associated biology may overlap partly with general transport or surface programs | osmotic or nutrient-shift experiments and targeted validation of aquaporin-like modules |
 | Abiotic stress-response program | present as a state-like response rather than stable cell type | redox, heat, cold, dehydration, or handling-associated stress programs may appear as real but dynamic signatures | medium | subset-specific or condition-specific signatures enriched for stress-response markers | observed stress signatures may reflect dissociation or handling artifacts rather than stable endogenous states | perturbation experiments with oxidative, osmotic, heat, or cold treatments and targeted validation of responsive modules |
 
 ## Interpretation Priority
 
-The first four predictions should drive the earliest analysis once SMART-seq data arrive:
+The first four predictions should drive the earliest analysis once `PIP-seq` data arrive:
 
 1. proliferative / meristematic
 2. photosynthetic / assimilation

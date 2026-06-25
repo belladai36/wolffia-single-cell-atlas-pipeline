@@ -30,7 +30,7 @@ Useful reference markers:
 First-pass Wolffia expectation:
 
 - very likely present
-- likely one of the clearest early programs in future SMART-seq data
+- likely one of the clearest early programs in future `PIP-seq` data
 
 Interpretation:
 

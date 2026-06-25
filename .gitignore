@@ -23,9 +23,15 @@ data/public_references/processed/
 
 # Temporary local upload workspace
 github_upload/
+tmp/
 
 # Local professor-facing materials
 docs/professor_intro_script.md
 docs/professor_intro_with_figures.md
 docs/professor_intro_with_figures.pdf
 docs/wolffia_public_sc_research_brief.md
+
+# Finder noise in generated export folders
+output/.DS_Store
+output/docx/.DS_Store
+output/pdf/.DS_Store

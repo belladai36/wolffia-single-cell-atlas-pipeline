@@ -1,6 +1,6 @@
-# Edit this file when real FASTQ files, reference files, and metadata arrive.
+# Edit this file when real reference files, metadata, and any legacy per-cell FASTQ inputs arrive.
 
-project_name: wolffia_smartseq_atlas
+project_name: wolffia_single_cell_atlas
 
 paths:
   sample_sheet: data/metadata/samples.csv
