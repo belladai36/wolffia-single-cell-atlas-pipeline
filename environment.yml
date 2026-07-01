@@ -10,6 +10,8 @@ dependencies:
   - star
   - samtools
   - subread
+  - diamond
+  - ncbi-datasets-cli
   - scanpy
   - anndata
   - pandas
@@ -24,4 +26,3 @@ dependencies:
   - openpyxl
   - pip:
       - session-info
-

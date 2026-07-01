@@ -1,7 +1,0 @@
-interface:
-  display_name: "Wolffia PIP-seq"
-  short_description: "Wolffia PIP-seq planning and QC"
-  default_prompt: "Use $wolffia-pip-seq to help me plan, validate, or interpret a Wolffia PIP-seq workflow."
-
-policy:
-  allow_implicit_invocation: true

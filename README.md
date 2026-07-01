@@ -60,7 +60,6 @@ The clearest current progress summary is here:
 │   ├── reference/                   # Genome FASTA, GTF/GFF, STAR index
 │   └── metadata/                    # Sample/cell metadata and marker tables
 ├── docs/                            # Project narrative, plans, results, and protocols
-├── skills/                          # Repo-local Codex skills for project-specific workflows
 ├── scripts/
 │   ├── README.md                    # Script order and what each group does
 │   ├── 00_fastq_qc.sh               # FastQC + MultiQC
@@ -86,7 +85,6 @@ The clearest current progress summary is here:
 ## 5. Folder Guide
 
 - [docs/README.md](docs/README.md): best entry point for understanding the project
-- [skills/README.md](skills/README.md): repo-local Codex skills and their entry points
 - [scripts/README.md](scripts/README.md): best entry point for running code in the right order
 - [config/README.md](config/README.md): best entry point for choosing config files
 - [notebooks/README.md](notebooks/README.md): optional exploratory analysis notes
@@ -293,6 +291,23 @@ python scripts/10_public_reference_statistical_prediction.py \
 ```
 
 This tests whether a root-derived reference reduces the strong stress-like collapse we saw when training on callus.
+
+To benchmark two classifiers with entire GSE123818 clusters held out and build a conservative two-dataset root consensus model:
+
+```bash
+python scripts/27_root_reference_consensus.py
+```
+
+This comparison uses logistic regression and random forest. GSE121619 cells enter the provisional consensus set only when both models agree with each other and with the strongest marker module at the configured confidence thresholds. Review the executed notebook at `notebooks/02_root_consensus_benchmark.ipynb` and the interpretation in `docs/root_consensus_benchmark_summary.md`.
+
+To prepare cross-species-compatible features:
+
+```bash
+bash scripts/28_download_orthology_references.sh
+python scripts/29_build_arabidopsis_wolffia_orthologs.py
+```
+
+This uses pinned RefSeq protein annotations and reciprocal DIAMOND searches. The generated `data/metadata/wolffia_transfer_feature_set.csv` contains only high- and medium-confidence reciprocal mappings. See `docs/ortholog_mapping_summary.md` for confidence rules and limitations.
 
 Expected outputs include:
 
