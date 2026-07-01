@@ -33,6 +33,13 @@ These scripts are the main computational core of the current project:
 4. `15_prepare_gse121619_h5ad.py`
 5. `16_prepare_gse123818_h5ad.py`
 6. `17_cluster_public_reference.py`
+7. `27_root_reference_consensus.py`
+8. `28_download_orthology_references.sh`
+9. `29_build_arabidopsis_wolffia_orthologs.py`
+
+`27_root_reference_consensus.py` performs a cluster-held-out comparison of logistic regression and random forest, applies a conservative agreement filter to GSE121619, and fits provisional root consensus models.
+
+`28_download_orthology_references.sh` pins and downloads RefSeq Arabidopsis and Wolffia protein/GFF3 resources. `29_build_arabidopsis_wolffia_orthologs.py` performs reciprocal DIAMOND protein searches and writes confidence-graded model and marker mappings.
 
 ### 3. Wolffia public-data preparation helpers
 
@@ -61,6 +68,7 @@ If you only want the current project core, focus on:
 1. `10_public_reference_statistical_prediction.py`
 2. `17_cluster_public_reference.py`
 3. `19_generate_public_reference_umaps.py`
+4. `27_root_reference_consensus.py`
 
 Environment note:
 
