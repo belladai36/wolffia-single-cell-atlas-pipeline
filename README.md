@@ -305,9 +305,12 @@ To prepare cross-species-compatible features:
 ```bash
 bash scripts/28_download_orthology_references.sh
 python scripts/29_build_arabidopsis_wolffia_orthologs.py
+python scripts/30_transfer_model_benchmark_and_marker_audit.py
 ```
 
 This uses pinned RefSeq protein annotations and reciprocal DIAMOND searches. The generated `data/metadata/wolffia_transfer_feature_set.csv` contains only high- and medium-confidence reciprocal mappings. See `docs/ortholog_mapping_summary.md` for confidence rules and limitations.
+
+The final comparison and biological-program coverage audit are summarized in [docs/transfer_model_and_marker_audit.md](docs/transfer_model_and_marker_audit.md).
 
 Expected outputs include:
 
