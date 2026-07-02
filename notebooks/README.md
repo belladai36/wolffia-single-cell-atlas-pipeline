@@ -6,7 +6,7 @@ Start with the consolidated overview:
 
 1. Open [00_wolffia_project_analysis_overview.ipynb](00_wolffia_project_analysis_overview.ipynb).
 2. Review the project question, datasets, Arabidopsis transfer results, UMAP examples, classifier validation, confidence calibration, ortholog coverage, and transfer-readiness decision in one place.
-3. Use notebooks `01` through `03` for the more detailed analysis layers.
+3. Use notebooks `01` through `04` for the more detailed analysis layers.
 
 Recommended first notebook:
 
@@ -40,3 +40,10 @@ Third notebook:
 2. Review reciprocal Arabidopsis-to-Wolffia protein mappings and program-level marker coverage.
 3. Compare the 2,000-gene Arabidopsis benchmark with the 340-gene ortholog-restricted model.
 4. Use its transfer-readiness decision before applying any model to Wolffia cells.
+
+Fourth notebook:
+
+1. Open [04_transfer_model_benchmark_and_marker_audit.ipynb](04_transfer_model_benchmark_and_marker_audit.ipynb).
+2. Compare the full 2,000-gene Arabidopsis model with the 340-gene transfer-ready model.
+3. Review performance loss, calibration, independent-root acceptance, and program-level marker coverage.
+4. Inspect family-level Wolffia candidates for weak stress, epidermal, and vascular marker panels.

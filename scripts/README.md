@@ -36,10 +36,13 @@ These scripts are the main computational core of the current project:
 7. `27_root_reference_consensus.py`
 8. `28_download_orthology_references.sh`
 9. `29_build_arabidopsis_wolffia_orthologs.py`
+10. `30_transfer_model_benchmark_and_marker_audit.py`
 
 `27_root_reference_consensus.py` performs a cluster-held-out comparison of logistic regression and random forest, applies a conservative agreement filter to GSE121619, and fits provisional root consensus models.
 
 `28_download_orthology_references.sh` pins and downloads RefSeq Arabidopsis and Wolffia protein/GFF3 resources. `29_build_arabidopsis_wolffia_orthologs.py` performs reciprocal DIAMOND protein searches and writes confidence-graded model and marker mappings.
+
+`30_transfer_model_benchmark_and_marker_audit.py` compares the full Arabidopsis benchmark with the 340-gene transfer-ready model, quantifies performance loss, and separates marker mappings into transfer-ready, family-level candidate, and unresolved categories.
 
 ### 3. Wolffia public-data preparation helpers
 
