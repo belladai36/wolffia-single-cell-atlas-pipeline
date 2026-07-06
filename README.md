@@ -26,7 +26,8 @@ For most viewers, the easiest way through the repository is:
 3. [Prediction framework](docs/prediction_framework.md) for the main hypothesis logic
 4. [Root-derived reference update](docs/root_derived_reference_update.md) for the most important computational lesson so far
 5. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md) for how the model will be applied to Wolffia
-6. [Wolffia data-generation protocol](docs/wolffia_data_generation_protocol.md) for the planned experimental route
+6. [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md) for the exact model and rejection rule
+7. [Wolffia data-generation protocol](docs/wolffia_data_generation_protocol.md) for the planned experimental route
 
 ## 3. Current Status
 
@@ -37,6 +38,7 @@ What that means:
 - the Arabidopsis reference-and-transfer framework has been built and tested
 - the broad program set has been refined into a more interpretable working ontology
 - the current reference layer is ready for a first Wolffia-facing pass
+- the provisional 340-feature Wolffia transfer model and conservative decision rule are frozen
 - actual Wolffia training is waiting on download and preprocessing of public Wolffia datasets
 
 Current public Wolffia plan:
@@ -47,6 +49,7 @@ Current public Wolffia plan:
 The clearest current progress summary is here:
 
 - [Project progress summary](docs/project_progress_summary.md)
+- [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
 
 ## 4. Project Layout
 

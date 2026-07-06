@@ -17,6 +17,7 @@ That means:
 - the Arabidopsis reference framework is working
 - the broad program ontology has been refined several times
 - the current program set is good enough to support a first Wolffia-facing pass
+- the provisional 340-feature dual-model transfer rule is frozen for first application
 - actual Wolffia training is waiting on download and preprocessing of public Wolffia data
 
 ## What We Have Completed
@@ -102,6 +103,17 @@ Key docs:
 - [Prediction framework](prediction_framework.md)
 - [Wolffia mapping notes](wolffia_mapping_notes.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
+
+### 7. Frozen provisional Wolffia transfer model
+
+The cross-species model is restricted to 340 high- or medium-confidence reciprocal mappings. The
+v1 rule requires calibrated logistic-regression and random-forest agreement, at least `0.60`
+confidence from each model, and an explicit `ambiguous` result otherwise. High-confidence
+biological annotation will additionally require independent marker-module and cluster evidence.
+
+Key specification:
+
+- [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## Most Important Biological Lessons So Far
 

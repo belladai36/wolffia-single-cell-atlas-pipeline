@@ -25,6 +25,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Wolffia mapping notes](wolffia_mapping_notes.md)
 - [Validation experiment plan](validation_experiment_plan.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
+- [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 04. Current Computational Results
 
