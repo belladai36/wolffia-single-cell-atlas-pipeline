@@ -72,10 +72,17 @@ These generate the polished project documents:
 
 If you only want the current project core, focus on:
 
-1. `10_public_reference_statistical_prediction.py`
-2. `17_cluster_public_reference.py`
-3. `19_generate_public_reference_umaps.py`
-4. `27_root_reference_consensus.py`
+1. `27_root_reference_consensus.py`
+2. `28_download_orthology_references.sh`
+3. `29_build_arabidopsis_wolffia_orthologs.py`
+4. `30_transfer_model_benchmark_and_marker_audit.py`
+5. `31_freeze_wolffia_transfer_model.py`
+6. `32_apply_frozen_wolffia_model.py`
+
+The older public-reference scripts (`10_public_reference_statistical_prediction.py`,
+`17_cluster_public_reference.py`, and `19_generate_public_reference_umaps.py`) remain useful for
+background exploration and figure generation, but the current model-freeze path is scripts
+`27` through `32`.
 
 Environment note:
 

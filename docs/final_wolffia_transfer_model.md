@@ -20,8 +20,12 @@ cluster-level evidence.
 
 ## Why This Model
 
-The unrestricted 2,000-gene model performs better within Arabidopsis, but many of its genes do not
-have defensible one-to-one Wolffia mappings. It remains the within-species benchmark and is not
+The unrestricted 2,000-gene feature set comes from the GSE123818 wild-type Arabidopsis root
+reference. It represents the top variable/shared Arabidopsis genes used to train and benchmark the
+coarse-program classifiers before cross-species filtering.
+
+That unrestricted 2,000-gene model performs better within Arabidopsis, but many of its genes do
+not have defensible one-to-one Wolffia mappings. It remains the within-species benchmark and is not
 permitted for strict Wolffia prediction.
 
 The 340-feature model is weaker but technically transferable. On the cluster-held-out Arabidopsis

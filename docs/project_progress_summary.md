@@ -106,10 +106,20 @@ Key docs:
 
 ### 7. Frozen provisional Wolffia transfer model
 
-The cross-species model is restricted to 340 high- or medium-confidence reciprocal mappings. The
-v1 rule requires calibrated logistic-regression and random-forest agreement, at least `0.60`
-confidence from each model, and an explicit `ambiguous` result otherwise. High-confidence
-biological annotation will additionally require independent marker-module and cluster evidence.
+The within-Arabidopsis benchmark starts from the top 2,000 variable/shared genes selected from the
+GSE123818 wild-type root reference. Those genes define the broad-program classifier input space
+before cross-species filtering.
+
+The Wolffia-facing model is the subset of that feature space with defensible Arabidopsis-to-Wolffia
+transfer. Reciprocal protein mapping retained 340 high- or medium-confidence ortholog features
+from the original 2,000-gene benchmark set. This filtering reduced model performance, but it makes
+the model biologically and technically more defensible for cross-species application.
+
+The v1 rule requires calibrated logistic-regression and random-forest agreement, at least `0.60`
+confidence from each model, and an explicit `ambiguous` result otherwise. In the held-out
+Arabidopsis pseudo-label benchmark, this restricted consensus accepted `30.4%` of cells with
+`95.3%` selective accuracy. High-confidence biological annotation will additionally require
+independent marker-module and cluster evidence.
 
 Key specification:
 
@@ -189,7 +199,8 @@ If someone wants the shortest useful path through the repo, they should read:
 2. [Project aims](project_aims.md)
 3. [Project progress summary](project_progress_summary.md)
 4. [Root-derived reference update](root_derived_reference_update.md)
-5. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+5. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+6. [Wolffia first transfer note](wolffia_first_transfer_note.md)
 
 ## Bottom Line
 
