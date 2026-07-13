@@ -46,6 +46,18 @@ Current public Wolffia plan:
 - `PRJNA1124135` as the first training dataset
 - `PRJNA809022` as the validation dataset
 
+Current model snapshot:
+
+- the within-Arabidopsis benchmark starts from the top 2,000 variable/shared genes selected from
+  the GSE123818 wild-type root reference
+- reciprocal Arabidopsis-to-Wolffia protein mapping reduces that benchmark feature space to
+  340 high- or medium-confidence transferable ortholog features
+- the restricted 340-feature model is the only model intended for Wolffia application
+- the frozen rule emits a provisional program only when calibrated logistic regression and random
+  forest agree at confidence `>= 0.60`; otherwise the cell remains `ambiguous`
+- on held-out Arabidopsis pseudo-labels, the restricted consensus accepted `30.4%` of cells with
+  `95.3%` selective accuracy
+
 The clearest current progress summary is here:
 
 - [Project progress summary](docs/project_progress_summary.md)

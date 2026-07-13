@@ -36,3 +36,8 @@ output/.DS_Store
 output/docx/.DS_Store
 output/pdf/.DS_Store
 output/documents/.DS_Store
+
+# Local manuscript drafts and manuscript-generation helpers
+output/manuscript/
+scripts/33_generate_manuscript_figures.py
+scripts/34_generate_manuscript_draft.py

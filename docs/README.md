@@ -9,7 +9,8 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 3. [Prediction framework](prediction_framework.md)
 4. [Root-derived reference update](root_derived_reference_update.md)
 5. [Wolffia first transfer note](wolffia_first_transfer_note.md)
-6. [Wolffia data-generation protocol](wolffia_data_generation_protocol.md)
+6. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+7. [Wolffia data-generation protocol](wolffia_data_generation_protocol.md)
 
 ## 02. Core Orientation
 
@@ -34,6 +35,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [GSE123818 validation run summary](gse123818_validation_run_summary.md)
 - [Root-derived reference update](root_derived_reference_update.md)
 - [Public dataset results summary](public_dataset_results_summary.md)
+- [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 05. Experimental and Protocol Planning
 
