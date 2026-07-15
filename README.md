@@ -371,3 +371,7 @@ Before Wolffia `PIP-seq` data arrive, the project is organized around a predicti
 - [First-pass Wolffia mapping notes](docs/wolffia_mapping_notes.md)
 - [Phase 1 public-data workplan](docs/phase1_public_data_workplan.md)
 - [Validation experiment plan](docs/validation_experiment_plan.md)
+
+## 14. License
+
+This repository is released under the [MIT License](LICENSE).
