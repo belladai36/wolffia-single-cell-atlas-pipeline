@@ -375,3 +375,9 @@ Before Wolffia `PIP-seq` data arrive, the project is organized around a predicti
 ## 14. License
 
 This repository is released under the [MIT License](LICENSE).
+
+## 15. Citations
+
+Please cite this repository with [CITATION.cff](CITATION.cff). Upstream datasets, genome
+resources, software, and method papers are listed in [docs/references.md](docs/references.md) and
+provided as BibTeX in [references.bib](references.bib).
