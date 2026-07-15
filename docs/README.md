@@ -18,6 +18,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Project aims](project_aims.md)
 - [Phase 1 public-data workplan](phase1_public_data_workplan.md)
 - [Statistical prediction strategy](statistical_prediction_strategy.md)
+- [References and citation guide](references.md)
 
 ## 03. Main Biological Interpretation Layer
 

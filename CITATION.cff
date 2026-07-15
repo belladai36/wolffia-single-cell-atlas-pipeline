@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below and cite the upstream datasets/software listed in docs/references.md."
+title: "Wolffia PIP-seq Single-Cell Atlas Framework"
+authors:
+  - family-names: Dai
+    given-names: Bella
+year: 2026
+license: MIT
+repository-code: "https://github.com/belladai36/wolffia-single-cell-atlas-pipeline"
+abstract: "A prediction-first, ortholog-aware framework for conservative Arabidopsis-to-Wolffia single-cell program transfer before Wolffia expression data are fully processed."
+keywords:
+  - Wolffia australiana
+  - Arabidopsis thaliana
+  - single-cell RNA-seq
+  - orthology
+  - transfer learning
+  - plant cell atlas
