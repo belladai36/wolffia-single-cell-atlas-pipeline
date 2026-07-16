@@ -3,7 +3,7 @@ message: "If you use this repository, please cite it using the metadata below an
 title: "Wolffia PIP-seq Single-Cell Atlas Framework"
 authors:
   - family-names: Dai
-    given-names: Bella
+    given-names: Jinglan
 year: 2026
 license: MIT
 repository-code: "https://github.com/belladai36/wolffia-single-cell-atlas-pipeline"
