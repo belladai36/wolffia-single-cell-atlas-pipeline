@@ -374,7 +374,9 @@ Before Wolffia `PIP-seq` data arrive, the project is organized around a predicti
 
 ## 14. License
 
-This repository is released under the [MIT License](LICENSE).
+This repository is **not open source**. All rights are reserved by Jinglan Dai.
+Use, modification, redistribution, sublicensing, commercialization, or derivative work requires
+prior written permission. See [LICENSE](LICENSE).
 
 ## 15. Citations
 

@@ -5,7 +5,6 @@ authors:
   - family-names: Dai
     given-names: Jinglan
 year: 2026
-license: MIT
 repository-code: "https://github.com/belladai36/wolffia-single-cell-atlas-pipeline"
 abstract: "A prediction-first, ortholog-aware framework for conservative Arabidopsis-to-Wolffia single-cell program transfer before Wolffia expression data are fully processed."
 keywords:
