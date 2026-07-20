@@ -91,7 +91,7 @@ Current status:
 
 - first selected dataset: `GSE161332`
 - processed matrix files are available from GEO
-- additional professor-recommended published matrices can still be added later as a second leaf/aerial validation layer
+- additional published matrices can still be added later as a second leaf/aerial validation layer
 
 ### Secondary Reference A
 

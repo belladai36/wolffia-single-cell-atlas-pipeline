@@ -50,7 +50,7 @@ Current public Wolffia plan:
 
 Current lab-data plan:
 
-- Madison is generating Wolffia single-cell libraries using `PIP-seq`
+- new Wolffia single-cell libraries are being generated using `PIP-seq`
 - when those matrices become available, they should be analyzed with both the frozen root-derived view and the new leaf/aerial reference view
 
 Current model snapshot:
