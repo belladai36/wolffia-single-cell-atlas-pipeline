@@ -56,7 +56,7 @@ Design validation experiments for future `PIP-seq` data and downstream follow-up
 
 Near-term update:
 
-- prepare the pipeline to analyze Madison's incoming Wolffia `PIP-seq` libraries as soon as counts or processed matrices are available
+- prepare the pipeline to analyze incoming Wolffia `PIP-seq` libraries as soon as counts or processed matrices are available
 
 ## Biological Hypotheses
 

@@ -172,7 +172,7 @@ Current Wolffia candidates:
 
 Lab update:
 
-- Madison is currently generating Wolffia single-cell libraries using `PIP-seq`
+- new Wolffia single-cell libraries are being generated using `PIP-seq`
 - those data should become the most important real Wolffia analysis target once counts or processed matrices are available
 
 ## Immediate Blocker
@@ -216,7 +216,7 @@ Practical files:
 3. generate the first Wolffia count matrix
 4. run the first Wolffia-facing transfer pass with the frozen broad program set
 
-When Madison's new Wolffia `PIP-seq` libraries are available, they should be added as a priority real-data analysis target alongside or ahead of public Wolffia datasets, depending on data format and access timing.
+When new Wolffia `PIP-seq` libraries are available, they should be added as a priority real-data analysis target alongside or ahead of public Wolffia datasets, depending on data format and access timing.
 
 ## Best Files for a New Viewer
 
@@ -243,4 +243,4 @@ It now has:
 - a Wolffia-facing interpretation framework
 - a clear operational blocker and a clear next execution step
 
-In short: the project is scientifically organized around a stronger reference strategy and computationally ready for the first real Wolffia dataset as soon as storage, matrix format, or Madison's new `PIP-seq` output becomes available.
+In short: the project is scientifically organized around a stronger reference strategy and computationally ready for the first real Wolffia dataset as soon as storage, matrix format, or new `PIP-seq` output becomes available.

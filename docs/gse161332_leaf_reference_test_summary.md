@@ -74,7 +74,7 @@ It does not yet predict leaf-relevant programs such as:
 
 `GSE161332` passes the technical feature-coverage test and can be used in the project. But the frozen root-derived model is not sufficient as the final biological model for leaf-like or Wolffia-like interpretation.
 
-The result strengthens the project refinement suggested by Dr. Cox:
+The result strengthens the current reference-strategy refinement:
 
 > Keep the root-derived model as a conservative benchmark, but build a dedicated Arabidopsis leaf/aerial reference layer before interpreting Wolffia PIP-seq cells.
 

@@ -16,7 +16,7 @@ That means we still do not know whether the current pattern is:
 
 Before moving onto large public Wolffia files, the best next step is to add at least one more Arabidopsis validation dataset.
 
-After professor feedback, the most important new reference type is an Arabidopsis leaf or aerial-tissue expression matrix. The root atlas remains valuable because the markers are well established, but the leaf/aerial layer should test whether photosynthetic and surface-associated programs transfer more naturally. We selected `GSE161332` as the first leaf reference because it has processed 10x-style matrix files and captures leaf-relevant populations.
+The most important new reference type is an Arabidopsis leaf or aerial-tissue expression matrix. The root atlas remains valuable because the markers are well established, but the leaf/aerial layer should test whether photosynthetic and surface-associated programs transfer more naturally. We selected `GSE161332` as the first leaf reference because it has processed 10x-style matrix files and captures leaf-relevant populations.
 
 ## Selection criteria
 
@@ -104,7 +104,7 @@ Why it is useful:
 - Arabidopsis leaf single-cell dataset
 - processed 10x-style matrix files are available from GEO
 - includes leaf-relevant populations such as epidermis, guard cells, hydathodes, mesophyll, and vascular cell types
-- directly supports the root-versus-leaf comparison recommended after professor feedback
+- directly supports the root-versus-leaf comparison needed for the refined reference strategy
 
 Main caveat:
 

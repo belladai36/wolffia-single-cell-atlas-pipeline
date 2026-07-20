@@ -52,7 +52,7 @@ The first comparison config is:
 Preference order:
 
 1. `GSE161332` as the first selected Arabidopsis leaf reference
-2. a professor-recommended published Arabidopsis leaf single-cell or single-nucleus dataset
+2. an additional published Arabidopsis leaf single-cell or single-nucleus dataset with strong metadata
 3. a public Arabidopsis aerial-tissue atlas with processed counts and usable metadata
 4. a more targeted leaf dataset, if it has strong cell-type or cluster annotations
 
@@ -101,7 +101,7 @@ The key comparison should ask:
 - does the leaf reference reduce over-assignment to stress-like programs?
 - do photosynthetic and surface-associated programs become more separable?
 
-### Step 5: Prepare for Madison's Wolffia PIP-seq Data
+### Step 5: Prepare for Incoming Wolffia PIP-seq Data
 
 When the new Wolffia PIP-seq libraries become available, the first application should run both views:
 
