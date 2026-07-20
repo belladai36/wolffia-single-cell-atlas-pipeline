@@ -11,9 +11,11 @@ Comparative prediction of cell states and developmental programs in `Wolffia aus
 At the moment, the most realistic path is a prediction-first project:
 
 1. use public plant single-cell references and Wolffia genomic resources to generate hypotheses
-2. use statistical analyses on public single-cell references to quantify broad cell programs and their separability
-3. define candidate cell states and marker programs expected in Wolffia
-4. use future `PIP-seq` data to test and refine those predictions
+2. start with well-annotated Arabidopsis root data as a conservative benchmark
+3. add Arabidopsis leaf or aerial-tissue references to better represent photosynthetic and surface-associated programs
+4. use statistical analyses on public single-cell references to quantify broad cell programs and their separability
+5. define candidate cell states and marker programs expected in Wolffia
+6. use incoming Wolffia `PIP-seq` data to test and refine those predictions
 
 ## Central Question
 
@@ -24,6 +26,11 @@ Can we predict the cellular organization of `Wolffia australiana` by integrating
 ### Aim 1
 
 Build a curated reference framework of plant cell states using public single-cell RNA-seq datasets from better-annotated species.
+
+Near-term refinement:
+
+- keep the Arabidopsis root atlas as the first benchmark because root markers are well established
+- add an Arabidopsis leaf or aerial-tissue matrix as the next reference layer because Wolffia is expected to be more photosynthetic and frond-like than root-like
 
 ### Aim 2
 
@@ -46,6 +53,10 @@ Generate explicit predictions about which cell states and developmental programs
 ### Aim 5
 
 Design validation experiments for future `PIP-seq` data and downstream follow-up assays.
+
+Near-term update:
+
+- prepare the pipeline to analyze Madison's incoming Wolffia `PIP-seq` libraries as soon as counts or processed matrices are available
 
 ## Biological Hypotheses
 
@@ -71,6 +82,7 @@ Future single-cell data may reveal a continuum of developmental states rather th
 - a curated marker-gene reference table
 - an ortholog-mapped Wolffia candidate marker table
 - a ranked list of predicted Wolffia cell programs
+- a root-versus-leaf Arabidopsis reference comparison
 - a statistical summary of which public plant programs are most robust and transferable
 - a validation plan for `PIP-seq` and downstream wet-lab experiments
 

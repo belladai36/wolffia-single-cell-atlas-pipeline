@@ -72,21 +72,28 @@ Priority:
 
 These are not required to finish Phase 1, but they are useful once the core marker framework is stable.
 
-### Secondary Reference A
+### Primary Reference 4
 
 `Arabidopsis thaliana` leaf or aerial-tissue single-cell references
 
 Why they matter:
 
+- respond directly to the concern that root cells differ from leaf-like or frond-like cells
 - improve coverage of photosynthetic programs
-- help distinguish surface, mesophyll-like, and stress-responsive states
-- useful if Wolffia cell states look more frond-like than root-like
+- help distinguish surface, mesophyll-like, guard-cell-like, and stress-responsive states
+- provide a more biologically relevant comparison for the reduced photosynthetic body of Wolffia
 
 Priority:
 
-- medium
+- high for the next analysis phase
 
-### Secondary Reference B
+Current status:
+
+- first selected dataset: `GSE161332`
+- processed matrix files are available from GEO
+- additional professor-recommended published matrices can still be added later as a second leaf/aerial validation layer
+
+### Secondary Reference A
 
 Duckweed or other Lemnaceae transcriptomic resources
 
@@ -157,7 +164,8 @@ To keep the project biologically careful, we will follow these rules:
 2. prefer markers supported by more than one Arabidopsis reference when possible
 3. treat root-derived labels as transferable programs, not literal Wolffia organs
 4. mark Wolffia mappings as `high`, `medium`, or `low` confidence rather than pretending orthology is fully resolved
-5. leave room for Wolffia-specific or aquatic-specific states that do not map neatly to Arabidopsis
+5. compare root-derived and leaf-derived reference behavior before deciding whether Wolffia ambiguity reflects true biological compression
+6. leave room for Wolffia-specific or aquatic-specific states that do not map neatly to Arabidopsis
 
 ## Phase 1 Output Expected from This Reference Set
 
@@ -166,3 +174,4 @@ Using this locked panel, we should now be able to produce:
 - a populated marker template
 - first-pass Wolffia mapping notes
 - ranked predictions for preserved, merged, reduced, or novel programs
+- root-versus-leaf reference comparison

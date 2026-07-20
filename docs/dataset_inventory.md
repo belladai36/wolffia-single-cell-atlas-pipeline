@@ -31,7 +31,7 @@ Use it to track:
 | Jean-Baptiste Arabidopsis root single-cell reference | Arabidopsis thaliana | scRNA-seq | journal supplement / public repository | paper-level reference locked; exact accession to verify later | root cell-state atlas | high | primary marker transfer reference | usable | locked into Phase 1 reference panel because it supports conservative marker collection |
 | Shulse Arabidopsis root single-cell reference | Arabidopsis thaliana | scRNA-seq | journal supplement / public repository | paper-level reference locked; exact accession to verify later | root cell-type profiling | high | cross-reference for marker stability | usable | reduces dependence on a single annotation scheme |
 | Denyer Arabidopsis developmental root trajectory reference | Arabidopsis thaliana | scRNA-seq | journal supplement / public repository | paper-level reference locked; exact accession to verify later | developmental root trajectories | high | developmental transition and pseudotime reference | usable | especially important for testing the idea of compressed or continuous Wolffia states |
-| Arabidopsis leaf or aerial-tissue single-cell atlas | Arabidopsis thaliana | scRNA-seq | journal supplement / public repository | exact accession pending | photosynthetic or aerial tissue context | medium | optional support for photosynthetic and surface programs | in review | useful secondary layer, but not required to complete first-pass predictions |
+| GSE161332 Arabidopsis leaf single-cell reference | Arabidopsis thaliana | scRNA-seq | GEO | GSE161332 | leaf, enriched leaf vasculature, mesophyll, epidermis, guard cells, hydathodes | medium to high | first root-versus-leaf comparison; photosynthetic, surface, mesophyll-like, vascular/transport, and stress/interface programs | selected | selected after professor feedback because processed 10x-style matrix files are available and the biology is more Wolffia-relevant than root alone |
 | Genome of the world's smallest flowering plant, Wolffia australiana, helps explain its specialized physiology and unique morphology | Wolffia australiana | genome | Communications Biology | 10.1038/s42003-021-02389-w | species-wide genome and morphology resource | medium | foundational Wolffia background; candidate genome source | usable | anchors morphology, reduction, and genome context |
 | The genome of Wolffia australiana facilitates discovery of genetic basis for aquatic adaptation in duckweeds | Wolffia australiana | genome / annotation | The Plant Cell | 10.1093/plcell/koac068 | species-wide genome and comparative duckweed resource | high | ortholog reasoning, annotation context, aquatic adaptation interpretation | usable | strongest currently locked Wolffia genome-context paper for Phase 1 |
 | Wolffia public transcriptome resource | Wolffia australiana | bulk RNA-seq or transcriptome | SRA / GEO / journal supplement | accession still to verify | any available tissue or condition | medium | expression support for predicted programs | in review | valuable but not required to finish first-pass marker mapping |
@@ -52,6 +52,10 @@ Identify the exact Wolffia genome and annotation resources we will use in the pi
 ### Goal 3
 
 Add at least 2 duckweed comparative resources that help interpret reduced or aquatic-specific programs.
+
+### Goal 4
+
+Convert `GSE161332` into `.h5ad` and compare its broad-program behavior against the existing root-derived reference model.
 
 ## Completion Standard
 

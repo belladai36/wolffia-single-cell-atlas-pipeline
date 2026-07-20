@@ -8,9 +8,10 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 2. [Project aims](project_aims.md)
 3. [Prediction framework](prediction_framework.md)
 4. [Root-derived reference update](root_derived_reference_update.md)
-5. [Wolffia first transfer note](wolffia_first_transfer_note.md)
-6. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
-7. [Wolffia data-generation protocol](wolffia_data_generation_protocol.md)
+5. [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
+6. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+7. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+8. [Wolffia data-generation protocol](wolffia_data_generation_protocol.md)
 
 ## 02. Core Orientation
 
@@ -26,6 +27,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Candidate cell programs](candidate_cell_programs.md)
 - [Wolffia mapping notes](wolffia_mapping_notes.md)
 - [Validation experiment plan](validation_experiment_plan.md)
+- [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
@@ -57,6 +59,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Reference datasets](reference_datasets.md)
 - [Dataset inventory](dataset_inventory.md)
 - [Arabidopsis validation dataset selection](arabidopsis_validation_dataset_selection.md)
+- [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
 
 ## 08. Narrower Working Notes
 

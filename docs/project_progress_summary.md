@@ -170,6 +170,11 @@ Current Wolffia candidates:
 - `PRJNA1124135` = first training candidate
 - `PRJNA809022` = validation candidate
 
+Lab update:
+
+- Madison is currently generating Wolffia single-cell libraries using `PIP-seq`
+- those data should become the most important real Wolffia analysis target once counts or processed matrices are available
+
 ## Immediate Blocker
 
 The real blocker is now **data availability and format**, not project design.
@@ -184,12 +189,34 @@ To proceed with real Wolffia training, we need:
 
 ## Current Best Next Step
 
-The next meaningful project step is:
+The next meaningful project step has two tracks.
+
+### Track A: Reference refinement before Wolffia data arrive
+
+1. use `GSE161332` as the first selected Arabidopsis leaf expression matrix
+2. convert it into the same `.h5ad` format used by the current public-reference workflow
+3. collapse its labels into the current broad program ontology where metadata support it
+4. compare root-derived versus leaf-derived predictions, especially for photosynthetic, surface, transport, and stress/interface programs
+
+This track responds directly to the biological limitation that Arabidopsis root cells are well annotated but not leaf-like.
+
+Planning document:
+
+- [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
+
+Practical files:
+
+- [GSE161332 leaf converter](../scripts/26_prepare_gse161332_leaf_h5ad.py)
+- [GSE123818 root to GSE161332 leaf config](../config/public_reference_gse123818_wt_train_to_gse161332_leaf.yaml)
+
+### Track B: Real Wolffia data preparation
 
 1. obtain an external SSD
 2. download the four `PRJNA1124135` scRNA runs
 3. generate the first Wolffia count matrix
 4. run the first Wolffia-facing transfer pass with the frozen broad program set
+
+When Madison's new Wolffia `PIP-seq` libraries are available, they should be added as a priority real-data analysis target alongside or ahead of public Wolffia datasets, depending on data format and access timing.
 
 ## Best Files for a New Viewer
 
@@ -199,8 +226,9 @@ If someone wants the shortest useful path through the repo, they should read:
 2. [Project aims](project_aims.md)
 3. [Project progress summary](project_progress_summary.md)
 4. [Root-derived reference update](root_derived_reference_update.md)
-5. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
-6. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+5. [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
+6. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+7. [Wolffia first transfer note](wolffia_first_transfer_note.md)
 
 ## Bottom Line
 
@@ -211,7 +239,8 @@ It now has:
 - a working computational scaffold
 - validated Arabidopsis reference tests
 - an improved broad-program ontology
+- a refined root-versus-leaf reference strategy
 - a Wolffia-facing interpretation framework
 - a clear operational blocker and a clear next execution step
 
-In short: the project is scientifically organized and computationally ready for the first real Wolffia dataset as soon as storage and download capacity are available.
+In short: the project is scientifically organized around a stronger reference strategy and computationally ready for the first real Wolffia dataset as soon as storage, matrix format, or Madison's new `PIP-seq` output becomes available.
