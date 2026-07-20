@@ -91,7 +91,7 @@ Prediction:
 
 Primary validation:
 
-- computational re-analysis of trajectory structure once `PIP-seq` data arrive
+- computational re-analysis of trajectory structure once Wolffia single-cell data arrive
 
 Secondary validation:
 
@@ -140,7 +140,7 @@ Primary validation:
 
 Secondary validation:
 
-- repeat `PIP-seq` or bulk expression profiling after induction
+- compare additional single-cell or bulk expression profiles after induction, if available
 
 What success would look like:
 
@@ -189,8 +189,8 @@ These are the best starting points because they are:
 
 ## Practical Next Use
 
-Once Wolffia `PIP-seq` data arrive, this validation plan should be used alongside the prediction table to decide:
+Once Wolffia single-cell data arrive, this validation plan should be used alongside the prediction table to decide:
 
 - which signatures to check first
 - which negative results are meaningful
-- and which follow-up wet-lab experiments would most strongly test the computational model
+- and which follow-up computational or validation analyses would most strongly test the model

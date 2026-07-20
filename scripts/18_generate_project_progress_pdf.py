@@ -104,7 +104,7 @@ def build_story():
     story.append(Paragraph("Wolffia Project Progress Summary", styles["TitleSmall"]))
     story.append(
         Paragraph(
-            "Prediction-first single-cell framework for <i>Wolffia australiana</i> before new PIP-seq data arrive.",
+            "Prediction-first single-cell framework for <i>Wolffia australiana</i> before new Wolffia single-cell data arrive.",
             styles["BodyTight"],
         )
     )

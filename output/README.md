@@ -1,20 +1,19 @@
 # 01. Output Guide
 
-This folder holds shareable project exports.
+This folder holds optional shareable analysis exports.
 
 ## 01. Subfolders
 
-- `pdf/`: generated PDF summaries and protocols
-- `docx/`: editable Word-format exports
-- `documents/`: additional editable protocol exports, including the dedicated PIP-seq DOCX build
+- `pdf/`: generated PDF summaries, if created
+- `docx/`: editable Word-format analysis exports, if created
+- `documents/`: additional generated analysis exports, if created
 
 ## 02. Most Useful Files for Viewers
 
-Start with:
+Protocol exports have been removed from this repository so the project stays focused on model building and data analysis.
 
-1. `pdf/wolffia_data_generation_protocol_plain.pdf`
-2. `pdf/wolffia_data_generation_protocol_detailed.pdf`
-3. `docx/wolffia_data_generation_protocol.docx`
-4. `documents/wolffia_pipseq_data_generation_protocol.docx`
+For current results, start with the notebooks and analysis summaries in:
 
-These files are generated from the markdown source files in `../docs/`.
+1. `../notebooks/`
+2. `../docs/project_progress_summary.md`
+3. `../docs/gse161332_leaf_reference_test_summary.md`

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it using the metadata below and cite the upstream datasets/software listed in docs/references.md."
-title: "Wolffia PIP-seq Single-Cell Atlas Framework"
+title: "Wolffia Single-Cell Atlas Analysis Framework"
 authors:
   - family-names: Dai
     given-names: Jinglan

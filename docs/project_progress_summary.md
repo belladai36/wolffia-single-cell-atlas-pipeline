@@ -2,7 +2,7 @@
 
 ## Project in One Sentence
 
-This project is building a prediction-first single-cell analysis framework for `Wolffia australiana` so that we can make biologically meaningful hypotheses before new Wolffia `PIP-seq` data are available.
+This project is building a prediction-first single-cell analysis framework for `Wolffia australiana` so that we can make biologically meaningful hypotheses before new Wolffia single-cell expression data are available.
 
 ## Central Question
 
@@ -33,7 +33,6 @@ The repo already supports:
 
 Important note:
 
-- the experimental platform now planned in the lab is `PIP-seq`
 - the legacy STAR and featureCounts scaffold remains in the repo as a backup or custom-processing route, but it is no longer the main project identity
 
 Main entry point:
@@ -170,10 +169,9 @@ Current Wolffia candidates:
 - `PRJNA1124135` = first training candidate
 - `PRJNA809022` = validation candidate
 
-Lab update:
+Lab-data update:
 
-- new Wolffia single-cell libraries are being generated using `PIP-seq`
-- those data should become the most important real Wolffia analysis target once counts or processed matrices are available
+- incoming Wolffia single-cell matrices should become the most important real Wolffia analysis target once counts or processed matrices are available
 
 ## Immediate Blocker
 
@@ -216,7 +214,7 @@ Practical files:
 3. generate the first Wolffia count matrix
 4. run the first Wolffia-facing transfer pass with the frozen broad program set
 
-When new Wolffia `PIP-seq` libraries are available, they should be added as a priority real-data analysis target alongside or ahead of public Wolffia datasets, depending on data format and access timing.
+When new Wolffia single-cell matrices are available, they should be added as a priority real-data analysis target alongside or ahead of public Wolffia datasets, depending on data format and access timing.
 
 ## Best Files for a New Viewer
 
@@ -243,4 +241,4 @@ It now has:
 - a Wolffia-facing interpretation framework
 - a clear operational blocker and a clear next execution step
 
-In short: the project is scientifically organized around a stronger reference strategy and computationally ready for the first real Wolffia dataset as soon as storage, matrix format, or new `PIP-seq` output becomes available.
+In short: the project is scientifically organized around a stronger reference strategy and computationally ready for the first real Wolffia dataset as soon as storage, matrix format, or new single-cell output becomes available.

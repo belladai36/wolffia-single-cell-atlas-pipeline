@@ -76,7 +76,7 @@ It does not yet predict leaf-relevant programs such as:
 
 The result strengthens the current reference-strategy refinement:
 
-> Keep the root-derived model as a conservative benchmark, but build a dedicated Arabidopsis leaf/aerial reference layer before interpreting Wolffia PIP-seq cells.
+> Keep the root-derived model as a conservative benchmark, but build a dedicated Arabidopsis leaf/aerial reference layer before interpreting Wolffia single-cell data.
 
 In practical terms, the next model-development step should be to use `GSE161332` to add or score leaf-relevant programs, especially photosynthetic, surface/epidermal, mesophyll-like, and vascular/transport programs.
 

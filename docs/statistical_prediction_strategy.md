@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines how the project can use public single-cell plant datasets as training and reference data for statistical prediction before any new `Wolffia australiana` `PIP-seq` data arrive.
+This document defines how the project can use public single-cell plant datasets as training and reference data for statistical prediction before any new `Wolffia australiana` single-cell expression data arrive.
 
 The goal is to make prediction computational, not only descriptive.
 

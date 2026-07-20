@@ -4,7 +4,7 @@ set -euo pipefail
 CONFIG="${1:-config/config.yaml}"
 
 bash scripts/00_fastq_qc.sh "$CONFIG"
-bash scripts/01_align_pipseq_star.sh "$CONFIG"
+bash scripts/01_align_star.sh "$CONFIG"
 bash scripts/02_featurecounts.sh "$CONFIG"
 python scripts/03_build_count_matrix.py --config "$CONFIG"
 python scripts/04_cell_qc.py --config "$CONFIG"

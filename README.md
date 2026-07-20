@@ -1,9 +1,9 @@
-# Wolffia PIP-seq Single-Cell Atlas Framework
+# Wolffia Single-Cell Atlas Analysis Framework
 
-This repository is a beginner-friendly, prediction-first scaffold for a `Wolffia australiana` single-cell project before the real data arrive. The current planned experimental platform is `PIP-seq`. The repo therefore combines:
+This repository is a beginner-friendly, prediction-first scaffold for a `Wolffia australiana` single-cell analysis project before the real data arrive. The repo focuses on:
 
 - a comparative public-reference workflow for biological prediction and label transfer
-- Wolffia-facing planning and validation documents
+- Wolffia-facing model-building and validation documents
 - a legacy FASTQ-level alignment-and-counting scaffold that can still be useful for full-length or custom raw-data workflows
 
 The paths are placeholders. Replace the example FASTQ, genome, annotation, and metadata paths with your project files when they are available.
@@ -28,7 +28,6 @@ For most viewers, the easiest way through the repository is:
 5. [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md) for the next root-versus-leaf reference comparison
 6. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md) for how the model will be applied to Wolffia
 7. [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md) for the exact model and rejection rule
-8. [Wolffia data-generation protocol](docs/wolffia_data_generation_protocol.md) for the planned experimental route
 
 ## 3. Current Status
 
@@ -41,7 +40,7 @@ What that means:
 - the current reference layer is ready for a first Wolffia-facing pass
 - the provisional 340-feature Wolffia transfer model and conservative decision rule are frozen
 - the next reference refinement is an Arabidopsis root-versus-leaf comparison
-- actual Wolffia training is waiting on download, preprocessing, or arrival of new Wolffia `PIP-seq` matrices
+- actual Wolffia training is waiting on download, preprocessing, or arrival of new Wolffia single-cell expression matrices
 
 Current public Wolffia plan:
 
@@ -50,8 +49,7 @@ Current public Wolffia plan:
 
 Current lab-data plan:
 
-- new Wolffia single-cell libraries are being generated using `PIP-seq`
-- when those matrices become available, they should be analyzed with both the frozen root-derived view and the new leaf/aerial reference view
+- when new Wolffia single-cell matrices become available, they should be analyzed with both the frozen root-derived view and the new leaf/aerial reference view
 
 Current model snapshot:
 
@@ -87,11 +85,11 @@ Selected first leaf reference:
 │   ├── raw_fastq/                   # Put or symlink FASTQ files here
 │   ├── reference/                   # Genome FASTA, GTF/GFF, STAR index
 │   └── metadata/                    # Sample/cell metadata and marker tables
-├── docs/                            # Project narrative, plans, results, and protocols
+├── docs/                            # Project narrative, analysis plans, results, and model notes
 ├── scripts/
 │   ├── README.md                    # Script order and what each group does
 │   ├── 00_fastq_qc.sh               # FastQC + MultiQC
-│   ├── 01_align_pipseq_star.sh      # Legacy STAR alignment route for per-cell FASTQ workflows
+│   ├── 01_align_star.sh             # Legacy STAR alignment route for per-cell FASTQ workflows
 │   ├── 02_featurecounts.sh          # Legacy gene-level counting from BAM files
 │   ├── 03_build_count_matrix.py     # Merge per-cell counts into one matrix
 │   ├── 04_cell_qc.py                # Cell QC and filtering flags
@@ -107,7 +105,7 @@ Selected first leaf reference:
 ├── figures/                         # QC, UMAP, marker, and PAGA plots
 ├── logs/                            # Tool logs
 ├── notebooks/                       # Optional exploratory notebooks
-└── output/                          # Shareable PDF and DOCX exports
+└── output/                          # Optional generated analysis exports
 ```
 
 ## 5. Folder Guide
@@ -116,7 +114,7 @@ Selected first leaf reference:
 - [scripts/README.md](scripts/README.md): best entry point for running code in the right order
 - [config/README.md](config/README.md): best entry point for choosing config files
 - [notebooks/README.md](notebooks/README.md): optional exploratory analysis notes
-- [output/README.md](output/README.md): generated summary and protocol exports
+- [output/README.md](output/README.md): optional generated analysis exports
 
 ## 6. Install
 
@@ -148,7 +146,7 @@ For the current prediction-first and transfer workflow, the key inputs are:
 
 - processed public reference `.h5ad` files
 - marker tables and label-collapse rules under `data/metadata/`
-- later, a processed Wolffia matrix or `.h5ad` derived from the lab's `PIP-seq` output
+- later, a processed Wolffia matrix or `.h5ad`
 
 If you want to run the legacy FASTQ scaffold, the minimum inputs are:
 
@@ -192,7 +190,7 @@ STAR \
 Then align:
 
 ```bash
-bash scripts/01_align_pipseq_star.sh config/config.yaml
+bash scripts/01_align_star.sh config/config.yaml
 ```
 
 ### 3. Count Genes
@@ -355,8 +353,7 @@ Expected outputs include:
 ## 11. Notes for Wolffia
 
 - Wolffia organelle gene names may not follow human-style `MT-` prefixes. Edit `mitochondrial_gene_prefixes` and `plastid_gene_prefixes` in `config/config.yaml` after inspecting the annotation.
-- If the lab's `PIP-seq` workflow returns a processed matrix or `.h5ad` rather than per-cell FASTQs, start from the downstream Scanpy and transfer-analysis stages instead of forcing the legacy STAR and featureCounts route.
-- Because the planned experimental platform is `PIP-seq`, future wet-lab success will depend heavily on low-debris, low-clump sample preparation and on matching the core facility's loading requirements.
+- If a processed matrix or `.h5ad` is available, start from the downstream Scanpy and transfer-analysis stages instead of forcing the legacy STAR and featureCounts route.
 - Plant cells can have strong chloroplast/plastid signal. This pipeline computes plastid fractions when prefixes are provided, but does not hard-filter on plastid percentage by default.
 - Marker-based annotation is only as good as the marker table. Keep early labels coarse, especially for an under-annotated organism.
 
@@ -373,7 +370,7 @@ Expected outputs include:
 
 ## 13. Prediction-First Planning Docs
 
-Before Wolffia `PIP-seq` data arrive, the project is organized around a prediction-first comparative biology workflow:
+Before Wolffia single-cell expression data arrive, the project is organized around a prediction-first comparative biology workflow:
 
 - [Project aims](docs/project_aims.md)
 - [Reference datasets](docs/reference_datasets.md)

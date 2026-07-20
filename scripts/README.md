@@ -1,6 +1,6 @@
 # 01. Scripts Guide
 
-This folder contains both the main analysis scripts and the helper/export scripts.
+This folder contains the main analysis scripts and lightweight helper/export scripts.
 
 ## 01. Best Way to Read This Folder
 
@@ -11,7 +11,7 @@ There are four script groups.
 These scripts represent the older per-cell FASTQ route:
 
 1. `00_fastq_qc.sh`
-2. `01_align_pipseq_star.sh`
+2. `01_align_star.sh`
 3. `02_featurecounts.sh`
 4. `03_build_count_matrix.py`
 5. `04_cell_qc.py`
@@ -61,18 +61,12 @@ These support later Wolffia-native training:
 1. `12_prepare_wolffia_public_references.py`
 2. `13_wolffia_download_helper.py`
 
-### 4. Report and protocol export scripts
+### 4. Report and figure export scripts
 
-These generate the polished project documents:
+These generate analysis summaries and visual exports:
 
 1. `18_generate_project_progress_pdf.py`
 2. `19_generate_public_reference_umaps.py`
-3. `20_generate_wolffia_protocol_pdf.py`
-4. `21_generate_stepwise_protocol_pdf.py`
-5. `22_generate_plain_protocol_pdf.py`
-6. `23_generate_protocol_docx.py`
-7. `24_generate_detailed_protocol_pdf.py`
-8. `25_build_pipseq_protocol_docx.py`
 
 ## 02. Most Important Scripts Right Now
 

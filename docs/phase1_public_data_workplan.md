@@ -1,19 +1,19 @@
-# Phase 1 Workplan: Public Data Before Wolffia PIP-seq
+# Phase 1 Workplan: Public Data Before Wolffia Single-Cell Data
 
 ## Goal
 
-Use public reference datasets and existing Wolffia resources to build a testable prediction framework before any new Wolffia `PIP-seq` data arrive.
+Use public reference datasets and existing Wolffia resources to build a testable prediction framework before any new Wolffia single-cell expression data arrive.
 
 ## Why This Phase Matters
 
-This gives the project a strong scientific shape even before wet-lab data are available. Instead of waiting passively for sequencing, we can define what we expect to find, what would count as a surprise, and which future experiments would be most informative.
+This gives the project a strong scientific shape even before Wolffia single-cell data are available. Instead of waiting passively for sequencing, we can define what we expect to find, what would count as a surprise, and which future analyses would be most informative.
 
 ## Phase 1 Questions
 
 1. which broad plant cell programs are most likely to be preserved in Wolffia?
 2. which programs may be reduced, merged, or hard to separate?
 3. which candidate Wolffia states might reflect aquatic adaptation rather than standard textbook cell types?
-4. what signatures should we look for immediately once `PIP-seq` data arrive?
+4. what signatures should we look for immediately once Wolffia single-cell data arrive?
 
 ## Immediate Deliverables
 
@@ -74,7 +74,7 @@ Each prediction should include:
 - expected status in Wolffia
 - evidence basis
 - confidence
-- expected `PIP-seq` outcome
+- expected single-cell data outcome
 - validation experiment
 
 Output files:
@@ -110,7 +110,7 @@ Success criterion:
 
 ### Step 4: Write Testable Predictions
 
-Translate descriptive biology into statements that future `PIP-seq` data can support or falsify.
+Translate descriptive biology into statements that future Wolffia single-cell data can support or falsify.
 
 Success criterion:
 
@@ -139,7 +139,7 @@ Even before real single-cell data, Phase 1 is successful if we can say:
 - these are the cell programs most likely to exist in Wolffia
 - these are the programs most likely to be merged or reduced
 - these are the most interesting places where Wolffia may differ from model plants
-- these are the first signatures we will test when `PIP-seq` data arrive
+- these are the first signatures we will test when Wolffia single-cell data arrive
 
 ## Suggested Near-Term Milestone
 

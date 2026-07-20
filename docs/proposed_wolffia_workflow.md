@@ -1,8 +1,8 @@
-# Proposed Workflow: Wolffia PIP-seq Cell Atlas Project
+# Proposed Workflow: Wolffia Single-Cell Data Analysis Project
 
 ## Project Goal
 
-Use `PIP-seq` single-cell RNA-seq data from *Wolffia australiana* to identify major cell populations, propose candidate cell identities, and explore developmental relationships between cell states.
+Use single-cell RNA-seq data from *Wolffia australiana* to identify major cell populations, propose candidate cell identities, and explore developmental relationships between cell states.
 
 ## Core Biological Questions
 
@@ -13,9 +13,9 @@ Use `PIP-seq` single-cell RNA-seq data from *Wolffia australiana* to identify ma
 ## Suggested Computational Workflow
 
 1. **Raw data processing**
-   - Start from the lab or core facility `PIP-seq` output.
+   - Start from a processed count matrix when available.
    - If the platform returns a processed cell-by-gene matrix, begin directly with matrix-level QC and Scanpy analysis.
-   - If the platform returns raw reads, follow the official or core-supported `PIP-seq` preprocessing route to generate a gene-by-cell count matrix.
+   - If only raw reads are available, follow the appropriate preprocessing route to generate a gene-by-cell count matrix.
    - Record the exact preprocessing and filtering choices used by the platform.
 
 2. **Cell-level quality control**
@@ -51,6 +51,6 @@ Use `PIP-seq` single-cell RNA-seq data from *Wolffia australiana* to identify ma
 
 ## Feasibility Notes
 
-- This project is strongest if new `PIP-seq` data will be generated in the lab.
+- This project is strongest once new Wolffia single-cell expression data are available for analysis.
 - If the experimental data are not available yet, public single-cell plant datasets could still be used to practice pipeline development and analysis methods.
 - Annotation may be challenging if Wolffia reference annotations and marker knowledge are limited, so early conclusions should remain conservative.

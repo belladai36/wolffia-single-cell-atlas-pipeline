@@ -15,11 +15,11 @@ At the moment, the most realistic path is a prediction-first project:
 3. add Arabidopsis leaf or aerial-tissue references to better represent photosynthetic and surface-associated programs
 4. use statistical analyses on public single-cell references to quantify broad cell programs and their separability
 5. define candidate cell states and marker programs expected in Wolffia
-6. use incoming Wolffia `PIP-seq` data to test and refine those predictions
+6. use incoming Wolffia single-cell expression data to test and refine those predictions
 
 ## Central Question
 
-Can we predict the cellular organization of `Wolffia australiana` by integrating public plant single-cell references with Wolffia genomic and transcriptomic resources, and then test those predictions with future `PIP-seq` data?
+Can we predict the cellular organization of `Wolffia australiana` by integrating public plant single-cell references with Wolffia genomic and transcriptomic resources, and then test those predictions with future Wolffia single-cell expression data?
 
 ## Specific Aims
 
@@ -52,11 +52,11 @@ Generate explicit predictions about which cell states and developmental programs
 
 ### Aim 5
 
-Design validation experiments for future `PIP-seq` data and downstream follow-up assays.
+Design computational validation analyses for future Wolffia single-cell data.
 
 Near-term update:
 
-- prepare the pipeline to analyze incoming Wolffia `PIP-seq` libraries as soon as counts or processed matrices are available
+- prepare the pipeline to analyze incoming Wolffia single-cell count matrices as soon as counts or processed matrices are available
 
 ## Biological Hypotheses
 
@@ -84,8 +84,8 @@ Future single-cell data may reveal a continuum of developmental states rather th
 - a ranked list of predicted Wolffia cell programs
 - a root-versus-leaf Arabidopsis reference comparison
 - a statistical summary of which public plant programs are most robust and transferable
-- a validation plan for `PIP-seq` and downstream wet-lab experiments
+- a validation plan for downstream computational analysis
 
 ## Success Criteria
 
-This summer project will be successful if it produces a credible, testable hypothesis framework that can guide interpretation of future Wolffia `PIP-seq` data rather than waiting for the sequencing results before asking biological questions.
+This summer project will be successful if it produces a credible, testable hypothesis framework that can guide interpretation of future Wolffia single-cell expression data rather than waiting for the sequencing results before asking biological questions.

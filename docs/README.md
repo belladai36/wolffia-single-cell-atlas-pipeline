@@ -11,7 +11,6 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 5. [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
 6. [Wolffia first transfer note](wolffia_first_transfer_note.md)
 7. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
-8. [Wolffia data-generation protocol](wolffia_data_generation_protocol.md)
 
 ## 02. Core Orientation
 
@@ -41,11 +40,10 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [GSE161332 leaf reference test summary](gse161332_leaf_reference_test_summary.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
-## 05. Experimental and Protocol Planning
+## 05. Wolffia Analysis Planning
 
 - [Proposed Wolffia workflow](proposed_wolffia_workflow.md)
-- [Wolffia data-generation protocol](wolffia_data_generation_protocol.md)
-- [Wolffia data-generation protocol detailed guide](wolffia_data_generation_protocol_detailed.md)
+- [Validation experiment plan](validation_experiment_plan.md)
 
 ## 06. Wolffia Training and Storage Planning
 

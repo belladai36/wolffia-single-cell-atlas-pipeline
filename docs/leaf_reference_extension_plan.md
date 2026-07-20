@@ -101,9 +101,9 @@ The key comparison should ask:
 - does the leaf reference reduce over-assignment to stress-like programs?
 - do photosynthetic and surface-associated programs become more separable?
 
-### Step 5: Prepare for Incoming Wolffia PIP-seq Data
+### Step 5: Prepare for Incoming Wolffia Single-Cell Data
 
-When the new Wolffia PIP-seq libraries become available, the first application should run both views:
+When new Wolffia single-cell expression matrices become available, the first application should run both views:
 
 1. root-derived frozen transfer model
 2. leaf/aerial reference scoring or transfer model
@@ -145,4 +145,4 @@ python scripts/10_public_reference_statistical_prediction.py --config config/pub
 
 The project is no longer only “use Arabidopsis root to predict Wolffia.” The refined version is:
 
-> Use well-annotated Arabidopsis root data as a conservative benchmark, add Arabidopsis leaf/aerial data as a more Wolffia-relevant photosynthetic reference, and then compare both against incoming Wolffia PIP-seq libraries.
+> Use well-annotated Arabidopsis root data as a conservative benchmark, add Arabidopsis leaf/aerial data as a more Wolffia-relevant photosynthetic reference, and then compare both against incoming Wolffia single-cell data.

@@ -73,7 +73,7 @@ Example structure:
 
 - predicted state or process
 - supporting evidence
-- expected `PIP-seq` signature
+- expected single-cell expression signature
 - possible alternative explanation
 - proposed validation experiment
 
@@ -111,7 +111,7 @@ Examples to evaluate:
 
 ## Validation Logic
 
-When `PIP-seq` data arrive, predictions will be checked by asking:
+When Wolffia single-cell data arrive, predictions will be checked by asking:
 
 1. do clusters or gradients support the predicted states?
 2. do predicted marker genes co-occur in the same cells or states?
@@ -136,7 +136,7 @@ The final product of this framework should be a prediction table with columns su
 - reference evidence
 - Wolffia support
 - prediction confidence
-- expected `PIP-seq` outcome
+- expected single-cell data outcome
 - validation experiment
 - interpretation if prediction fails
 
@@ -151,13 +151,13 @@ The table below converts the current reference panel and Wolffia mapping notes i
 | Vascular-like / transport program | partially preserved or merged | transport genes are likely present, but morphology suggests reduced specialization relative to larger angiosperms | medium | transport-associated markers appear either in a weak subcluster or as a mixed signature embedded within another major state | transport functions are distributed across multifunctional cells rather than specialized cell identities | qRT-PCR panel for transporter candidates plus anatomical imaging or section-based localization if feasible |
 | Developmental transition program | preserved as a continuum rather than discrete cell type | developmental trajectory references suggest transitional states may be more informative than strict labels | medium to high | gradual expression shifts, pseudotime structure, or partially overlapping marker programs rather than many sharply separated clusters | limited cell number or technical noise may blur true discrete states | trajectory re-analysis, hormone perturbation experiments, and follow-up marker testing across induced developmental conditions |
 | Epidermal / surface identity program | reduced or weakly separable | surface-associated programs may still exist, but Wolffia body-plan reduction may weaken layer-specific specialization | medium | subtle enrichment of surface markers, possibly without a clean standalone cluster | surface functions may be merged with photosynthetic or stress-responsive states | targeted marker assay for surface-identity candidates and microscopy-based surface characterization |
-| Reproductive / floral program | condition-specific or absent in baseline samples | floral regulators are biologically relevant but unlikely to be active in ordinary vegetative sampling | low | no strong reproductive cluster in baseline `PIP-seq`, or only rare cells with floral-transition markers | flowering may require specific induction conditions not represented in the sampled material | repeat sampling under flowering-induction conditions and targeted assays for floral regulators |
+| Reproductive / floral program | condition-specific or absent in baseline samples | floral regulators are biologically relevant but unlikely to be active in ordinary vegetative sampling | low | no strong reproductive cluster in baseline single-cell data, or only rare cells with floral-transition markers | flowering may require specific induction conditions not represented in the sampled material | compare induced or flowering-enriched samples if available |
 | Transport / interface / water-balance program | present as a broad interface-associated program | Wolffia aquatic lifestyle likely requires strong membrane, aquaporin, and water-balance regulation that does not map neatly to standard organ labels | medium to high | one broad state or gradient enriched for aquaporin-like, membrane-interface, or water-flux-associated signatures | interface-associated biology may overlap partly with general transport or surface programs | osmotic or nutrient-shift experiments and targeted validation of aquaporin-like modules |
 | Abiotic stress-response program | present as a state-like response rather than stable cell type | redox, heat, cold, dehydration, or handling-associated stress programs may appear as real but dynamic signatures | medium | subset-specific or condition-specific signatures enriched for stress-response markers | observed stress signatures may reflect dissociation or handling artifacts rather than stable endogenous states | perturbation experiments with oxidative, osmotic, heat, or cold treatments and targeted validation of responsive modules |
 
 ## Interpretation Priority
 
-The first four predictions should drive the earliest analysis once `PIP-seq` data arrive:
+The first four predictions should drive the earliest analysis once Wolffia single-cell data arrive:
 
 1. proliferative / meristematic
 2. photosynthetic / assimilation

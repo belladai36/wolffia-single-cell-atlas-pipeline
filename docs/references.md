@@ -6,7 +6,7 @@ reports.
 
 ## How to Cite This Repository
 
-Dai J. *Wolffia PIP-seq Single-Cell Atlas Framework*. 2026.
+Dai J. *Wolffia Single-Cell Atlas Analysis Framework*. 2026.
 <https://github.com/belladai36/wolffia-single-cell-atlas-pipeline>
 
 GitHub should also expose this citation through [`CITATION.cff`](../CITATION.cff).

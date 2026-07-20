@@ -36,7 +36,7 @@ Instead use a staged approach:
 3. assign broad pseudo-labels or manual labels
 4. train a Wolffia-native classifier on those broad labels
 5. validate on the second Wolffia dataset
-6. later project future PIP-seq data into the Wolffia-trained reference
+6. later project future Wolffia single-cell data into the Wolffia-trained reference
 
 ## Why this is better than Arabidopsis-only training
 
