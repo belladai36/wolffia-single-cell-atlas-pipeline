@@ -55,3 +55,10 @@ Fifth notebook:
 3. Inspect the confidence-threshold tradeoff, synthetic rejection-path stress test, and marker-evidence coverage.
 4. Use the embedded validation checks to reconcile headline metrics directly against paired out-of-fold predictions.
 5. Treat the model as provisionally ready for Wolffia application, not as biologically validated before the public Wolffia datasets are processed.
+
+Sixth notebook:
+
+1. Open [06_gse161332_leaf_transfer_test.ipynb](06_gse161332_leaf_transfer_test.ipynb).
+2. Review the first Arabidopsis leaf-reference test using `GSE161332`.
+3. Inspect frozen-feature coverage, root-derived model agreement, conservative acceptance, and consensus prediction distribution.
+4. Use the conclusion to motivate the next project step: keeping the root model as a conservative benchmark while building a dedicated leaf/aerial reference layer for photosynthetic and surface-associated programs.
