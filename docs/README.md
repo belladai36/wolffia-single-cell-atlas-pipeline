@@ -38,6 +38,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [GSE123818 validation run summary](gse123818_validation_run_summary.md)
 - [Root-derived reference update](root_derived_reference_update.md)
 - [Public dataset results summary](public_dataset_results_summary.md)
+- [GSE161332 leaf reference test summary](gse161332_leaf_reference_test_summary.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 05. Experimental and Protocol Planning

@@ -40,6 +40,7 @@ These scripts are the main computational core of the current project:
 11. `30_transfer_model_benchmark_and_marker_audit.py`
 12. `31_freeze_wolffia_transfer_model.py`
 13. `32_apply_frozen_wolffia_model.py`
+14. `33_apply_root_consensus_to_gse161332_leaf.py`
 
 `27_root_reference_consensus.py` performs a cluster-held-out comparison of logistic regression and random forest, applies a conservative agreement filter to GSE121619, and fits provisional root consensus models.
 
@@ -50,6 +51,8 @@ These scripts are the main computational core of the current project:
 `31_freeze_wolffia_transfer_model.py` audits confidence thresholds, runs controlled rejection-path stress tests, and writes the machine-readable v1 model manifest. `32_apply_frozen_wolffia_model.py` applies that frozen dual-model rule to a normalized Wolffia `.h5ad` while enforcing feature coverage and retaining `ambiguous` calls.
 
 `26_prepare_gse161332_leaf_h5ad.py` converts the selected Arabidopsis leaf reference, `GSE161332`, from GEO's processed 10x-style matrix files into the same `.h5ad` format used by the public-reference workflow.
+
+`33_apply_root_consensus_to_gse161332_leaf.py` applies the frozen 340-feature root-consensus model directly to the processed `GSE161332` matrix files. This bypasses slow full `.h5ad` loading and writes a focused root-to-leaf transfer diagnostic.
 
 ### 3. Wolffia public-data preparation helpers
 

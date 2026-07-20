@@ -74,6 +74,7 @@ The clearest current progress summary is here:
 Selected first leaf reference:
 
 - `GSE161332`, an Arabidopsis leaf scRNA-seq matrix used for the first root-versus-leaf comparison
+- [GSE161332 leaf reference test summary](docs/gse161332_leaf_reference_test_summary.md)
 
 ## 4. Project Layout
 

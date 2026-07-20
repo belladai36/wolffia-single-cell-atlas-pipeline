@@ -6,6 +6,7 @@ import gzip
 from pathlib import Path
 
 import anndata as ad
+import numpy as np
 import pandas as pd
 import scipy.io
 from scipy import sparse
@@ -58,13 +59,15 @@ def build_adata(raw_dir: Path) -> ad.AnnData:
             f"Matrix shape {matrix.shape} does not match genes/cells {(features.shape[0], len(barcodes))}."
         )
 
-    obs = pd.DataFrame(index=pd.Index(barcodes, name="cell_id"))
+    obs = pd.DataFrame(index=pd.Index(np.asarray(barcodes, dtype=object), name="cell_id"))
     obs["dataset_accession"] = "GSE161332"
     obs["source_tissue"] = "Arabidopsis_leaf"
     obs["reference_layer"] = "leaf_aerial"
+    obs = obs.astype(object)
 
     var = features.copy()
-    var.index = pd.Index(var["gene_name"].astype(str), name="gene_name")
+    var.index = pd.Index(np.asarray(var["gene_name"].astype(str), dtype=object), name="feature_name")
+    var = var.astype(object)
 
     adata = ad.AnnData(X=sparse.csr_matrix(matrix.transpose()), obs=obs, var=var)
     adata.layers["counts"] = adata.X.copy()
@@ -87,6 +90,7 @@ def main() -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     adata = build_adata(raw_dir)
+    ad.settings.allow_write_nullable_strings = True
     adata.write_h5ad(output_path)
     print(f"Wrote {output_path}")
 
