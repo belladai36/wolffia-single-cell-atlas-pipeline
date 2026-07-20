@@ -2,10 +2,11 @@
 
 ## Why we need one more Arabidopsis dataset
 
-Our current transfer framework already works, but the present training and test pair still leaves one major limitation:
+Our current transfer framework already works, but the present training and test pair still leaves two major limitations:
 
 - we can recover broad programs
-- but we have only one transfer target so far
+- but the strongest current reference is root-derived
+- and root cells are not the best biological match for a reduced photosynthetic Wolffia body
 
 That means we still do not know whether the current pattern is:
 
@@ -14,6 +15,8 @@ That means we still do not know whether the current pattern is:
 - or biased by the current training reference
 
 Before moving onto large public Wolffia files, the best next step is to add at least one more Arabidopsis validation dataset.
+
+After professor feedback, the most important new reference type is an Arabidopsis leaf or aerial-tissue expression matrix. The root atlas remains valuable because the markers are well established, but the leaf/aerial layer should test whether photosynthetic and surface-associated programs transfer more naturally. We selected `GSE161332` as the first leaf reference because it has processed 10x-style matrix files and captures leaf-relevant populations.
 
 ## Selection criteria
 
@@ -24,6 +27,12 @@ We want the next dataset to satisfy as many of these conditions as possible:
 3. biologically interpretable context
 4. enough metadata to support transfer validation
 5. useful contrast with our current train and test pair
+
+For the leaf extension, also prioritize:
+
+6. photosynthetic or aerial-tissue context
+7. labels that can distinguish mesophyll-like, epidermal/surface, vascular/transport, and stress/interface programs
+8. a processed matrix that can be converted into `.h5ad`
 
 ## Verified candidates
 
@@ -86,13 +95,33 @@ Best use in our project:
 
 - targeted follow-up for transport-program validation after the broad program framework is stable
 
+### 4. GSE161332
+
+GEO record: [GSE161332](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE161332)
+
+Why it is useful:
+
+- Arabidopsis leaf single-cell dataset
+- processed 10x-style matrix files are available from GEO
+- includes leaf-relevant populations such as epidermis, guard cells, hydathodes, mesophyll, and vascular cell types
+- directly supports the root-versus-leaf comparison recommended after professor feedback
+
+Main caveat:
+
+- detailed cell-type annotation may need to be reconstructed from publication/browser labels or cluster-level marker scoring
+
+Best use in our project:
+
+- first leaf reference extension for photosynthetic, surface, mesophyll-like, and vascular/transport program comparison
+
 ## Recommendation
 
-The strongest order for our next Arabidopsis phase is:
+The refined order for our next Arabidopsis phase is:
 
-1. `GSE121619` for immediate validation because the processed metadata are lightweight and already verified
-2. `GSE123818` as the next broad atlas dataset for deeper developmental transfer analysis
-3. `GSE181999` as a focused vascular validation dataset
+1. keep `GSE123818` as the root-derived benchmark because it is already converted and supports the frozen transfer model
+2. add `GSE161332` as the first Arabidopsis leaf matrix for the next root-versus-leaf comparison
+3. use `GSE181999` as a focused vascular validation dataset if transport programs remain weak or merged
+4. use `GSE121619` and `GSE308672` as stress and perturbation checks when needed
 
 ## What this will let us test
 
@@ -119,9 +148,9 @@ This is directly relevant to Wolffia, where reduced morphology may make vascular
 
 The best immediate computational move is:
 
-1. intake `GSE121619`
-2. inspect whether its metadata can be translated into broad biological programs
-3. rerun the transfer workflow with `GSE227564` training versus `GSE121619` validation
-4. compare its prediction distribution against the current `GSE141730` result
+1. download the processed `GSE161332` matrix, features, and barcode files
+2. convert `GSE161332` into `.h5ad`
+3. map or infer its labels into the eight broad programs where possible
+4. compare root-derived and leaf-derived predictions before applying both views to Wolffia
 
-If the patterns agree, we can say with more confidence that our Arabidopsis-trained framework is stable enough to generate first-pass Wolffia predictions.
+If the root and leaf patterns agree, we can say with more confidence that our Arabidopsis-trained framework is stable enough to generate first-pass Wolffia predictions. If they disagree, that disagreement becomes biologically informative because it shows which Wolffia programs are most sensitive to reference choice.

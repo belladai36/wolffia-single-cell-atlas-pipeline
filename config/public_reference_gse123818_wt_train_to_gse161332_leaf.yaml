@@ -1,0 +1,22 @@
+public_reference_analysis:
+  train_h5ad: data/public_references/processed/GSE123818_wt_root_clustered.h5ad
+  test_h5ad: data/public_references/processed/GSE161332_leaf.h5ad
+  train_dataset_name: GSE123818_wt_root
+  test_dataset_name: GSE161332_leaf
+  train_label_mode: infer_from_cluster_scores
+  test_label_mode: unlabeled
+  train_label_column: leiden
+  test_label_column: null
+  label_rules_csv: data/metadata/public_reference_label_rules.csv
+  program_markers_csv: data/metadata/public_reference_program_markers.csv
+  output_dir: results/public_reference_gse123818_wt_train_to_gse161332_leaf
+  figure_dir: figures/public_reference_gse123818_wt_train_to_gse161332_leaf
+  min_cells_per_program: 20
+  n_top_hvgs: 2000
+  n_pcs: 30
+  classifier: logistic_regression
+  random_state: 42
+  max_train_cells: 3000
+  max_test_cells: 3000
+  infer_min_score: 0.05
+  infer_min_margin: 0.02

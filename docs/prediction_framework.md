@@ -18,6 +18,11 @@ Outputs:
 - summary of each reference cell state
 - evidence level for each marker set
 
+Current reference logic:
+
+- use Arabidopsis root data first because its cell identities and marker genes are well established
+- add Arabidopsis leaf or aerial-tissue data next because Wolffia is a highly reduced, photosynthetic plant body and may be better represented by leaf-like programs than root-specific labels
+
 ### Step 1b: Quantify Programs in Existing Data
 
 Use public reference datasets to measure how strongly each broad program is recovered and how separable it is from other programs.
@@ -175,3 +180,15 @@ Prediction in this project should now be interpreted in two layers:
    what structures are consistently recoverable in existing public plant single-cell data and therefore most likely to transfer to Wolffia
 
 The companion document [Statistical prediction strategy](statistical_prediction_strategy.md) defines the quantitative layer of this plan.
+
+## Root-Versus-Leaf Reference Extension
+
+The next refinement is to compare the frozen root-derived reference view with an Arabidopsis leaf or aerial-tissue reference view.
+
+This comparison will test whether the current conservative result is mostly caused by:
+
+- true compression of plant programs in Wolffia
+- mismatch between a root reference and a photosynthetic Wolffia body plan
+- or insufficient public-reference coverage of surface, mesophyll-like, and aquatic-interface programs
+
+The working plan is documented in [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md).

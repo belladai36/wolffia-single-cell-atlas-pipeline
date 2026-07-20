@@ -25,9 +25,10 @@ For most viewers, the easiest way through the repository is:
 2. [Project aims](docs/project_aims.md) for the biological motivation
 3. [Prediction framework](docs/prediction_framework.md) for the main hypothesis logic
 4. [Root-derived reference update](docs/root_derived_reference_update.md) for the most important computational lesson so far
-5. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md) for how the model will be applied to Wolffia
-6. [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md) for the exact model and rejection rule
-7. [Wolffia data-generation protocol](docs/wolffia_data_generation_protocol.md) for the planned experimental route
+5. [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md) for the next root-versus-leaf reference comparison
+6. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md) for how the model will be applied to Wolffia
+7. [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md) for the exact model and rejection rule
+8. [Wolffia data-generation protocol](docs/wolffia_data_generation_protocol.md) for the planned experimental route
 
 ## 3. Current Status
 
@@ -39,12 +40,18 @@ What that means:
 - the broad program set has been refined into a more interpretable working ontology
 - the current reference layer is ready for a first Wolffia-facing pass
 - the provisional 340-feature Wolffia transfer model and conservative decision rule are frozen
-- actual Wolffia training is waiting on download and preprocessing of public Wolffia datasets
+- the next reference refinement is an Arabidopsis root-versus-leaf comparison
+- actual Wolffia training is waiting on download, preprocessing, or arrival of new Wolffia `PIP-seq` matrices
 
 Current public Wolffia plan:
 
 - `PRJNA1124135` as the first training dataset
 - `PRJNA809022` as the validation dataset
+
+Current lab-data plan:
+
+- Madison is generating Wolffia single-cell libraries using `PIP-seq`
+- when those matrices become available, they should be analyzed with both the frozen root-derived view and the new leaf/aerial reference view
 
 Current model snapshot:
 
@@ -61,7 +68,12 @@ Current model snapshot:
 The clearest current progress summary is here:
 
 - [Project progress summary](docs/project_progress_summary.md)
+- [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
+
+Selected first leaf reference:
+
+- `GSE161332`, an Arabidopsis leaf scRNA-seq matrix used for the first root-versus-leaf comparison
 
 ## 4. Project Layout
 

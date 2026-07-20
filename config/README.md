@@ -24,6 +24,9 @@ This folder contains the configuration files used by different workflows in the 
 6. `public_reference_gse123818_wt_train_to_gse121619.yaml`
    - root-derived training reference transferred to `GSE121619`
 
+7. `public_reference_gse123818_wt_train_to_gse161332_leaf.yaml`
+   - root-derived training reference transferred to the selected `GSE161332` Arabidopsis leaf reference
+
 ## 02. For Most Viewers
 
 If you are only trying to understand the project, start with:
