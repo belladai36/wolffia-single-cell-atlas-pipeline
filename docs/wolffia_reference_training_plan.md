@@ -77,7 +77,6 @@ This has now been refined one step further:
 
 See:
 
-- [docs/wolffia_public_download_layout.md](wolffia_public_download_layout.md)
 - [data/metadata/wolffia_public_run_accessions.csv](../data/metadata/wolffia_public_run_accessions.csv)
 
 ## Next execution step

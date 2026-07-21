@@ -45,13 +45,9 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Proposed Wolffia workflow](proposed_wolffia_workflow.md)
 - [Validation experiment plan](validation_experiment_plan.md)
 
-## 06. Wolffia Training and Storage Planning
+## 06. Wolffia Training Planning
 
 - [Wolffia reference training plan](wolffia_reference_training_plan.md)
-- [Wolffia public download layout](wolffia_public_download_layout.md)
-- [Wolffia next step downloads](wolffia_next_step_downloads.md)
-- [Wolffia external storage setup](wolffia_external_storage_setup.md)
-- [Wolffia storage model](wolffia_storage_model.md)
 
 ## 07. Reference and Dataset Inventory
 

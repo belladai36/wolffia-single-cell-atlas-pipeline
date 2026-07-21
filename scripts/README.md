@@ -61,12 +61,11 @@ These support later Wolffia-native training:
 1. `12_prepare_wolffia_public_references.py`
 2. `13_wolffia_download_helper.py`
 
-### 4. Report and figure export scripts
+### 4. Figure export scripts
 
-These generate analysis summaries and visual exports:
+These generate visual exports:
 
-1. `18_generate_project_progress_pdf.py`
-2. `19_generate_public_reference_umaps.py`
+1. `19_generate_public_reference_umaps.py`
 
 ## 02. Most Important Scripts Right Now
 

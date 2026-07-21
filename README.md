@@ -104,8 +104,7 @@ Selected first leaf reference:
 ├── results/                         # Count matrices, AnnData files, reports
 ├── figures/                         # QC, UMAP, marker, and PAGA plots
 ├── logs/                            # Tool logs
-├── notebooks/                       # Optional exploratory notebooks
-└── output/                          # Optional generated analysis exports
+└── notebooks/                       # Optional exploratory notebooks
 ```
 
 ## 5. Folder Guide
@@ -114,7 +113,6 @@ Selected first leaf reference:
 - [scripts/README.md](scripts/README.md): best entry point for running code in the right order
 - [config/README.md](config/README.md): best entry point for choosing config files
 - [notebooks/README.md](notebooks/README.md): optional exploratory analysis notes
-- [output/README.md](output/README.md): optional generated analysis exports
 
 ## 6. Install
 
