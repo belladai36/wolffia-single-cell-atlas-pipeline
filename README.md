@@ -73,6 +73,7 @@ The clearest current progress summary is here:
 - [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md)
 - [Leaf-primary ortholog model summary](docs/leaf_primary_ortholog_model_summary.md)
 - [Ortholog-aware model comparison](docs/ortholog_aware_model_comparison.md)
+- [Combined Wolffia application script](docs/combined_wolffia_application.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
 
 Selected first leaf reference:
@@ -80,6 +81,7 @@ Selected first leaf reference:
 - `GSE161332`, an Arabidopsis leaf scRNA-seq matrix used for the first root-versus-leaf comparison
 - [GSE161332 leaf reference test summary](docs/gse161332_leaf_reference_test_summary.md)
 - the next executable refinement is [scripts/34_train_leaf_primary_ortholog_model.py](scripts/34_train_leaf_primary_ortholog_model.py), which trains a leaf-primary, ortholog-restricted benchmark from PSCB/Kim et al. cluster labels when available
+- future Wolffia matrices can be routed through [scripts/36_apply_leaf_primary_and_root_benchmark.py](scripts/36_apply_leaf_primary_and_root_benchmark.py), which applies both the leaf-primary and root-benchmark views through the ortholog feature set
 
 ## 4. Project Layout
 

@@ -11,8 +11,9 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 5. [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
 6. [Leaf-primary ortholog model summary](leaf_primary_ortholog_model_summary.md)
 7. [Ortholog-aware model comparison](ortholog_aware_model_comparison.md)
-8. [Wolffia first transfer note](wolffia_first_transfer_note.md)
-9. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+8. [Combined Wolffia application script](combined_wolffia_application.md)
+9. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+10. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 02. Core Orientation
 
@@ -31,6 +32,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
 - [Leaf-primary ortholog model summary](leaf_primary_ortholog_model_summary.md)
 - [Ortholog-aware model comparison](ortholog_aware_model_comparison.md)
+- [Combined Wolffia application script](combined_wolffia_application.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 

@@ -98,7 +98,7 @@ canonical Arabidopsis programs. The correct output should therefore be:
 
 ## Next Coding Step
 
-The next implementation step is a combined Wolffia application script:
+The combined Wolffia application script is:
 
 ```text
 scripts/36_apply_leaf_primary_and_root_benchmark.py
@@ -118,6 +118,20 @@ Expected output:
 - final interpretation label
 - ambiguous/review-required calls
 - summary tables and figures
+
+Smoke-test command:
+
+```bash
+python scripts/36_apply_leaf_primary_and_root_benchmark.py --smoke-test
+```
+
+Future real-data command:
+
+```bash
+python scripts/36_apply_leaf_primary_and_root_benchmark.py \
+  input_wolffia_normalized.h5ad \
+  --gene-id-column wolffia_gene_id
+```
 
 ## Bottom Line
 

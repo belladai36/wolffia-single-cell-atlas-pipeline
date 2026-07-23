@@ -58,6 +58,8 @@ These scripts are the main computational core of the current project:
 
 `35_extract_pscb_leaf_metadata.R` extracts barcode-level Seurat metadata from the Plant Single Cell Browser `leaf.RDS` object. This enables `34_train_leaf_primary_ortholog_model.py` to use PSCB/Kim et al. cluster labels collapsed into broad programs instead of relying only on marker-derived pseudoclusters.
 
+`36_apply_leaf_primary_and_root_benchmark.py` applies both the v2 leaf-primary model and the v1 root-benchmark model to a normalized Wolffia `.h5ad`, using the ortholog table to assemble the 340-feature transfer matrix. It writes leaf predictions, root predictions, final interpretation labels, ambiguity/review flags, and a feature-coverage audit. Use `--smoke-test` to test the application path before real Wolffia data arrive.
+
 ### 3. Wolffia public-data preparation helpers
 
 These support later Wolffia-native training:
