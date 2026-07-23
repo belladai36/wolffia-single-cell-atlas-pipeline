@@ -144,3 +144,6 @@ Figures:
 The project should now be described as a leaf-prioritized, ortholog-aware Wolffia program-prediction
 framework. The current root-derived model is still useful, but mainly as a baseline and stress test.
 The new leaf-primary model is the better biological direction for future Wolffia application.
+
+For the combined root/leaf/ortholog decision rule, see
+[Ortholog-aware root and leaf model comparison](ortholog_aware_model_comparison.md).

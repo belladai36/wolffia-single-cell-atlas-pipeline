@@ -17,6 +17,7 @@ If you are opening this repository for the first time, these are the most useful
 2. [Project aims](docs/project_aims.md)
 3. [Docs guide](docs/README.md)
 4. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md)
+5. [Ortholog-aware model comparison](docs/ortholog_aware_model_comparison.md)
 
 ## 2. Recommended Reading Order
 
@@ -26,9 +27,10 @@ For most viewers, the easiest way through the repository is:
 2. [Project aims](docs/project_aims.md) for the biological motivation
 3. [Prediction framework](docs/prediction_framework.md) for the main hypothesis logic
 4. [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md) for the primary Wolffia-relevant reference strategy
-5. [Root-derived reference update](docs/root_derived_reference_update.md) for the benchmark/root proof-of-concept lesson
-6. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md) for how the model will be applied to Wolffia
-7. [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md) for the exact model and rejection rule
+5. [Ortholog-aware model comparison](docs/ortholog_aware_model_comparison.md) for how ortholog mapping, root, and leaf models fit together
+6. [Root-derived reference update](docs/root_derived_reference_update.md) for the benchmark/root proof-of-concept lesson
+7. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md) for how the model will be applied to Wolffia
+8. [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md) for the exact model and rejection rule
 
 ## 3. Current Status
 
@@ -70,6 +72,7 @@ The clearest current progress summary is here:
 - [Project progress summary](docs/project_progress_summary.md)
 - [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md)
 - [Leaf-primary ortholog model summary](docs/leaf_primary_ortholog_model_summary.md)
+- [Ortholog-aware model comparison](docs/ortholog_aware_model_comparison.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
 
 Selected first leaf reference:

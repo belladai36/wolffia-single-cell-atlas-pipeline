@@ -62,6 +62,11 @@ The vascular result does not prove vascular biology is absent from Wolffia. Most
 
 Reciprocal protein similarity supports putative orthology, not conserved expression or function. Gene duplication, loss, annotation differences, and lineage-specific family expansion can break one-to-one reciprocity. Cross-species predictions should require adequate mapped-feature coverage and preserve an `ambiguous` result whenever evidence is weak.
 
+Orthology is not tissue-specific. The same Arabidopsis-to-Wolffia gene relationship applies whether
+a feature is used in a root-derived benchmark model or a leaf-primary model. What changes between
+root and leaf models is which Arabidopsis programs are biologically informative. For the combined
+model hierarchy, see [Ortholog-aware root and leaf model comparison](ortholog_aware_model_comparison.md).
+
 ## Reproduction
 
 ```bash

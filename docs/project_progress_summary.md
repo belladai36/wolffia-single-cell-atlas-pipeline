@@ -137,6 +137,7 @@ Key specification:
 
 - [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
 - [Leaf-primary ortholog model summary](leaf_primary_ortholog_model_summary.md)
+- [Ortholog-aware root and leaf model comparison](ortholog_aware_model_comparison.md)
 
 Latest leaf-primary benchmark:
 
