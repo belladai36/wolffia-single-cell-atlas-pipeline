@@ -84,10 +84,11 @@ This is now implemented as a separate retraining step:
 
 - [scripts/34_train_leaf_primary_ortholog_model.py](../scripts/34_train_leaf_primary_ortholog_model.py)
 
-That script trains a leaf-primary model using marker-derived pseudocluster labels and the
-Arabidopsis-to-Wolffia ortholog feature set. Because curated leaf cell-type labels are not present
-in the local object, the resulting benchmark should be described as pseudo-label recovery rather
-than true cell-type accuracy.
+That script now trains a leaf-primary model using PSCB/Kim et al. cluster labels when the
+`leaf.RDS` metadata have been extracted, then collapses those labels into the project broad-program
+ontology. If the PSCB metadata are unavailable, it falls back to marker-derived pseudocluster labels.
+The resulting benchmark should still be described as Arabidopsis broad-label recovery rather than
+true Wolffia accuracy.
 
 ## Reproducible Command
 

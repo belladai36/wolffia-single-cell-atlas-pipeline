@@ -1,0 +1,20 @@
+cluster_id,published_cluster_label,broad_program,interpretation_notes,source
+0,unassigned,ambiguous,"Cluster not assigned to a known cell type in the publication figure legend; exclude from supervised label training.",Kim et al. 2021 / PSCB leaf atlas
+1,mesophyll,photosynthetic_or_assimilation,"One of the mesophyll clusters listed in the publication.",Kim et al. 2021 / PSCB leaf atlas
+2,mesophyll_spongy_candidate,photosynthetic_or_assimilation,"Mesophyll cluster; FIL/YAB1 enrichment suggested possible spongy parenchyma.",Kim et al. 2021 / PSCB leaf atlas
+3,mesophyll,photosynthetic_or_assimilation,"One of the mesophyll clusters listed in the publication.",Kim et al. 2021 / PSCB leaf atlas
+4,bundle_sheath_xylem_mixed,vascular_like_or_transport,"Cluster contains bundle sheath and xylem-related cells and was subclustered in the publication.",Kim et al. 2021 / PSCB leaf atlas
+5,mesophyll,photosynthetic_or_assimilation,"One of the mesophyll clusters listed in the publication.",Kim et al. 2021 / PSCB leaf atlas
+6,mesophyll_rrna_enriched,photosynthetic_or_assimilation,"Mesophyll cluster enriched for rRNA; publication notes possible artifact or biological subset.",Kim et al. 2021 / PSCB leaf atlas
+7,mesophyll_spongy_candidate,photosynthetic_or_assimilation,"Mesophyll cluster; FIL/YAB1 enrichment suggested possible spongy parenchyma.",Kim et al. 2021 / PSCB leaf atlas
+8,mesophyll,photosynthetic_or_assimilation,"One of the mesophyll clusters listed in the publication.",Kim et al. 2021 / PSCB leaf atlas
+9,mesophyll_rrna_enriched,photosynthetic_or_assimilation,"Mesophyll cluster enriched for rRNA; publication notes possible artifact or biological subset.",Kim et al. 2021 / PSCB leaf atlas
+10,procambium_phloem_parenchyma_mixed,vascular_like_or_transport,"Cluster includes PP and procambium subpopulations after subclustering.",Kim et al. 2021 / PSCB leaf atlas
+11,mesophyll,photosynthetic_or_assimilation,"One of the mesophyll clusters listed in the publication.",Kim et al. 2021 / PSCB leaf atlas
+12,mesophyll,photosynthetic_or_assimilation,"One of the mesophyll clusters listed in the publication.",Kim et al. 2021 / PSCB leaf atlas
+13,epidermal,epidermal_or_surface_identity,"Annotated as epidermal based on AtML1 and wax-related genes.",Kim et al. 2021 / PSCB leaf atlas
+14,mesophyll,photosynthetic_or_assimilation,"One of the mesophyll clusters listed in the publication.",Kim et al. 2021 / PSCB leaf atlas
+15,companion_cell,vascular_like_or_transport,"Annotated as companion cells based on SUC2/SUT1, AHA3, FTIP, and APL.",Kim et al. 2021 / PSCB leaf atlas
+16,guard_cell,epidermal_or_surface_identity,"Annotated as epidermal guard cells based on FAMA and guard-cell MAP kinase enrichment.",Kim et al. 2021 / PSCB leaf atlas
+17,hydathode,transport_interface_or_water_balance,"Annotated as hydathode cells based on PUP1 and EP3 enrichment.",Kim et al. 2021 / PSCB leaf atlas
+18,phloem_parenchyma_xylem_mixed,vascular_like_or_transport,"Cluster includes PP2 and XP3 subpopulations after subclustering.",Kim et al. 2021 / PSCB leaf atlas

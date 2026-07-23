@@ -140,13 +140,15 @@ Key specification:
 
 Latest leaf-primary benchmark:
 
-- `GSE161332` leaf cells tested: 6,300
+- `GSE161332` leaf matrix cells: 6,300
+- PSCB/Kim-labeled cells used after filtering: 4,587
 - Arabidopsis-to-Wolffia transfer features present: 340 of 340
-- dominant marker-derived pseudo-label: `photosynthetic_or_assimilation`
-- dual-model consensus acceptance rate: `94.5%`
-- selective pseudo-label recovery among accepted cells: `99.7%`
+- dominant published broad label: `photosynthetic_or_assimilation`
+- dual-model consensus acceptance rate: `43.3%`
+- selective broad-label recovery among accepted cells: `93.6%`
 
-These values measure recovery of marker-derived leaf pseudo-labels, not true Wolffia accuracy.
+These values measure recovery of broad Arabidopsis leaf labels collapsed from PSCB/Kim et al.
+clusters, not true Wolffia accuracy.
 
 ## Most Important Biological Lessons So Far
 

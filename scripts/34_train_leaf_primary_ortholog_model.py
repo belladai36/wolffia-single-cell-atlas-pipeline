@@ -32,6 +32,10 @@ from pipeline_utils import PROJECT_ROOT
 DEFAULT_LEAF_REFERENCE = PROJECT_ROOT / "data" / "public_references" / "processed" / "GSE161332_leaf.h5ad"
 DEFAULT_MARKERS = PROJECT_ROOT / "data" / "metadata" / "public_reference_program_markers.csv"
 DEFAULT_TRANSFER_FEATURES = PROJECT_ROOT / "data" / "metadata" / "wolffia_transfer_feature_set.csv"
+DEFAULT_PUBLISHED_METADATA = (
+    PROJECT_ROOT / "data" / "public_references" / "raw" / "GSE161332" / "pscb_leaf" / "leaf_metadata_from_pscb.csv"
+)
+DEFAULT_CLUSTER_MAP = PROJECT_ROOT / "data" / "metadata" / "gse161332_pscb_cluster_annotation_map.csv"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "results" / "leaf_primary_ortholog_model"
 DEFAULT_FIGURE_DIR = PROJECT_ROOT / "figures" / "leaf_primary_ortholog_model"
 
@@ -46,6 +50,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--leaf-reference", type=Path, default=DEFAULT_LEAF_REFERENCE)
     parser.add_argument("--markers", type=Path, default=DEFAULT_MARKERS)
     parser.add_argument("--transfer-features", type=Path, default=DEFAULT_TRANSFER_FEATURES)
+    parser.add_argument(
+        "--published-metadata",
+        type=Path,
+        default=DEFAULT_PUBLISHED_METADATA,
+        help="Optional PSCB/Kim et al. metadata CSV extracted from leaf.RDS.",
+    )
+    parser.add_argument(
+        "--cluster-map",
+        type=Path,
+        default=DEFAULT_CLUSTER_MAP,
+        help="Cluster-to-broad-program mapping for the PSCB/Kim et al. leaf atlas.",
+    )
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--figure-dir", type=Path, default=DEFAULT_FIGURE_DIR)
     parser.add_argument("--feature-column", default="arabidopsis_gene_id")
@@ -62,6 +78,45 @@ def parse_args() -> argparse.Namespace:
         help="Write a full scored/pseudolabeled h5ad. Off by default because this file is large.",
     )
     return parser.parse_args()
+
+
+def attach_published_cluster_labels(
+    adata: ad.AnnData,
+    metadata_path: Path,
+    cluster_map_path: Path,
+) -> tuple[ad.AnnData, pd.DataFrame] | tuple[None, None]:
+    if not metadata_path.exists() or not cluster_map_path.exists():
+        return None, None
+    adata = adata.copy()
+    metadata = pd.read_csv(metadata_path, index_col=0)
+    cluster_map = pd.read_csv(cluster_map_path)
+    cluster_map["cluster_id"] = cluster_map["cluster_id"].astype(str)
+    metadata["seurat_clusters"] = metadata["seurat_clusters"].astype(str)
+    annotated = metadata.merge(
+        cluster_map,
+        left_on="seurat_clusters",
+        right_on="cluster_id",
+        how="left",
+    )
+    annotated.index = metadata.index.astype(str)
+    shared = adata.obs_names.astype(str).intersection(annotated.index.astype(str))
+    if len(shared) == 0:
+        raise ValueError(f"No overlapping barcodes were found between {metadata_path} and the leaf AnnData object.")
+    adata.obs["published_leaf_cluster"] = pd.Series(index=adata.obs_names, dtype="object")
+    adata.obs["published_leaf_label"] = pd.Series(index=adata.obs_names, dtype="object")
+    adata.obs["published_broad_program"] = pd.Series(index=adata.obs_names, dtype="object")
+    adata.obs.loc[shared, "published_leaf_cluster"] = annotated.loc[shared, "seurat_clusters"].astype(str)
+    adata.obs.loc[shared, "published_leaf_label"] = annotated.loc[shared, "published_cluster_label"].astype(str)
+    adata.obs.loc[shared, "published_broad_program"] = annotated.loc[shared, "broad_program"].astype(str)
+    adata.obs["published_broad_program"] = adata.obs["published_broad_program"].fillna("unlabeled")
+    summary = (
+        adata.obs.loc[shared, ["published_leaf_cluster", "published_leaf_label", "published_broad_program"]]
+        .value_counts(dropna=False)
+        .rename("n_cells")
+        .reset_index()
+        .sort_values(["published_leaf_cluster"])
+    )
+    return adata, summary
 
 
 def normalize_counts(adata: ad.AnnData) -> ad.AnnData:
@@ -305,7 +360,12 @@ def run_stratified_cv(
     )
 
 
-def save_confusion_figure(consensus: pd.DataFrame, labels: list[str], output_path: Path) -> None:
+def save_confusion_figure(
+    consensus: pd.DataFrame,
+    labels: list[str],
+    output_path: Path,
+    label_source: str,
+) -> None:
     accepted = consensus[consensus["consensus_accepted"]].copy()
     if accepted.empty:
         plt.figure(figsize=(7, 5))
@@ -321,7 +381,8 @@ def save_confusion_figure(consensus: pd.DataFrame, labels: list[str], output_pat
         plt.figure(figsize=(9, 7))
         sns.heatmap(matrix, annot=True, fmt=".2f", cmap="Greens", xticklabels=labels, yticklabels=labels)
         plt.xlabel("Accepted consensus prediction")
-        plt.ylabel("Marker-derived pseudo-label")
+        ylabel = "Published broad program" if label_source == "published_cluster_labels" else "Marker-derived pseudo-label"
+        plt.ylabel(ylabel)
         plt.title("Leaf-primary consensus on held-out cells")
         plt.xticks(rotation=35, ha="right")
         plt.yticks(rotation=0)
@@ -330,14 +391,14 @@ def save_confusion_figure(consensus: pd.DataFrame, labels: list[str], output_pat
     plt.close()
 
 
-def save_counts_figure(adata: ad.AnnData, output_path: Path) -> None:
-    counts = adata.obs["leaf_pseudo_label"].astype(str).value_counts().rename_axis("program").reset_index(name="n_cells")
+def save_counts_figure(adata: ad.AnnData, output_path: Path, label_column: str) -> None:
+    counts = adata.obs[label_column].astype(str).value_counts().rename_axis("program").reset_index(name="n_cells")
     plt.figure(figsize=(10, 5))
     sns.barplot(data=counts, x="program", y="n_cells", color="#59A14F")
     plt.xticks(rotation=35, ha="right")
-    plt.xlabel("Leaf marker-derived pseudo-label")
+    plt.xlabel("Leaf broad program label")
     plt.ylabel("Cells")
-    plt.title("Leaf reference pseudo-label composition")
+    plt.title("Leaf reference label composition")
     plt.tight_layout()
     plt.savefig(output_path, dpi=220)
     plt.close()
@@ -352,25 +413,36 @@ def main() -> None:
     leaf = normalize_counts(ad.read_h5ad(args.leaf_reference))
     markers = read_markers(args.markers)
     leaf, marker_recovery = score_programs(leaf, markers)
+    leaf, published_label_summary = attach_published_cluster_labels(
+        leaf,
+        args.published_metadata,
+        args.cluster_map,
+    )
+    label_source = "published_cluster_labels" if leaf is not None else "marker_pseudoclusters"
+    if leaf is None:
+        leaf = normalize_counts(ad.read_h5ad(args.leaf_reference))
+        leaf, marker_recovery = score_programs(leaf, markers)
     leaf = add_leaf_clusters(leaf, args.n_pcs, args.n_clusters, args.random_state)
     leaf, cluster_assignments, cluster_scores = assign_cluster_pseudo_labels(leaf, args.min_cluster_margin)
     transfer_features, feature_coverage = load_transfer_features(args.transfer_features, args.feature_column, leaf)
 
-    labeled = leaf[~leaf.obs["leaf_pseudo_label"].astype(str).isin(["ambiguous"])].copy()
-    label_counts = labeled.obs["leaf_pseudo_label"].astype(str).value_counts()
+    training_label_column = "published_broad_program" if label_source == "published_cluster_labels" else "leaf_pseudo_label"
+    excluded_labels = ["ambiguous", "unlabeled", "nan", "None"]
+    labeled = leaf[~leaf.obs[training_label_column].astype(str).isin(excluded_labels)].copy()
+    label_counts = labeled.obs[training_label_column].astype(str).value_counts()
     valid_labels = label_counts[label_counts >= args.min_cells_per_program].index.tolist()
-    labeled = labeled[labeled.obs["leaf_pseudo_label"].astype(str).isin(valid_labels)].copy()
-    if labeled.obs["leaf_pseudo_label"].nunique() < 2:
-        raise ValueError("Fewer than two pseudo-labels remained after filtering; cannot train a classifier.")
+    labeled = labeled[labeled.obs[training_label_column].astype(str).isin(valid_labels)].copy()
+    if labeled.obs[training_label_column].nunique() < 2:
+        raise ValueError("Fewer than two labels remained after filtering; cannot train a classifier.")
 
     x = dense_float32(labeled[:, transfer_features].X)
-    y = labeled.obs["leaf_pseudo_label"].astype(str).to_numpy()
+    y = labeled.obs[training_label_column].astype(str).to_numpy()
     n_pcs = min(args.n_pcs, x.shape[0] - 1, x.shape[1])
     models = build_models(n_pcs=n_pcs, random_state=args.random_state)
     min_class_count = int(pd.Series(y).value_counts().min())
     n_splits = min(args.n_splits, min_class_count)
     if n_splits < 2:
-        raise ValueError("At least two cells per pseudo-label are required for cross-validation.")
+        raise ValueError("At least two cells per label are required for cross-validation.")
     cv_metrics, cv_predictions, cv_consensus = run_stratified_cv(
         x,
         y,
@@ -392,7 +464,11 @@ def main() -> None:
                 "classes": sorted(np.unique(y).tolist()),
                 "leaf_reference": str(args.leaf_reference),
                 "feature_source": str(args.transfer_features),
-                "label_status": "leaf cluster marker-derived pseudo-labels, not curated cell-type truth",
+                "label_status": (
+                    "Published PSCB/Kim et al. cluster labels collapsed to broad programs"
+                    if label_source == "published_cluster_labels"
+                    else "leaf cluster marker-derived pseudo-labels, not curated cell-type truth"
+                ),
                 "model_role": "v2_leaf_primary",
             },
             path,
@@ -420,6 +496,8 @@ def main() -> None:
     consensus_counts = cv_consensus["consensus_label"].value_counts().to_dict()
 
     marker_recovery.to_csv(args.output_dir / "leaf_marker_recovery.csv", index=False)
+    if published_label_summary is not None:
+        published_label_summary.to_csv(args.output_dir / "published_leaf_cluster_label_summary.csv", index=False)
     cluster_assignments.to_csv(args.output_dir / "leaf_cluster_program_assignments.csv", index=False)
     cluster_scores.to_csv(args.output_dir / "leaf_cluster_program_scores.csv", index=False)
     feature_coverage.to_csv(args.output_dir / "leaf_transfer_feature_coverage.csv", index=False)
@@ -442,20 +520,29 @@ def main() -> None:
             args.output_dir / "gse161332_leaf_scored_pseudolabeled.h5ad"
         )
 
-    save_counts_figure(leaf, args.figure_dir / "leaf_pseudo_label_counts.png")
+    save_counts_figure(leaf, args.figure_dir / "leaf_pseudo_label_counts.png", training_label_column)
     save_confusion_figure(
         cv_consensus,
         sorted(np.unique(y).tolist()),
         args.figure_dir / "leaf_primary_consensus_confusion_matrix.png",
+        label_source,
     )
 
     summary = {
         "model_role": "v2_leaf_primary",
         "leaf_reference": str(args.leaf_reference),
-        "label_status": "marker-derived pseudo-labels from leaf pseudoclusters; not curated cell-type truth",
+        "label_source": label_source,
+        "training_label_column": training_label_column,
+        "label_status": (
+            "Published PSCB/Kim et al. cluster labels collapsed to broad programs"
+            if label_source == "published_cluster_labels"
+            else "marker-derived pseudo-labels from leaf pseudoclusters; not curated cell-type truth"
+        ),
         "n_leaf_cells": int(leaf.n_obs),
         "n_training_cells_after_filtering": int(labeled.n_obs),
-        "pseudo_label_counts_after_filtering": {str(k): int(v) for k, v in pd.Series(y).value_counts().to_dict().items()},
+        "training_label_counts_after_filtering": {
+            str(k): int(v) for k, v in pd.Series(y).value_counts().to_dict().items()
+        },
         "n_requested_transfer_features": int(feature_coverage["requested_transfer_features"].iloc[0]),
         "n_present_transfer_features": int(feature_coverage["present_transfer_features"].iloc[0]),
         "feature_coverage": float(feature_coverage["feature_coverage"].iloc[0]),
@@ -466,8 +553,8 @@ def main() -> None:
         "consensus_label_counts": {str(k): int(v) for k, v in consensus_counts.items()},
         "model_paths": fitted_paths,
         "interpretation": (
-            "This leaf-primary model is more biologically relevant to Wolffia than the root-derived benchmark, "
-            "but current accuracy values measure recovery of marker-derived leaf pseudo-labels, not true Wolffia accuracy."
+            "This leaf-primary model is more biologically relevant to Wolffia than the root-derived benchmark. "
+            "Current accuracy values measure recovery of broad Arabidopsis leaf labels, not true Wolffia accuracy."
         ),
     }
     with open(args.output_dir / "leaf_primary_model_summary.json", "w", encoding="utf-8") as handle:
@@ -476,7 +563,7 @@ def main() -> None:
     print(metric_summary.to_string(index=False))
     print(
         f"Consensus accepted {consensus_accepted.sum():,}/{len(cv_consensus):,} held-out leaf cells "
-        f"({consensus_accepted.mean():.1%}); selective pseudo-label accuracy = {accepted_accuracy:.1%}."
+        f"({consensus_accepted.mean():.1%}); selective label recovery = {accepted_accuracy:.1%}."
     )
     print(f"Wrote results to {args.output_dir}")
     print(f"Wrote figures to {args.figure_dir}")

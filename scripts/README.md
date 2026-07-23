@@ -54,7 +54,9 @@ These scripts are the main computational core of the current project:
 
 `33_apply_root_consensus_to_gse161332_leaf.py` applies the frozen 340-feature root-consensus model directly to the processed `GSE161332` matrix files. This bypasses slow full `.h5ad` loading and writes a focused root-to-leaf transfer diagnostic.
 
-`34_train_leaf_primary_ortholog_model.py` trains and retests a leaf-primary Arabidopsis model restricted to the same Arabidopsis-to-Wolffia transfer features. Because the local `GSE161332` object does not include curated cell-type labels, it uses leaf pseudoclusters and marker-derived broad-program pseudo-labels. Its metrics therefore measure internal recovery of leaf marker programs, not true Wolffia accuracy.
+`34_train_leaf_primary_ortholog_model.py` trains and retests a leaf-primary Arabidopsis model restricted to the same Arabidopsis-to-Wolffia transfer features. When the PSCB/Kim et al. `leaf.RDS` metadata have been extracted, it uses published cluster labels collapsed to broad project programs. If those metadata are unavailable, it falls back to leaf pseudoclusters and marker-derived broad-program pseudo-labels.
+
+`35_extract_pscb_leaf_metadata.R` extracts barcode-level Seurat metadata from the Plant Single Cell Browser `leaf.RDS` object. This enables `34_train_leaf_primary_ortholog_model.py` to use PSCB/Kim et al. cluster labels collapsed into broad programs instead of relying only on marker-derived pseudoclusters.
 
 ### 3. Wolffia public-data preparation helpers
 

@@ -152,11 +152,11 @@ python scripts/10_public_reference_statistical_prediction.py --config config/pub
 python scripts/34_train_leaf_primary_ortholog_model.py
 ```
 
-The third command is the new leaf-primary retraining step. It should be interpreted carefully:
-because the local `GSE161332` object does not include curated cell-type labels, the script trains
-against marker-derived broad-program pseudo-labels from leaf pseudoclusters. This is useful for
-testing whether a Wolffia-transferable leaf model is internally stable, but it is not a final
-estimate of true biological annotation accuracy.
+The third command is the leaf-primary retraining step. It should be interpreted carefully: when the
+PSCB/Kim et al. `leaf.RDS` metadata are available, the script trains against published cluster
+labels collapsed into broad project programs. If those metadata are not available, it falls back to
+marker-derived broad-program pseudo-labels from leaf pseudoclusters. In either case, this is not a
+final estimate of true Wolffia annotation accuracy.
 
 ## Working Summary
 

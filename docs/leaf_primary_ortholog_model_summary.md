@@ -7,8 +7,9 @@ This analysis retrains the project around the updated model logic:
 - root-derived model = conservative benchmark and proof of concept
 - leaf/aerial-derived model = primary Wolffia-relevant biological layer
 
-The new leaf-primary model uses the selected Arabidopsis leaf reference `GSE161332` and restricts
-the classifier input to the 340 high- or medium-confidence Arabidopsis-to-Wolffia ortholog features.
+The new leaf-primary model uses the selected Arabidopsis leaf reference `GSE161332`, the Plant
+Single Cell Browser/Kim et al. cluster assignments, and the 340 high- or medium-confidence
+Arabidopsis-to-Wolffia ortholog features.
 
 ## Why This Was Needed
 
@@ -21,30 +22,36 @@ root system, leaf/aerial references should carry more biological weight for Wolf
 
 ## Method
 
-The new script is:
+The main training script is:
 
 - [scripts/34_train_leaf_primary_ortholog_model.py](../scripts/34_train_leaf_primary_ortholog_model.py)
+
+The metadata extraction helper is:
+
+- [scripts/35_extract_pscb_leaf_metadata.R](../scripts/35_extract_pscb_leaf_metadata.R)
 
 The script performs the following steps:
 
 1. loads the processed `GSE161332` Arabidopsis leaf matrix
 2. normalizes and log-transforms expression
 3. scores broad biological programs using the project marker table
-4. creates leaf pseudoclusters from PCA space
-5. assigns each pseudocluster a marker-derived broad-program pseudo-label
-6. keeps only the 340 Arabidopsis genes with high- or medium-confidence Wolffia ortholog mappings
-7. trains class-balanced logistic regression and random forest models
-8. retests the models with stratified held-out folds
-9. applies the same dual-model consensus idea: both models must agree and confidence must be at least `0.60`
+4. attaches PSCB/Kim et al. Seurat cluster IDs where barcode-level metadata are available
+5. collapses the published cluster IDs into broad project programs
+6. creates marker-derived pseudocluster labels as a fallback/checking layer
+7. keeps only the 340 Arabidopsis genes with high- or medium-confidence Wolffia ortholog mappings
+8. trains class-balanced logistic regression and random forest models
+9. retests the models with stratified held-out folds
+10. applies the same dual-model consensus idea: both models must agree and confidence must be at least `0.60`
 
 ## Important Label Caveat
 
-The local `GSE161332` object does not include curated published cell-type labels. Therefore, this
-benchmark measures recovery of marker-derived leaf pseudo-labels, not true cell-type annotation
-accuracy.
+The GEO `GSE161332` matrix does not include barcode-level cell-type labels. We therefore downloaded
+the Plant Single Cell Browser `leaf.RDS` object and extracted its Seurat cluster metadata. The
+training labels are published cluster identities collapsed into broad project programs, not manually
+curated per-cell Wolffia labels.
 
-This is still useful because it tests whether a Wolffia-transferable leaf model can recover a
-leaf/aerial marker structure more effectively than the root-derived benchmark.
+This is still not true Wolffia accuracy. It measures recovery of broad Arabidopsis leaf programs
+within the published leaf reference.
 
 ## Main Results
 
@@ -52,43 +59,46 @@ Dataset and feature compatibility:
 
 | Metric | Result |
 |---|---:|
-| Leaf cells tested | 6,300 |
+| Leaf matrix cells | 6,300 |
+| PSCB/Kim-labeled cells used after filtering | 4,587 |
 | Requested transfer features | 340 |
 | Transfer features present | 340 |
 | Feature coverage | 100.0% |
 
-Marker-derived pseudo-label composition after filtering:
+Published-label composition after filtering:
 
-| Pseudo-label | Cells |
+| Broad program label | Cells |
 |---|---:|
-| `photosynthetic_or_assimilation` | 6,117 |
-| `abiotic_stress_response` | 95 |
-| `transport_interface_or_water_balance` | 88 |
+| `photosynthetic_or_assimilation` | 3,527 |
+| `vascular_like_or_transport` | 820 |
+| `epidermal_or_surface_identity` | 177 |
+| `transport_interface_or_water_balance` | 63 |
 
 Model retest results:
 
 | Model | Accuracy | Balanced accuracy | Macro F1 | Mean confidence |
 |---|---:|---:|---:|---:|
-| Logistic regression | 0.959 | 0.905 | 0.720 | 0.977 |
-| Random forest | 0.988 | 0.735 | 0.789 | 0.982 |
+| Logistic regression | 0.699 | 0.763 | 0.623 | 0.703 |
+| Random forest | 0.830 | 0.589 | 0.653 | 0.787 |
 
 Dual-model consensus:
 
 | Metric | Result |
 |---|---:|
-| Held-out cells evaluated | 6,300 |
-| Consensus accepted cells | 5,954 |
-| Consensus acceptance rate | 94.5% |
-| Selective pseudo-label accuracy | 99.7% |
+| Held-out labeled cells evaluated | 4,587 |
+| Consensus accepted cells | 1,988 |
+| Consensus acceptance rate | 43.3% |
+| Selective label recovery | 93.6% |
 
 Consensus prediction counts:
 
 | Consensus prediction | Cells |
 |---|---:|
-| `photosynthetic_or_assimilation` | 5,856 |
-| `ambiguous` | 346 |
-| `transport_interface_or_water_balance` | 75 |
-| `abiotic_stress_response` | 23 |
+| `ambiguous` | 2,599 |
+| `photosynthetic_or_assimilation` | 1,711 |
+| `vascular_like_or_transport` | 153 |
+| `epidermal_or_surface_identity` | 100 |
+| `transport_interface_or_water_balance` | 24 |
 
 ## Interpretation
 
@@ -101,9 +111,9 @@ This supports the refined project logic:
 > The root-derived model should remain the conservative benchmark, while the leaf/aerial-derived
 > model should become the primary biological interpretation layer for Wolffia.
 
-The high consensus acceptance rate should not be overinterpreted as true cell-type accuracy. It is
-best described as strong internal recovery of marker-derived leaf programs using the Wolffia-transfer
-ortholog feature set.
+The consensus acceptance rate is lower than the marker-only pseudo-label run because the benchmark is
+now harder and more realistic. This is a good refinement: the model accepts fewer cells, but accepted
+labels have high broad-program recovery.
 
 ## Output Files
 
@@ -117,6 +127,7 @@ Key outputs:
 - `leaf_primary_model_metric_summary.csv`
 - `leaf_primary_cv_consensus.csv`
 - `leaf_primary_cv_fold_metrics.csv`
+- `published_leaf_cluster_label_summary.csv`
 - `leaf_cluster_program_assignments.csv`
 - `leaf_transfer_feature_coverage.csv`
 - `leaf_primary_selected_transfer_features.csv`

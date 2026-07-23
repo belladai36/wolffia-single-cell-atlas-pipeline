@@ -37,6 +37,17 @@ GitHub should also expose this citation through [`CITATION.cff`](../CITATION.cff
   doi: [10.1126/sciadv.adg6983](https://doi.org/10.1126/sciadv.adg6983).
   Dataset: [GSE227564](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE227564).
 
+- Kim JY, Symeonidi E, Pang TY, Denyer T, Weidauer D, Bezrutczyk M, et al. 2021.
+  Distinct identities of leaf phloem cells revealed by single cell transcriptomics.
+  *The Plant Cell* 33(3):511-530.
+  doi: [10.1093/plcell/koaa060](https://doi.org/10.1093/plcell/koaa060).
+  Dataset: [GSE161332/GSE161482](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE161482).
+
+- Ma X, Denyer T, Timmermans MCP. 2020. PscB: A Browser to Explore Plant Single
+  Cell RNA-Sequencing Data Sets. *Plant Physiology* 183(2):464-467.
+  doi: [10.1104/pp.20.00250](https://doi.org/10.1104/pp.20.00250).
+  Browser: [Plant Single Cell Browser](https://www.zmbp-resources.uni-tuebingen.de/timmermans/plant-single-cell-browser/).
+
 Additional candidate Arabidopsis datasets currently recorded in
 [`data/metadata/arabidopsis_public_dataset_manifest.csv`](../data/metadata/arabidopsis_public_dataset_manifest.csv)
 include:

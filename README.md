@@ -76,7 +76,7 @@ Selected first leaf reference:
 
 - `GSE161332`, an Arabidopsis leaf scRNA-seq matrix used for the first root-versus-leaf comparison
 - [GSE161332 leaf reference test summary](docs/gse161332_leaf_reference_test_summary.md)
-- the next executable refinement is [scripts/34_train_leaf_primary_ortholog_model.py](scripts/34_train_leaf_primary_ortholog_model.py), which trains a leaf-primary, ortholog-restricted benchmark from marker-derived leaf pseudo-labels
+- the next executable refinement is [scripts/34_train_leaf_primary_ortholog_model.py](scripts/34_train_leaf_primary_ortholog_model.py), which trains a leaf-primary, ortholog-restricted benchmark from PSCB/Kim et al. cluster labels when available
 
 ## 4. Project Layout
 
