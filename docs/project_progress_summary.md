@@ -17,7 +17,8 @@ That means:
 - the Arabidopsis reference framework is working
 - the broad program ontology has been refined several times
 - the current program set is good enough to support a first Wolffia-facing pass
-- the provisional 340-feature dual-model transfer rule is frozen for first application
+- the provisional 340-feature root-derived dual-model transfer rule is frozen as a conservative benchmark
+- the project is now being refined so Arabidopsis leaf/aerial datasets become the primary Wolffia-relevant interpretation layer
 - actual Wolffia training is waiting on download and preprocessing of public Wolffia data
 
 ## What We Have Completed
@@ -103,13 +104,13 @@ Key docs:
 - [Wolffia mapping notes](wolffia_mapping_notes.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
 
-### 7. Frozen provisional Wolffia transfer model
+### 7. Frozen provisional root-derived transfer model
 
 The within-Arabidopsis benchmark starts from the top 2,000 variable/shared genes selected from the
 GSE123818 wild-type root reference. Those genes define the broad-program classifier input space
 before cross-species filtering.
 
-The Wolffia-facing model is the subset of that feature space with defensible Arabidopsis-to-Wolffia
+The current root-derived Wolffia-facing benchmark model is the subset of that feature space with defensible Arabidopsis-to-Wolffia
 transfer. Reciprocal protein mapping retained 340 high- or medium-confidence ortholog features
 from the original 2,000-gene benchmark set. This filtering reduced model performance, but it makes
 the model biologically and technically more defensible for cross-species application.
@@ -124,11 +125,34 @@ Key specification:
 
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
+### 8. Leaf/aerial reference prioritization
+
+Because `Wolffia australiana` is a reduced floating plant body rather than a canonical root system,
+Arabidopsis leaf/aerial references should now receive more biological weight than root references.
+The root-derived model remains valuable as a proof-of-concept, benchmark, and rejection-rule stress
+test. The leaf/aerial model should become the primary layer for interpreting photosynthetic,
+surface, mesophyll-like, developmental, and aquatic-interface programs in future Wolffia data.
+
+Key specification:
+
+- [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
+- [Leaf-primary ortholog model summary](leaf_primary_ortholog_model_summary.md)
+
+Latest leaf-primary benchmark:
+
+- `GSE161332` leaf cells tested: 6,300
+- Arabidopsis-to-Wolffia transfer features present: 340 of 340
+- dominant marker-derived pseudo-label: `photosynthetic_or_assimilation`
+- dual-model consensus acceptance rate: `94.5%`
+- selective pseudo-label recovery among accepted cells: `99.7%`
+
+These values measure recovery of marker-derived leaf pseudo-labels, not true Wolffia accuracy.
+
 ## Most Important Biological Lessons So Far
 
 ### 1. Reference choice matters a lot
 
-Callus-trained references produced much less believable transfer behavior than root-derived references.
+Callus-trained references produced much less believable transfer behavior than root-derived references. Root references therefore remain useful as a benchmark, but they should not be the final biological frame for Wolffia.
 
 ### 2. One giant stress bucket was misleading
 
@@ -153,6 +177,10 @@ But vascular-like identity remains weak or partially merged at this broad level.
 ### 4. That is actually useful for Wolffia
 
 This means future Wolffia results should not be over-interpreted as “novel” just because some classical programs appear weak, merged, or compressed.
+
+### 5. Leaf/aerial references should carry the main biological interpretation
+
+The leaf test showed that the current root-derived model can technically run on leaf data, but it leaves most cells ambiguous and cannot predict key leaf programs. That supports the new project logic: use the root-derived model as a conservative baseline, then build a leaf/aerial ortholog-restricted model as the primary Wolffia-facing classifier.
 
 ## What We Have Not Completed Yet
 

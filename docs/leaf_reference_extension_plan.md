@@ -8,19 +8,21 @@ However, `Wolffia australiana` is not root-like in the ordinary anatomical sense
 
 ## Refined Project Logic
 
-The project should now be framed as a two-reference comparison:
+The project should now be framed as a weighted two-reference strategy:
 
 1. **Root-derived reference model**
    - strongest for benchmarking because root cell identities and markers are well characterized
    - useful for testing conservative transfer mechanics
    - especially informative for proliferative, developmental, transport, and stress-response programs
+   - should be treated as a proof-of-concept and secondary comparison layer for Wolffia interpretation
 
 2. **Leaf/aerial-tissue reference model**
    - biologically closer to the photosynthetic body plan of Wolffia
    - useful for photosynthetic, epidermal/surface, mesophyll-like, guard-cell-like, and stress/interface programs
    - needed to test whether root-derived ambiguity is caused by reference mismatch rather than true Wolffia simplification
+   - should become the primary biological interpretation layer once a leaf-trained, ortholog-restricted model is benchmarked
 
-The two references should not be treated as competing answers. Instead, they should be used as complementary views of broad plant programs.
+The two references should not be treated as equal competing answers. Instead, the root model should be used to prove and stress-test the transfer pipeline, while the leaf/aerial model should carry more weight when making Wolffia-facing biological claims.
 
 ## Main Question for the Leaf Extension
 
@@ -101,6 +103,13 @@ The key comparison should ask:
 - does the leaf reference reduce over-assignment to stress-like programs?
 - do photosynthetic and surface-associated programs become more separable?
 
+Interpretation rule:
+
+- if the leaf/aerial model is confident and marker-supported, prioritize that result for Wolffia biology
+- if the root model is confident but the leaf/aerial model is weak or contradictory, treat the root result as secondary evidence rather than a final label
+- if both models agree, consider the result stronger but still require marker-module and cluster support
+- if the two models disagree, keep the cell or cluster ambiguous until additional Wolffia-native evidence is available
+
 ### Step 5: Prepare for Incoming Wolffia Single-Cell Data
 
 When new Wolffia single-cell expression matrices become available, the first application should run both views:
@@ -108,7 +117,7 @@ When new Wolffia single-cell expression matrices become available, the first app
 1. root-derived frozen transfer model
 2. leaf/aerial reference scoring or transfer model
 
-Cells supported by both models can be considered higher-confidence. Cells supported by only one model should be interpreted cautiously and checked with marker modules, clustering, and biological context.
+Cells supported by both models can be considered higher-confidence. Cells supported mainly by the leaf/aerial model should be treated as more biologically relevant to Wolffia than cells supported only by the root model. Cells supported only by the root model should be interpreted cautiously and checked with marker modules, clustering, and biological context.
 
 ## Expected Outcomes
 
@@ -126,23 +135,31 @@ This would be biologically useful rather than a failure. It would identify the e
 
 ## Near-Term Deliverable
 
-The immediate deliverable is a root-versus-leaf reference comparison notebook that shows:
+The immediate deliverable is a leaf-prioritized root-versus-leaf reference comparison notebook that shows:
 
 - label/program composition of the leaf reference
 - overlap between root-selected and leaf-selected feature sets
 - cross-reference transfer performance
 - program-level prediction distributions
 - visual comparison plots for photosynthetic, surface, transport, proliferative, and stress/interface programs
+- a final interpretation table that separates primary leaf/aerial evidence from secondary root benchmark evidence
 
 The computational first step is:
 
 ```bash
 python scripts/26_prepare_gse161332_leaf_h5ad.py
 python scripts/10_public_reference_statistical_prediction.py --config config/public_reference_gse123818_wt_train_to_gse161332_leaf.yaml
+python scripts/34_train_leaf_primary_ortholog_model.py
 ```
+
+The third command is the new leaf-primary retraining step. It should be interpreted carefully:
+because the local `GSE161332` object does not include curated cell-type labels, the script trains
+against marker-derived broad-program pseudo-labels from leaf pseudoclusters. This is useful for
+testing whether a Wolffia-transferable leaf model is internally stable, but it is not a final
+estimate of true biological annotation accuracy.
 
 ## Working Summary
 
 The project is no longer only “use Arabidopsis root to predict Wolffia.” The refined version is:
 
-> Use well-annotated Arabidopsis root data as a conservative benchmark, add Arabidopsis leaf/aerial data as a more Wolffia-relevant photosynthetic reference, and then compare both against incoming Wolffia single-cell data.
+> Use well-annotated Arabidopsis root data as a conservative benchmark, build Arabidopsis leaf/aerial data into the primary Wolffia-relevant photosynthetic reference, and then compare both against incoming Wolffia single-cell data with leaf/aerial evidence weighted more heavily for biological interpretation.

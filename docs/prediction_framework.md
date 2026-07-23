@@ -183,7 +183,7 @@ The companion document [Statistical prediction strategy](statistical_prediction_
 
 ## Root-Versus-Leaf Reference Extension
 
-The next refinement is to compare the frozen root-derived reference view with an Arabidopsis leaf or aerial-tissue reference view.
+The next refinement is to compare the frozen root-derived reference view with an Arabidopsis leaf or aerial-tissue reference view, while explicitly weighting the leaf/aerial view more heavily for Wolffia biological interpretation.
 
 This comparison will test whether the current conservative result is mostly caused by:
 
@@ -191,4 +191,4 @@ This comparison will test whether the current conservative result is mostly caus
 - mismatch between a root reference and a photosynthetic Wolffia body plan
 - or insufficient public-reference coverage of surface, mesophyll-like, and aquatic-interface programs
 
-The working plan is documented in [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md).
+The working plan is documented in [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md). The root-derived view should be treated as a conservative benchmark, while the leaf/aerial view should become the primary Wolffia-facing model layer once trained and benchmarked.

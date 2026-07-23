@@ -2,7 +2,7 @@
 
 ## Decision
 
-The provisional model to carry forward into the first real Wolffia analysis is a calibrated,
+The provisional root-derived model to carry forward into the first real Wolffia analysis is a calibrated,
 two-model consensus restricted to 340 strict Arabidopsis-to-Wolffia ortholog features.
 
 The component classifiers are class-balanced logistic regression and class-balanced random forest,
@@ -18,7 +18,24 @@ Otherwise, the result is `ambiguous`. A transferred label does not become a high
 biological annotation until it is also supported by a coherent independent marker module and
 cluster-level evidence.
 
-## Why This Model
+## Role of This Model
+
+This model is a conservative root-derived baseline, not the final biological model for Wolffia.
+It was built from a well-annotated Arabidopsis root reference because root atlases provide strong
+within-species labels for testing the transfer machinery. Because Wolffia is a reduced floating
+photosynthetic plant body, future Wolffia interpretation should give more weight to a
+leaf/aerial-derived ortholog-restricted model once that model is built and benchmarked.
+
+The root-derived model should be used for:
+
+- proof-of-concept testing
+- conservative ambiguity/rejection behavior
+- secondary comparison against leaf/aerial predictions
+- identifying places where root-like programs are weak, merged, or unsupported
+
+It should not be used alone to make final claims about Wolffia cell identity.
+
+## Why This Model Was Frozen
 
 The unrestricted 2,000-gene feature set comes from the GSE123818 wild-type Arabidopsis root
 reference. It represents the top variable/shared Arabidopsis genes used to train and benchmark the
@@ -112,6 +129,7 @@ The machine-readable decision is stored under `results/final_wolffia_transfer_mo
 
 ## Bottom Line
 
-This is the frozen **provisional transfer model v1**. It is ready for real-data application, but it
-must not be described as a validated Wolffia cell-type model until the public Wolffia datasets have
+This is the frozen **provisional root-derived transfer model v1**. It is ready for real-data
+application as a benchmark, but it must not be described as the primary or validated Wolffia
+cell-type model until public Wolffia datasets and a leaf/aerial-prioritized reference layer have
 been processed and evaluated.

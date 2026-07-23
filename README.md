@@ -4,6 +4,7 @@ This repository is a beginner-friendly, prediction-first scaffold for a `Wolffia
 
 - a comparative public-reference workflow for biological prediction and label transfer
 - Wolffia-facing model-building and validation documents
+- a leaf/aerial-first interpretation strategy, because Wolffia is expected to be closer to a reduced photosynthetic frond than to a canonical root
 - a legacy FASTQ-level alignment-and-counting scaffold that can still be useful for full-length or custom raw-data workflows
 
 The paths are placeholders. Replace the example FASTQ, genome, annotation, and metadata paths with your project files when they are available.
@@ -24,8 +25,8 @@ For most viewers, the easiest way through the repository is:
 1. [Project progress summary](docs/project_progress_summary.md) for the current state
 2. [Project aims](docs/project_aims.md) for the biological motivation
 3. [Prediction framework](docs/prediction_framework.md) for the main hypothesis logic
-4. [Root-derived reference update](docs/root_derived_reference_update.md) for the most important computational lesson so far
-5. [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md) for the next root-versus-leaf reference comparison
+4. [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md) for the primary Wolffia-relevant reference strategy
+5. [Root-derived reference update](docs/root_derived_reference_update.md) for the benchmark/root proof-of-concept lesson
 6. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md) for how the model will be applied to Wolffia
 7. [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md) for the exact model and rejection rule
 
@@ -37,9 +38,9 @@ What that means:
 
 - the Arabidopsis reference-and-transfer framework has been built and tested
 - the broad program set has been refined into a more interpretable working ontology
-- the current reference layer is ready for a first Wolffia-facing pass
-- the provisional 340-feature Wolffia transfer model and conservative decision rule are frozen
-- the next reference refinement is an Arabidopsis root-versus-leaf comparison
+- the current root-derived reference layer is ready as a conservative benchmark and proof-of-concept
+- the provisional 340-feature root-derived transfer model and conservative decision rule are frozen as v1 baseline artifacts
+- the next reference refinement is to promote Arabidopsis leaf/aerial references into the primary Wolffia-facing interpretation layer
 - actual Wolffia training is waiting on download, preprocessing, or arrival of new Wolffia single-cell expression matrices
 
 Current public Wolffia plan:
@@ -49,7 +50,7 @@ Current public Wolffia plan:
 
 Current lab-data plan:
 
-- when new Wolffia single-cell matrices become available, they should be analyzed with both the frozen root-derived view and the new leaf/aerial reference view
+- when new Wolffia single-cell matrices become available, they should be analyzed with both views, but leaf/aerial-derived evidence should receive more biological weight than root-derived evidence
 
 Current model snapshot:
 
@@ -57,22 +58,25 @@ Current model snapshot:
   the GSE123818 wild-type root reference
 - reciprocal Arabidopsis-to-Wolffia protein mapping reduces that benchmark feature space to
   340 high- or medium-confidence transferable ortholog features
-- the restricted 340-feature model is the only model intended for Wolffia application
+- the restricted 340-feature model is the only current root-derived model intended for Wolffia application
 - the frozen rule emits a provisional program only when calibrated logistic regression and random
   forest agree at confidence `>= 0.60`; otherwise the cell remains `ambiguous`
 - on held-out Arabidopsis pseudo-labels, the restricted consensus accepted `30.4%` of cells with
   `95.3%` selective accuracy
+- because Wolffia lacks a normal root and has a reduced photosynthetic body, this root-derived model should be interpreted as a conservative benchmark; a leaf/aerial ortholog-restricted model should become the primary biological model
 
 The clearest current progress summary is here:
 
 - [Project progress summary](docs/project_progress_summary.md)
 - [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md)
+- [Leaf-primary ortholog model summary](docs/leaf_primary_ortholog_model_summary.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
 
 Selected first leaf reference:
 
 - `GSE161332`, an Arabidopsis leaf scRNA-seq matrix used for the first root-versus-leaf comparison
 - [GSE161332 leaf reference test summary](docs/gse161332_leaf_reference_test_summary.md)
+- the next executable refinement is [scripts/34_train_leaf_primary_ortholog_model.py](scripts/34_train_leaf_primary_ortholog_model.py), which trains a leaf-primary, ortholog-restricted benchmark from marker-derived leaf pseudo-labels
 
 ## 4. Project Layout
 

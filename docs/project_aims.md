@@ -12,7 +12,7 @@ At the moment, the most realistic path is a prediction-first project:
 
 1. use public plant single-cell references and Wolffia genomic resources to generate hypotheses
 2. start with well-annotated Arabidopsis root data as a conservative benchmark
-3. add Arabidopsis leaf or aerial-tissue references to better represent photosynthetic and surface-associated programs
+3. prioritize Arabidopsis leaf or aerial-tissue references as the main Wolffia-facing biological layer because Wolffia is reduced, photosynthetic, and not root-like
 4. use statistical analyses on public single-cell references to quantify broad cell programs and their separability
 5. define candidate cell states and marker programs expected in Wolffia
 6. use incoming Wolffia single-cell expression data to test and refine those predictions
@@ -30,7 +30,7 @@ Build a curated reference framework of plant cell states using public single-cel
 Near-term refinement:
 
 - keep the Arabidopsis root atlas as the first benchmark because root markers are well established
-- add an Arabidopsis leaf or aerial-tissue matrix as the next reference layer because Wolffia is expected to be more photosynthetic and frond-like than root-like
+- build an Arabidopsis leaf or aerial-tissue matrix into the primary reference layer because Wolffia is expected to be more photosynthetic and frond-like than root-like
 
 ### Aim 2
 
@@ -83,6 +83,7 @@ Future single-cell data may reveal a continuum of developmental states rather th
 - an ortholog-mapped Wolffia candidate marker table
 - a ranked list of predicted Wolffia cell programs
 - a root-versus-leaf Arabidopsis reference comparison
+- a leaf-prioritized interpretation rule for future Wolffia predictions
 - a statistical summary of which public plant programs are most robust and transferable
 - a validation plan for downstream computational analysis
 

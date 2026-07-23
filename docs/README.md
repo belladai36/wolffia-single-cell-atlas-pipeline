@@ -9,8 +9,9 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 3. [Prediction framework](prediction_framework.md)
 4. [Root-derived reference update](root_derived_reference_update.md)
 5. [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
-6. [Wolffia first transfer note](wolffia_first_transfer_note.md)
-7. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+6. [Leaf-primary ortholog model summary](leaf_primary_ortholog_model_summary.md)
+7. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+8. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 02. Core Orientation
 
@@ -27,6 +28,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Wolffia mapping notes](wolffia_mapping_notes.md)
 - [Validation experiment plan](validation_experiment_plan.md)
 - [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
+- [Leaf-primary ortholog model summary](leaf_primary_ortholog_model_summary.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 

@@ -76,9 +76,18 @@ It does not yet predict leaf-relevant programs such as:
 
 The result strengthens the current reference-strategy refinement:
 
-> Keep the root-derived model as a conservative benchmark, but build a dedicated Arabidopsis leaf/aerial reference layer before interpreting Wolffia single-cell data.
+> Keep the root-derived model as a conservative benchmark, but build a dedicated Arabidopsis leaf/aerial reference layer as the primary biological model before interpreting Wolffia single-cell data.
 
 In practical terms, the next model-development step should be to use `GSE161332` to add or score leaf-relevant programs, especially photosynthetic, surface/epidermal, mesophyll-like, and vascular/transport programs.
+
+This is now implemented as a separate retraining step:
+
+- [scripts/34_train_leaf_primary_ortholog_model.py](../scripts/34_train_leaf_primary_ortholog_model.py)
+
+That script trains a leaf-primary model using marker-derived pseudocluster labels and the
+Arabidopsis-to-Wolffia ortholog feature set. Because curated leaf cell-type labels are not present
+in the local object, the resulting benchmark should be described as pseudo-label recovery rather
+than true cell-type accuracy.
 
 ## Reproducible Command
 
