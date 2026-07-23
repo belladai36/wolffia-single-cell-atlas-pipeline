@@ -1,8 +1,8 @@
 # References and Citation Guide
 
 This file centralizes the project-level citations for the repository. Use it alongside
-[`references.bib`](../references.bib), which contains BibTeX entries for manuscripts, posters, and
-reports.
+[`references.bib`](../references.bib), which contains BibTeX entries for project reports,
+presentations, and future publications.
 
 ## How to Cite This Repository
 
@@ -48,7 +48,7 @@ include:
   *Discrete and cell specific hypoxic responses in Arabidopsis roots resolved by single nuclei
   transcriptomics*.
 
-Before using either in a submission, add its primary publication details if they are available.
+Before using either in a formal submission, add its primary publication details if they are available.
 
 ## Wolffia Genome and Public Data Resources
 
@@ -104,8 +104,8 @@ Before using either in a submission, add its primary publication details if they
 
 ## Citation Maintenance Notes
 
-- Before submitting a manuscript, verify every dataset actually used in the final analysis and
+- Before submitting a formal report or publication, verify every dataset actually used in the final analysis and
   remove citations for datasets that remained only candidates.
 - Add DOI/publication details for PRJNA1124135 and PRJNA809022 if associated papers become
   available or if the repository moves from planning to real-data analysis.
-- Keep `references.bib`, this file, and manuscript references synchronized.
+- Keep `references.bib`, this file, and any future publication references synchronized.
