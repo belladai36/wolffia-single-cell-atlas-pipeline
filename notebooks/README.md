@@ -62,3 +62,10 @@ Sixth notebook:
 2. Review the first Arabidopsis leaf-reference test using `GSE161332`.
 3. Inspect frozen-feature coverage, root-derived model agreement, conservative acceptance, and consensus prediction distribution.
 4. Use the conclusion to motivate the next project step: keeping the root model as a conservative benchmark while building a dedicated leaf/aerial reference layer for photosynthetic and surface-associated programs.
+
+Seventh notebook:
+
+1. Open [07_leaf_primary_and_combined_transfer_summary.ipynb](07_leaf_primary_and_combined_transfer_summary.ipynb).
+2. Review the final ortholog-aware model hierarchy: 340 transfer features, v1 root benchmark, v2 leaf-primary model, and combined application script.
+3. Inspect the root-vs-leaf benchmark comparison and combined-script smoke test.
+4. Use the takeaways as the current high-level project summary before real Wolffia expression data arrive.
