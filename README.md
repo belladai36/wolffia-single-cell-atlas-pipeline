@@ -74,6 +74,8 @@ The clearest current progress summary is here:
 - [Leaf-primary ortholog model summary](docs/leaf_primary_ortholog_model_summary.md)
 - [Ortholog-aware model comparison](docs/ortholog_aware_model_comparison.md)
 - [Combined Wolffia application script](docs/combined_wolffia_application.md)
+- [Current model conclusion](docs/current_model_conclusion.md)
+- [External data storage guide](docs/external_data_storage_guide.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
 
 Selected first leaf reference:

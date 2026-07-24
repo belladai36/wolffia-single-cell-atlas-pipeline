@@ -219,7 +219,8 @@ To proceed with real Wolffia training, we need:
 
 ## Current Best Next Step
 
-The next meaningful project step has two tracks.
+The next meaningful project step has two tracks. External project storage is now available, so the storage
+blocker has moved from “obtain storage” to “organize external data paths and begin real-data preparation.”
 
 ### Track A: Reference refinement before Wolffia data arrive
 
@@ -241,12 +242,21 @@ Practical files:
 
 ### Track B: Real Wolffia data preparation
 
-1. obtain an external SSD
-2. download the four `PRJNA1124135` scRNA runs
-3. generate the first Wolffia count matrix
-4. run the first Wolffia-facing transfer pass with the frozen broad program set
+1. organize the external project storage volume
+2. download public Wolffia data to external project storage
+3. generate or obtain the first Wolffia count matrix
+4. convert the matrix into normalized `.h5ad`
+5. run the combined leaf-primary plus root-benchmark application script
 
 When new Wolffia single-cell matrices are available, they should be added as a priority real-data analysis target alongside or ahead of public Wolffia datasets, depending on data format and access timing.
+
+External storage guide:
+
+- [External data storage guide](external_data_storage_guide.md)
+
+Current conclusion:
+
+- [Current model conclusion](current_model_conclusion.md)
 
 ## Best Files for a New Viewer
 
@@ -257,8 +267,10 @@ If someone wants the shortest useful path through the repo, they should read:
 3. [Project progress summary](project_progress_summary.md)
 4. [Root-derived reference update](root_derived_reference_update.md)
 5. [Arabidopsis leaf reference extension plan](leaf_reference_extension_plan.md)
-6. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
-7. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+6. [Ortholog-aware root and leaf model comparison](ortholog_aware_model_comparison.md)
+7. [Combined Wolffia application script](combined_wolffia_application.md)
+8. [Current model conclusion](current_model_conclusion.md)
+9. [External data storage guide](external_data_storage_guide.md)
 
 ## Bottom Line
 
