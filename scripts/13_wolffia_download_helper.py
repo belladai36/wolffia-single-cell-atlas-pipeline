@@ -66,12 +66,19 @@ def print_ena_commands(runs: list[dict[str, str]], target_dir: Path) -> None:
     for row in runs:
         run = row["run_accession"]
         url = row.get("ena_fastq_url", "").strip()
+        expected_bytes = row.get("ena_fastq_bytes", "").strip()
+        expected_gb = ""
+        if expected_bytes:
+            try:
+                expected_gb = f" (~{int(expected_bytes) / 1_000_000_000:.1f} GB)"
+            except ValueError:
+                expected_gb = ""
         if not url:
             print(f"# {run}: ENA FASTQ URL not filled in yet")
             print("")
             continue
-        print(f"# {run}")
-        print(f"curl -L '{url}' -o '{target_dir}/{run}.fastq.gz'")
+        print(f"# {run}{expected_gb}")
+        print(f"curl --fail -L -C - '{url}' -o '{target_dir}/{run}.fastq.gz'")
         print("")
 
 
