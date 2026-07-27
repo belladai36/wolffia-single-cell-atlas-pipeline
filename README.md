@@ -76,6 +76,7 @@ The clearest current progress summary is here:
 - [Combined Wolffia application script](docs/combined_wolffia_application.md)
 - [Current model conclusion](docs/current_model_conclusion.md)
 - [External data storage guide](docs/external_data_storage_guide.md)
+- [Cluster-based raw data processing](docs/cluster_raw_data_processing.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
 
 Selected first leaf reference:
@@ -363,6 +364,7 @@ Expected outputs include:
 
 - Wolffia organelle gene names may not follow human-style `MT-` prefixes. Edit `mitochondrial_gene_prefixes` and `plastid_gene_prefixes` in `config/config.yaml` after inspecting the annotation.
 - If a processed matrix or `.h5ad` is available, start from the downstream Scanpy and transfer-analysis stages instead of forcing the legacy STAR and featureCounts route.
+- For large public raw-data conversion, use the compute-cluster workflow in [docs/cluster_raw_data_processing.md](docs/cluster_raw_data_processing.md) instead of running SRA conversion on a laptop.
 - Plant cells can have strong chloroplast/plastid signal. This pipeline computes plastid fractions when prefixes are provided, but does not hard-filter on plastid percentage by default.
 - Marker-based annotation is only as good as the marker table. Keep early labels coarse, especially for an under-annotated organism.
 

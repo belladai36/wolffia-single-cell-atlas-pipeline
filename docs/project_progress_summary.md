@@ -19,7 +19,8 @@ That means:
 - the current program set is good enough to support a first Wolffia-facing pass
 - the provisional 340-feature root-derived dual-model transfer rule is frozen as a conservative benchmark
 - the project is now being refined so Arabidopsis leaf/aerial datasets become the primary Wolffia-relevant interpretation layer
-- actual Wolffia training is waiting on download and preprocessing of public Wolffia data
+- actual Wolffia training is waiting on completion of public Wolffia raw-data preprocessing or access
+  to a processed Wolffia count matrix
 
 ## What We Have Completed
 
@@ -34,7 +35,8 @@ The repo already supports:
 
 Important note:
 
-- the legacy STAR and featureCounts scaffold remains in the repo as a backup or custom-processing route, but it is no longer the main project identity
+- the legacy STAR and featureCounts scaffold remains in the repo as an optional custom-processing
+  route for raw-read workflows, but it is no longer the main project identity
 
 Main entry point:
 
@@ -192,9 +194,10 @@ We have **not** yet trained on real Wolffia data.
 
 Why not:
 
-- the two public Wolffia dataset directories exist only as placeholders right now
-- no FASTQs or processed matrices are present locally
-- the repo cannot train directly from empty `raw_fastq_dir` folders
+- public Wolffia raw data require large SRA/FASTQ conversion outside the GitHub repository
+- the first public Wolffia pilot run is currently being processed on a compute cluster
+- no normalized Wolffia `.h5ad` or gene-by-cell count matrix is available to the model yet
+- the repo cannot train directly from raw SRA accessions; it needs a count matrix or processed object
 
 Current Wolffia candidates:
 
@@ -211,11 +214,13 @@ The real blocker is now **data availability and format**, not project design.
 
 To proceed with real Wolffia training, we need:
 
-1. download `PRJNA1124135` to larger storage
-2. generate a count matrix or processed matrix
-3. convert it into `.h5ad`
-4. cluster and pseudo-label it
-5. then validate on `PRJNA809022`
+1. finish the cluster pilot conversion for `SRR29417746` from `PRJNA1124135`
+2. inspect the split FASTQ files to identify barcode, UMI, and cDNA reads
+3. choose the correct count-generation route
+4. generate or obtain a gene-by-cell count matrix
+5. convert it into normalized `.h5ad`
+6. run the combined leaf-primary plus root-benchmark application script
+7. then validate on an independent Wolffia dataset when a comparable matrix is available
 
 ## Current Best Next Step
 
@@ -242,17 +247,22 @@ Practical files:
 
 ### Track B: Real Wolffia data preparation
 
-1. organize the external project storage volume
-2. download public Wolffia data to external project storage
-3. generate or obtain the first Wolffia count matrix
-4. convert the matrix into normalized `.h5ad`
-5. run the combined leaf-primary plus root-benchmark application script
+1. use the compute cluster for heavy SRA download, read splitting, and count generation
+2. use external project storage for backup and transfer of selected outputs
+3. inspect the pilot run `SRR29417746` before processing all remaining `PRJNA1124135` runs
+4. generate or obtain the first Wolffia count matrix
+5. convert the matrix into normalized `.h5ad`
+6. run the combined leaf-primary plus root-benchmark application script
 
 When new Wolffia single-cell matrices are available, they should be added as a priority real-data analysis target alongside or ahead of public Wolffia datasets, depending on data format and access timing.
 
 External storage guide:
 
 - [External data storage guide](external_data_storage_guide.md)
+
+Cluster processing guide:
+
+- [Cluster-based raw data processing](cluster_raw_data_processing.md)
 
 Current conclusion:
 
@@ -271,6 +281,7 @@ If someone wants the shortest useful path through the repo, they should read:
 7. [Combined Wolffia application script](combined_wolffia_application.md)
 8. [Current model conclusion](current_model_conclusion.md)
 9. [External data storage guide](external_data_storage_guide.md)
+10. [Cluster-based raw data processing](cluster_raw_data_processing.md)
 
 ## Bottom Line
 
@@ -283,6 +294,8 @@ It now has:
 - an improved broad-program ontology
 - a refined root-versus-leaf reference strategy
 - a Wolffia-facing interpretation framework
-- a clear operational blocker and a clear next execution step
+- a clear operational blocker and a clear next execution step on the compute cluster
 
-In short: the project is scientifically organized around a stronger reference strategy and computationally ready for the first real Wolffia dataset as soon as storage, matrix format, or new single-cell output becomes available.
+In short: the project is scientifically organized around a stronger reference strategy and
+computationally ready for the first real Wolffia matrix as soon as cluster preprocessing produces a
+count matrix or a processed single-cell object.

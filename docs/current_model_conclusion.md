@@ -91,9 +91,13 @@ Those claims require real Wolffia expression data plus marker, cluster, QC, and 
 
 ## Immediate Next Step
 
-Now that external project storage is available, the next practical step is to move large public data and future
-Wolffia downloads onto that external volume, then prepare a Wolffia `.h5ad` matrix for the combined application
-script.
+Large public Wolffia raw-data conversion has moved to the compute cluster. The current pilot run is
+`SRR29417746` from `PRJNA1124135`. The purpose of the pilot is to split the SRA run with technical
+reads included, identify the barcode/UMI/cDNA read structure, and then choose the correct
+count-generation route before launching all remaining runs.
+
+External project storage remains useful for backup and transfer, but heavy SRA conversion and large
+temporary files should be handled by the cluster.
 
 The current application command will be:
 
@@ -106,4 +110,5 @@ python scripts/36_apply_leaf_primary_and_root_benchmark.py \
 ## Bottom Line
 
 The project is no longer waiting on design. The computational framework is ready. The next bottleneck
-is real Wolffia data storage, download, conversion, and validation.
+is converting public or newly generated Wolffia data into a normalized gene-by-cell matrix that can
+be passed into the combined application script.

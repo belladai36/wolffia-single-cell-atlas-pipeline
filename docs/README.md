@@ -14,8 +14,9 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 8. [Combined Wolffia application script](combined_wolffia_application.md)
 9. [Current model conclusion](current_model_conclusion.md)
 10. [External data storage guide](external_data_storage_guide.md)
-11. [Wolffia first transfer note](wolffia_first_transfer_note.md)
-12. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+11. [Cluster-based raw data processing](cluster_raw_data_processing.md)
+12. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+13. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 02. Core Orientation
 
@@ -54,6 +55,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Proposed Wolffia workflow](proposed_wolffia_workflow.md)
 - [Validation experiment plan](validation_experiment_plan.md)
 - [External data storage guide](external_data_storage_guide.md)
+- [Cluster-based raw data processing](cluster_raw_data_processing.md)
 
 ## 06. Wolffia Training Planning
 

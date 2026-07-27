@@ -26,10 +26,7 @@ data/public_references/processed/
 github_upload/
 tmp/
 
-# Local professor-facing materials
-docs/professor_intro_script.md
-docs/professor_intro_with_figures.md
-docs/professor_intro_with_figures.pdf
+# Local presentation materials
 docs/wolffia_public_sc_research_brief.md
 
 # Finder noise in generated export folders

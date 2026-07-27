@@ -109,6 +109,23 @@ ls -lh data
 
 Do not overwrite existing folders unless you have moved or backed them up.
 
+## Relationship to Cluster Processing
+
+External storage is useful for local backup and transfer, but the heavy raw-data conversion step
+should be run on the compute cluster when possible.
+
+Recommended division of labor:
+
+```text
+compute cluster = SRA download, FASTQ splitting, count generation, large temporary files
+external storage = backup and transfer of selected final outputs
+laptop = notebooks, model application, figures, documentation
+```
+
+For the current public Wolffia pilot, see:
+
+- [Cluster-based raw data processing](cluster_raw_data_processing.md)
+
 ## First Real Wolffia Data Goal
 
 The first external-storage-backed target should be:
@@ -142,5 +159,7 @@ If the volume name changes, replace `/Volumes/LaCie` in the commands above with 
 
 ## Bottom Line
 
-External project storage should become the home for large biological data. The GitHub repository should remain the
-clean, reproducible instruction layer that points to local or external data paths.
+External project storage should hold selected large biological outputs, but raw SRA conversion and
+large temporary files should be handled on the compute cluster when possible. The GitHub repository
+should remain the clean, reproducible instruction layer that points to local, external, or cluster
+data paths.
