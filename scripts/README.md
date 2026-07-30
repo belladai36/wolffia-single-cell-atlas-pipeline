@@ -60,6 +60,8 @@ These scripts are the main computational core of the current project:
 
 `36_apply_leaf_primary_and_root_benchmark.py` applies both the v2 leaf-primary model and the v1 root-benchmark model to a normalized Wolffia `.h5ad`, using the ortholog table to assemble the 340-feature transfer matrix. It writes leaf predictions, root predictions, final interpretation labels, ambiguity/review flags, and a feature-coverage audit. Use `--smoke-test` to test the application path before real Wolffia data arrive.
 
+`37_build_waus8730_annotation_bridge.py` converts externally stored OrthoFinder orthogroups and Waus8730 eggNOG-mapper annotations into a derived bridge from current Arabidopsis model features to Waus8730 gene IDs. This supports future Waus8730 salt-stress single-cell data without committing the raw externally shared annotation tables.
+
 ### 3. Wolffia public-data preparation helpers
 
 These support later Wolffia-native training:

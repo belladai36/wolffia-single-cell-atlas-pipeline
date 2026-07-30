@@ -53,6 +53,7 @@ Current public Wolffia plan:
 Current lab-data plan:
 
 - when new Wolffia single-cell matrices become available, they should be analyzed with both views, but leaf/aerial-derived evidence should receive more biological weight than root-derived evidence
+- future Waus8730 salt-stress data should use the new Waus8730 annotation bridge so model features can be matched to the gene IDs used by that reference
 
 Current model snapshot:
 
@@ -77,6 +78,7 @@ The clearest current progress summary is here:
 - [Current model conclusion](docs/current_model_conclusion.md)
 - [External data storage guide](docs/external_data_storage_guide.md)
 - [Cluster-based raw data processing](docs/cluster_raw_data_processing.md)
+- [Waus8730 salt-stress application plan](docs/waus8730_salt_stress_application_plan.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
 
 Selected first leaf reference:

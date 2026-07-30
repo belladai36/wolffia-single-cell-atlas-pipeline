@@ -27,6 +27,10 @@ This folder contains the configuration files used by different workflows in the 
 7. `public_reference_gse123818_wt_train_to_gse161332_leaf.yaml`
    - root-derived training reference transferred to the selected `GSE161332` Arabidopsis leaf reference
 
+8. `waus8730_salt_stress.yaml`
+   - planning config for future Waus8730 salt-stress single-cell data
+   - records expected experimental design, reference files, bridge outputs, and model-application settings
+
 ## 02. For Most Viewers
 
 If you are only trying to understand the project, start with:

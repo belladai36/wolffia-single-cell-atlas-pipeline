@@ -21,6 +21,7 @@ data/raw_fastq/
 data/reference/
 data/public_references/raw/
 data/public_references/processed/
+data/metadata/waus8730_bridge/
 
 # Temporary local upload workspace
 github_upload/

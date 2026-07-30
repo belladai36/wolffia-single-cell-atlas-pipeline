@@ -15,8 +15,9 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 9. [Current model conclusion](current_model_conclusion.md)
 10. [External data storage guide](external_data_storage_guide.md)
 11. [Cluster-based raw data processing](cluster_raw_data_processing.md)
-12. [Wolffia first transfer note](wolffia_first_transfer_note.md)
-13. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+12. [Waus8730 salt-stress application plan](waus8730_salt_stress_application_plan.md)
+13. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+14. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 02. Core Orientation
 
@@ -37,6 +38,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Ortholog-aware model comparison](ortholog_aware_model_comparison.md)
 - [Combined Wolffia application script](combined_wolffia_application.md)
 - [Current model conclusion](current_model_conclusion.md)
+- [Waus8730 salt-stress application plan](waus8730_salt_stress_application_plan.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
@@ -56,6 +58,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Validation experiment plan](validation_experiment_plan.md)
 - [External data storage guide](external_data_storage_guide.md)
 - [Cluster-based raw data processing](cluster_raw_data_processing.md)
+- [Waus8730 salt-stress application plan](waus8730_salt_stress_application_plan.md)
 
 ## 06. Wolffia Training Planning
 

@@ -1,0 +1,60 @@
+# Waus8730 salt-stress application configuration
+#
+# This config is a planning stub for future Wolffia australiana 8730 data.
+# Replace local paths with the actual project, external-storage, or cluster paths.
+
+project:
+  organism: Wolffia australiana
+  reference_accession_or_strain: Waus8730
+  application: salt_stress_single_cell
+
+experimental_design:
+  control_replicates: 3
+  salt_treatment_replicates: 3
+  salt_treatment: 100 mM NaCl
+  likely_treatment_duration: 4 hours
+  possible_extra_timepoint: false
+  input_material: protoplasts from approximately 1-2 g plant tissue
+  expected_loaded_cells_per_sample: 17000
+  expected_recovered_cells_per_sample: ">10000"
+  expected_multiplet_rate: "<8%"
+  expected_reads_per_sample: 340M
+
+reference_files:
+  # These should match the reference used to generate the final count matrix.
+  genome_fasta: /path/to/Waus8730_genome.fa
+  annotation_gtf_or_gff: /path/to/Waus8730_annotation.gtf
+  orthogroups_csv: /path/to/Orthogroups.csv
+  eggnog_mapper_csv: /path/to/waemap.csv
+
+derived_metadata:
+  waus8730_bridge_dir: data/metadata/waus8730_bridge
+  model_feature_bridge: data/metadata/waus8730_bridge/waus8730_model_feature_annotation_bridge.csv
+
+single_cell_inputs:
+  # Preferred future inputs, in order:
+  # 1. normalized .h5ad with Waus8730 gene IDs
+  # 2. raw count .h5ad or 10x matrix folder
+  # 3. Seurat .rds object
+  # 4. raw FASTQ files plus read structure and reference annotation
+  input_h5ad: /path/to/waus8730_salt_stress_normalized.h5ad
+  gene_id_column: waus8730_gene_id
+  sample_metadata: /path/to/sample_metadata.csv
+
+model_application:
+  primary_model_layer: leaf_primary
+  secondary_model_layer: root_benchmark
+  preserve_ambiguous_labels: true
+  compare_conditions:
+    - control
+    - 100mM_NaCl
+
+planned_outputs:
+  - QC summary by sample and condition
+  - UMAP colored by condition, replicate, and broad model program
+  - broad-program proportions by biological replicate
+  - stress-response and transport/water-balance module scores
+  - photosynthesis and growth/proliferation module scores
+  - ambiguous or Wolffia-specific cluster review
+  - differential expression within major model-supported programs
+
