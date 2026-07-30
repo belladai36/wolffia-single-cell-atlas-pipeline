@@ -16,8 +16,9 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 10. [External data storage guide](external_data_storage_guide.md)
 11. [Cluster-based raw data processing](cluster_raw_data_processing.md)
 12. [Waus8730 salt-stress application plan](waus8730_salt_stress_application_plan.md)
-13. [Wolffia first transfer note](wolffia_first_transfer_note.md)
-14. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+13. [Public Wolffia SRR29417746 model application](public_wolffia_srr29417746_model_application.md)
+14. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+15. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 02. Core Orientation
 
@@ -39,6 +40,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Combined Wolffia application script](combined_wolffia_application.md)
 - [Current model conclusion](current_model_conclusion.md)
 - [Waus8730 salt-stress application plan](waus8730_salt_stress_application_plan.md)
+- [Public Wolffia SRR29417746 model application](public_wolffia_srr29417746_model_application.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
@@ -50,6 +52,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Root-derived reference update](root_derived_reference_update.md)
 - [Public dataset results summary](public_dataset_results_summary.md)
 - [GSE161332 leaf reference test summary](gse161332_leaf_reference_test_summary.md)
+- [Public Wolffia SRR29417746 model application](public_wolffia_srr29417746_model_application.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 05. Wolffia Analysis Planning
@@ -59,6 +62,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [External data storage guide](external_data_storage_guide.md)
 - [Cluster-based raw data processing](cluster_raw_data_processing.md)
 - [Waus8730 salt-stress application plan](waus8730_salt_stress_application_plan.md)
+- [Public Wolffia SRR29417746 model application](public_wolffia_srr29417746_model_application.md)
 
 ## 06. Wolffia Training Planning
 
