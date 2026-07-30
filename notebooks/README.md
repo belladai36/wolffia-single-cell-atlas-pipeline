@@ -69,3 +69,10 @@ Seventh notebook:
 2. Review the final ortholog-aware model hierarchy: 340 transfer features, v1 root benchmark, v2 leaf-primary model, and combined application script.
 3. Inspect the root-vs-leaf benchmark comparison and combined-script smoke test.
 4. Use the takeaways as the current high-level project summary before real Wolffia expression data arrive.
+
+Eighth notebook:
+
+1. Open [08_public_wolffia_srr29417746_qc_umap.ipynb](08_public_wolffia_srr29417746_qc_umap.ipynb).
+2. Review the first public Wolffia run processed from STARsolo counts into native Waus8730 QC, UMAP, Leiden clusters, and transfer-label overlays.
+3. Inspect whether provisional photosynthetic/assimilation-like and vascular/transport-like labels occupy coherent native Wolffia expression regions.
+4. Use this notebook as the starting point for deciding whether to process the remaining public runs in the same way.
