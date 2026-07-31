@@ -80,6 +80,7 @@ The clearest current progress summary is here:
 - [Cluster-based raw data processing](docs/cluster_raw_data_processing.md)
 - [Waus8730 salt-stress application plan](docs/waus8730_salt_stress_application_plan.md)
 - [Public Wolffia SRR29417746 model application](docs/public_wolffia_srr29417746_model_application.md)
+- [Public Wolffia SRR29417746 cluster marker review](docs/public_wolffia_srr29417746_cluster_marker_review.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
 
 Selected first leaf reference:
