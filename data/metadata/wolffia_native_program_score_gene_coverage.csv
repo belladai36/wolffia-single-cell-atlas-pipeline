@@ -1,0 +1,10 @@
+native_program_id,native_program_name,candidate_genes,genes_present_in_matrix,coverage_fraction
+lipid_surface_cell_wall,Lipid / surface / cell-wall biology,20,20,1.0
+photosynthesis_light_harvesting,Photosynthesis / light harvesting,20,20,1.0
+carbon_fixation_assimilation,Carbon fixation / assimilation,16,16,1.0
+chloroplast_gene_expression,Chloroplast gene expression / plastid translation,14,14,1.0
+stress_chaperone_response,Stress / chaperone response,10,10,1.0
+ion_water_balance,Ion / water balance,9,9,1.0
+nutrient_transport,Nutrient transport,6,6,1.0
+unknown_high_marker,Unknown high-ranking marker,5,5,1.0
+rna_binding_regulatory,RNA-binding / regulatory,3,3,1.0

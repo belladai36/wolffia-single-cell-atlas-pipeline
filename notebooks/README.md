@@ -90,3 +90,10 @@ Tenth notebook:
 2. Combine all four public Wolffia normalized matrices into one cell-level object.
 3. Review UMAPs colored by run, dawn/dusk label, native Leiden clusters, final transfer labels, and interpretation status.
 4. Inspect the cluster-by-label composition and exported native marker-gene table to decide which transfer labels are supported by coherent Wolffia expression neighborhoods.
+
+Eleventh notebook:
+
+1. Open [11_public_wolffia_native_program_scoring.ipynb](11_public_wolffia_native_program_scoring.ipynb).
+2. Score cells from the four public Waus8730 runs using the Wolffia-native marker-program candidate table.
+3. Review program-score heatmaps, UMAP overlays, transfer-label comparisons, and dawn/dusk summaries.
+4. Use this notebook as the bridge from candidate marker discovery to a manually reviewed Wolffia-native marker panel.
