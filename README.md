@@ -83,6 +83,7 @@ The clearest current progress summary is here:
 - [Public Wolffia SRR29417746 cluster marker review](docs/public_wolffia_srr29417746_cluster_marker_review.md)
 - [Public Wolffia four-run reproducibility summary](docs/public_wolffia_four_run_reproducibility_summary.md)
 - [Public Wolffia four-run cluster interpretation](docs/public_wolffia_four_run_cluster_interpretation.md)
+- [Wolffia native marker-program candidates](docs/wolffia_native_marker_program_candidates.md)
 - [Public Wolffia three-run reproducibility summary](docs/public_wolffia_three_run_reproducibility_summary.md)
 - [Public Wolffia two-run reproducibility summary](docs/public_wolffia_two_run_reproducibility_summary.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)
