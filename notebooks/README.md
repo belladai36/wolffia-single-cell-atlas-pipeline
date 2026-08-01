@@ -83,3 +83,10 @@ Ninth notebook:
 2. Compare all four public `PRJNA1124135` Wolffia runs after STARsolo counting and transfer-model application.
 3. Review cross-run QC, model-feature coverage, leaf-primary/root-benchmark acceptance, final label fractions, and the tentative dawn-versus-dusk pattern.
 4. Use this notebook as the current bridge from per-run processing to combined public Wolffia interpretation.
+
+Tenth notebook:
+
+1. Open [10_public_wolffia_combined_umap_marker_review.ipynb](10_public_wolffia_combined_umap_marker_review.ipynb).
+2. Combine all four public Wolffia normalized matrices into one cell-level object.
+3. Review UMAPs colored by run, dawn/dusk label, native Leiden clusters, final transfer labels, and interpretation status.
+4. Inspect the cluster-by-label composition and exported native marker-gene table to decide which transfer labels are supported by coherent Wolffia expression neighborhoods.
