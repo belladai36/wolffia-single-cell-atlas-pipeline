@@ -19,10 +19,11 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 13. [Public Wolffia SRR29417746 model application](public_wolffia_srr29417746_model_application.md)
 14. [Public Wolffia SRR29417746 cluster marker review](public_wolffia_srr29417746_cluster_marker_review.md)
 15. [Public Wolffia four-run reproducibility summary](public_wolffia_four_run_reproducibility_summary.md)
-16. [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
-17. [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
-18. [Wolffia first transfer note](wolffia_first_transfer_note.md)
-19. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+16. [Public Wolffia four-run cluster interpretation](public_wolffia_four_run_cluster_interpretation.md)
+17. [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
+18. [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
+19. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+20. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 02. Core Orientation
 
@@ -47,6 +48,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Public Wolffia SRR29417746 model application](public_wolffia_srr29417746_model_application.md)
 - [Public Wolffia SRR29417746 cluster marker review](public_wolffia_srr29417746_cluster_marker_review.md)
 - [Public Wolffia four-run reproducibility summary](public_wolffia_four_run_reproducibility_summary.md)
+- [Public Wolffia four-run cluster interpretation](public_wolffia_four_run_cluster_interpretation.md)
 - [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
 - [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
@@ -63,6 +65,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Public Wolffia SRR29417746 model application](public_wolffia_srr29417746_model_application.md)
 - [Public Wolffia SRR29417746 cluster marker review](public_wolffia_srr29417746_cluster_marker_review.md)
 - [Public Wolffia four-run reproducibility summary](public_wolffia_four_run_reproducibility_summary.md)
+- [Public Wolffia four-run cluster interpretation](public_wolffia_four_run_cluster_interpretation.md)
 - [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
 - [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
@@ -77,6 +80,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Public Wolffia SRR29417746 model application](public_wolffia_srr29417746_model_application.md)
 - [Public Wolffia SRR29417746 cluster marker review](public_wolffia_srr29417746_cluster_marker_review.md)
 - [Public Wolffia four-run reproducibility summary](public_wolffia_four_run_reproducibility_summary.md)
+- [Public Wolffia four-run cluster interpretation](public_wolffia_four_run_cluster_interpretation.md)
 - [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
 - [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
 
