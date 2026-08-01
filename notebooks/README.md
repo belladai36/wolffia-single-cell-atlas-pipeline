@@ -76,3 +76,10 @@ Eighth notebook:
 2. Review the first public Wolffia run processed from STARsolo counts into native Waus8730 QC, UMAP, Leiden clusters, and transfer-label overlays.
 3. Inspect whether provisional photosynthetic/assimilation-like and vascular/transport-like labels occupy coherent native Wolffia expression regions.
 4. Use this notebook as the starting point for deciding whether to process the remaining public runs in the same way.
+
+Ninth notebook:
+
+1. Open [09_public_wolffia_four_run_comparison.ipynb](09_public_wolffia_four_run_comparison.ipynb).
+2. Compare all four public `PRJNA1124135` Wolffia runs after STARsolo counting and transfer-model application.
+3. Review cross-run QC, model-feature coverage, leaf-primary/root-benchmark acceptance, final label fractions, and the tentative dawn-versus-dusk pattern.
+4. Use this notebook as the current bridge from per-run processing to combined public Wolffia interpretation.
