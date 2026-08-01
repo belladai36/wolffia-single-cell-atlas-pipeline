@@ -23,10 +23,11 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 17. [Wolffia native marker-program candidates](wolffia_native_marker_program_candidates.md)
 18. [Public Wolffia native program scoring](public_wolffia_native_program_scoring.md)
 19. [Wolffia trusted native marker panel](wolffia_trusted_native_marker_panel.md)
-20. [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
-21. [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
-22. [Wolffia first transfer note](wolffia_first_transfer_note.md)
-23. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
+20. [Wolffia marker-panel review and future scoring](wolffia_marker_panel_review_and_future_scoring.md)
+21. [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
+22. [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
+23. [Wolffia first transfer note](wolffia_first_transfer_note.md)
+24. [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
 
 ## 02. Core Orientation
 
@@ -55,6 +56,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Wolffia native marker-program candidates](wolffia_native_marker_program_candidates.md)
 - [Public Wolffia native program scoring](public_wolffia_native_program_scoring.md)
 - [Wolffia trusted native marker panel](wolffia_trusted_native_marker_panel.md)
+- [Wolffia marker-panel review and future scoring](wolffia_marker_panel_review_and_future_scoring.md)
 - [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
 - [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
 - [Wolffia first transfer note](wolffia_first_transfer_note.md)
@@ -75,6 +77,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Wolffia native marker-program candidates](wolffia_native_marker_program_candidates.md)
 - [Public Wolffia native program scoring](public_wolffia_native_program_scoring.md)
 - [Wolffia trusted native marker panel](wolffia_trusted_native_marker_panel.md)
+- [Wolffia marker-panel review and future scoring](wolffia_marker_panel_review_and_future_scoring.md)
 - [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
 - [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
 - [Frozen Wolffia transfer model v1](final_wolffia_transfer_model.md)
@@ -93,6 +96,7 @@ This folder is the main project notebook. The easiest way to browse it is to fol
 - [Wolffia native marker-program candidates](wolffia_native_marker_program_candidates.md)
 - [Public Wolffia native program scoring](public_wolffia_native_program_scoring.md)
 - [Wolffia trusted native marker panel](wolffia_trusted_native_marker_panel.md)
+- [Wolffia marker-panel review and future scoring](wolffia_marker_panel_review_and_future_scoring.md)
 - [Public Wolffia three-run reproducibility summary](public_wolffia_three_run_reproducibility_summary.md)
 - [Public Wolffia two-run reproducibility summary](public_wolffia_two_run_reproducibility_summary.md)
 

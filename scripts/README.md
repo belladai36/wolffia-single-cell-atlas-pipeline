@@ -64,6 +64,10 @@ These scripts are the main computational core of the current project:
 
 `38_build_trusted_native_marker_panel.py` builds the first-pass trusted Wolffia-native marker panel from the broader candidate marker-program table. It keeps high-confidence core markers, supporting markers, and a separate unknown-marker watchlist for manual review.
 
+`39_build_trusted_marker_review_table.py` adds structured review columns to the trusted native marker panel so genes can be marked as keep, maybe, remove, or unknown but interesting after manual inspection.
+
+`40_score_future_wolffia_dataset.py` scores a future normalized Waus8730 `.h5ad` file with the trusted native marker panel and summarizes program scores by available metadata columns such as condition, sample, replicate, cluster, or Leiden group.
+
 ### 3. Wolffia public-data preparation helpers
 
 These support later Wolffia-native training:

@@ -104,3 +104,10 @@ Twelfth notebook:
 2. Review the first-pass trusted Wolffia-native marker panel and its scoring results.
 3. Compare trusted program scores across run, dawn/dusk group, transfer label, and native UMAP neighborhoods.
 4. Use this notebook as the practical baseline for applying Wolffia-native program scores to future control versus salt-stress data.
+
+Thirteenth notebook:
+
+1. Open [13_public_wolffia_marker_panel_review.ipynb](13_public_wolffia_marker_panel_review.ipynb).
+2. Review marker-level expression, detection, dawn/dusk differences, cluster dot plots, and representative marker UMAPs.
+3. Use the visualizations to fill in the manual-decision columns in `data/metadata/wolffia_trusted_native_marker_panel_review.csv`.
+4. Treat this as the bridge from first-pass computational markers to a manually reviewed marker panel.
