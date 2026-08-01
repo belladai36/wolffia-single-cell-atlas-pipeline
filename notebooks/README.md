@@ -97,3 +97,10 @@ Eleventh notebook:
 2. Score cells from the four public Waus8730 runs using the Wolffia-native marker-program candidate table.
 3. Review program-score heatmaps, UMAP overlays, transfer-label comparisons, and dawn/dusk summaries.
 4. Use this notebook as the bridge from candidate marker discovery to a manually reviewed Wolffia-native marker panel.
+
+Twelfth notebook:
+
+1. Open [12_public_wolffia_trusted_marker_panel_scoring.ipynb](12_public_wolffia_trusted_marker_panel_scoring.ipynb).
+2. Review the first-pass trusted Wolffia-native marker panel and its scoring results.
+3. Compare trusted program scores across run, dawn/dusk group, transfer label, and native UMAP neighborhoods.
+4. Use this notebook as the practical baseline for applying Wolffia-native program scores to future control versus salt-stress data.

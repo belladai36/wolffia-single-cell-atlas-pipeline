@@ -62,6 +62,8 @@ These scripts are the main computational core of the current project:
 
 `37_build_waus8730_annotation_bridge.py` converts externally stored OrthoFinder orthogroups and Waus8730 eggNOG-mapper annotations into a derived bridge from current Arabidopsis model features to Waus8730 gene IDs. This supports future Waus8730 salt-stress single-cell data without committing the raw externally shared annotation tables.
 
+`38_build_trusted_native_marker_panel.py` builds the first-pass trusted Wolffia-native marker panel from the broader candidate marker-program table. It keeps high-confidence core markers, supporting markers, and a separate unknown-marker watchlist for manual review.
+
 ### 3. Wolffia public-data preparation helpers
 
 These support later Wolffia-native training:

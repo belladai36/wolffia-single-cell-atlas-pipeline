@@ -1,0 +1,325 @@
+grouping,run,native_program_id,native_program_name,n_cells,mean_score,median_score,timepoint,final_label,leiden_trusted_panel
+run,SRR29417743,carbon_fixation_assimilation,Carbon fixation / assimilation,2666,3.451800582722243,3.548659011721611,,,
+run,SRR29417743,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,2666,1.8959905855016697,1.72461574152112,,,
+run,SRR29417743,ion_water_balance,Ion / water balance,2666,1.408275684565561,1.3604899815150668,,,
+run,SRR29417743,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,2666,1.1498785176962776,1.0881301164627075,,,
+run,SRR29417743,nutrient_transport,Nutrient transport,2666,1.018699744077426,0.6815256714820862,,,
+run,SRR29417743,photosynthesis_light_harvesting,Photosynthesis / light harvesting,2666,2.9097799496415693,2.9436786472797394,,,
+run,SRR29417743,rna_binding_regulatory,RNA-binding / regulatory,2666,2.987074077453545,3.1514339447021484,,,
+run,SRR29417743,stress_chaperone_response,Stress / chaperone response,2666,1.3233961064514508,1.3304373063147068,,,
+run,SRR29417743,unknown_high_marker,Unknown high-ranking marker,2666,1.1830486861090417,1.1462880849838257,,,
+run,SRR29417744,carbon_fixation_assimilation,Carbon fixation / assimilation,2886,3.4781899753219188,3.5716967498625367,,,
+run,SRR29417744,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,2886,1.9777995878864953,1.855218259516072,,,
+run,SRR29417744,ion_water_balance,Ion / water balance,2886,1.4323234647328198,1.3829925445908373,,,
+run,SRR29417744,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,2886,1.1845293956555671,1.1478917893382472,,,
+run,SRR29417744,nutrient_transport,Nutrient transport,2886,1.0616972044184554,0.7168499837333416,,,
+run,SRR29417744,photosynthesis_light_harvesting,Photosynthesis / light harvesting,2886,2.9303853789717986,2.983866592311807,,,
+run,SRR29417744,rna_binding_regulatory,RNA-binding / regulatory,2886,2.9855183332369144,3.1174278939867377,,,
+run,SRR29417744,stress_chaperone_response,Stress / chaperone response,2886,1.3130943299426752,1.3182612692253877,,,
+run,SRR29417744,unknown_high_marker,Unknown high-ranking marker,2886,1.191600669780688,1.160449940296179,,,
+run,SRR29417745,carbon_fixation_assimilation,Carbon fixation / assimilation,2814,3.6683733416726447,3.7025116491949914,,,
+run,SRR29417745,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,2814,2.3281152010942443,2.064184787843063,,,
+run,SRR29417745,ion_water_balance,Ion / water balance,2814,1.5828467277807374,1.5386987970609103,,,
+run,SRR29417745,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,2814,1.043379384792158,0.9449512252498903,,,
+run,SRR29417745,nutrient_transport,Nutrient transport,2814,0.6691230698925461,0.4151533611693652,,,
+run,SRR29417745,photosynthesis_light_harvesting,Photosynthesis / light harvesting,2814,3.8028333945782835,3.841192151658981,,,
+run,SRR29417745,rna_binding_regulatory,RNA-binding / regulatory,2814,1.2099629027297283,1.1716403626836198,,,
+run,SRR29417745,stress_chaperone_response,Stress / chaperone response,2814,0.9621159543770824,0.950616668747007,,,
+run,SRR29417745,unknown_high_marker,Unknown high-ranking marker,2814,1.2119279119873567,1.066747714339162,,,
+run,SRR29417746,carbon_fixation_assimilation,Carbon fixation / assimilation,2718,3.649716153061396,3.675709820161705,,,
+run,SRR29417746,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,2718,2.229589130227509,2.0398362255443225,,,
+run,SRR29417746,ion_water_balance,Ion / water balance,2718,1.5514028102612913,1.4958433102752233,,,
+run,SRR29417746,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,2718,1.0356062416389964,0.9270101160312476,,,
+run,SRR29417746,nutrient_transport,Nutrient transport,2718,0.6655986374875614,0.41407033888237144,,,
+run,SRR29417746,photosynthesis_light_harvesting,Photosynthesis / light harvesting,2718,3.77543149091386,3.801221463470667,,,
+run,SRR29417746,rna_binding_regulatory,RNA-binding / regulatory,2718,1.1936483268823253,1.1446845159133,,,
+run,SRR29417746,stress_chaperone_response,Stress / chaperone response,2718,0.9204434502287228,0.9090622701463836,,,
+run,SRR29417746,unknown_high_marker,Unknown high-ranking marker,2718,1.2348574734218027,1.1066678991425216,,,
+timepoint,,carbon_fixation_assimilation,Carbon fixation / assimilation,5532,3.659206631866901,3.687261828820861,dawn,,
+timepoint,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,5532,2.279707055646705,2.050526346107262,dawn,,
+timepoint,,ion_water_balance,Ion / water balance,5532,1.5673976012771484,1.5162632185370384,dawn,,
+timepoint,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,5532,1.0395602591431532,0.9388689189644679,dawn,,
+timepoint,,nutrient_transport,Nutrient transport,5532,0.6673914344484485,0.4147629531600189,dawn,,
+timepoint,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,5532,3.7893702032984744,3.8209977375328137,dawn,,
+timepoint,,rna_binding_regulatory,RNA-binding / regulatory,5532,1.2019471729478697,1.1604628953752378,dawn,,
+timepoint,,stress_chaperone_response,Stress / chaperone response,5532,0.9416412858529968,0.9307073008537339,dawn,,
+timepoint,,unknown_high_marker,Unknown high-ranking marker,5532,1.2231937377246713,1.086773670438892,dawn,,
+timepoint,,carbon_fixation_assimilation,Carbon fixation / assimilation,5552,3.465518123616095,3.5561554577776207,dusk,,
+timepoint,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,5552,1.9385159422888827,1.7944175677684087,dusk,,
+timepoint,,ion_water_balance,Ion / water balance,5552,1.420776025625127,1.3709290394341003,dusk,,
+timepoint,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,5552,1.167890483436643,1.1165537536144257,dusk,,
+timepoint,,nutrient_transport,Nutrient transport,5552,1.0410503691754465,0.699041497707367,dusk,,
+timepoint,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,5552,2.920490913086642,2.959994837641716,dusk,,
+timepoint,,rna_binding_regulatory,RNA-binding / regulatory,5552,2.9862653818827245,3.1334568262100215,dusk,,
+timepoint,,stress_chaperone_response,Stress / chaperone response,5552,1.3180411123944757,1.3257727473974228,dusk,,
+timepoint,,unknown_high_marker,Unknown high-ranking marker,5552,1.1874941156617023,1.1535235468749376,dusk,,
+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,9944,3.5587723264986417,3.632682136836496,,ambiguous,
+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,9944,2.074036676091795,1.9031551728447114,,ambiguous,
+final_label,,ion_water_balance,Ion / water balance,9944,1.51037715160651,1.4670066405158981,,ambiguous,
+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,9944,1.1364989802731706,1.0844719298438288,,ambiguous,
+final_label,,nutrient_transport,Nutrient transport,9944,0.8962426174886372,0.5609652356451886,,ambiguous,
+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,9944,3.345656084727605,3.382319212864335,,ambiguous,
+final_label,,rna_binding_regulatory,RNA-binding / regulatory,9944,2.1535697639249354,2.1778909774375275,,ambiguous,
+final_label,,stress_chaperone_response,Stress / chaperone response,9944,1.159010598924191,1.1676218900801243,,ambiguous,
+final_label,,unknown_high_marker,Unknown high-ranking marker,9944,1.2422482756486501,1.161471500469235,,ambiguous,
+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,1076,3.5913044636661486,3.684714282739198,,photosynthetic_or_assimilation,
+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,1076,2.3870992131796913,1.937757215788458,,photosynthetic_or_assimilation,
+final_label,,ion_water_balance,Ion / water balance,1076,1.3518553724209643,1.304550073619648,,photosynthetic_or_assimilation,
+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,1076,0.8194477685212392,0.7761294974950104,,photosynthetic_or_assimilation,
+final_label,,nutrient_transport,Nutrient transport,1076,0.4907943962074952,0.368605834650375,,photosynthetic_or_assimilation,
+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,1076,3.4297824132317403,3.4757961610268016,,photosynthetic_or_assimilation,
+final_label,,rna_binding_regulatory,RNA-binding / regulatory,1076,1.593278769275675,1.3469109141819635,,photosynthetic_or_assimilation,
+final_label,,stress_chaperone_response,Stress / chaperone response,1076,0.8831140361240148,0.8658733663650038,,photosynthetic_or_assimilation,
+final_label,,unknown_high_marker,Unknown high-ranking marker,1076,0.8870441935160144,0.6912532265231109,,photosynthetic_or_assimilation,
+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,2,3.3085575760295796,3.3085575760295796,,review_required,
+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,2,2.7431369224023237,2.7431369224023237,,review_required,
+final_label,,ion_water_balance,Ion / water balance,2,0.6269299799460992,0.6269299799460992,,review_required,
+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,2,0.5900939120705128,0.5900939120705128,,review_required,
+final_label,,nutrient_transport,Nutrient transport,2,0.5247557230932606,0.5247557230932606,,review_required,
+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,2,3.1125188502679872,3.1125188502679872,,review_required,
+final_label,,rna_binding_regulatory,RNA-binding / regulatory,2,1.5751955499012484,1.5751955499012484,,review_required,
+final_label,,stress_chaperone_response,Stress / chaperone response,2,1.0111394026701306,1.0111394026701306,,review_required,
+final_label,,unknown_high_marker,Unknown high-ranking marker,2,0.2623778615466303,0.2623778615466303,,review_required,
+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,4,3.492182052843288,3.4750569535779596,,transport_interface_or_water_balance,
+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,4,2.546376342291288,2.6023904278172107,,transport_interface_or_water_balance,
+final_label,,ion_water_balance,Ion / water balance,4,1.3485127435891242,1.0660934783445182,,transport_interface_or_water_balance,
+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,4,1.402844925538475,1.4894838570105624,,transport_interface_or_water_balance,
+final_label,,nutrient_transport,Nutrient transport,4,1.0672146360195949,0.8875957265123335,,transport_interface_or_water_balance,
+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,4,3.250348229302481,3.371181958707605,,transport_interface_or_water_balance,
+final_label,,rna_binding_regulatory,RNA-binding / regulatory,4,2.070284193086799,1.9911312765442846,,transport_interface_or_water_balance,
+final_label,,stress_chaperone_response,Stress / chaperone response,4,1.2764468249813783,1.2395574152469635,,transport_interface_or_water_balance,
+final_label,,unknown_high_marker,Unknown high-ranking marker,4,1.839271075435784,1.5529684005626923,,transport_interface_or_water_balance,
+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,58,3.621142221268184,3.6571501279945355,,vascular_like_or_transport,
+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,58,2.8546328236779424,2.639261886122642,,vascular_like_or_transport,
+final_label,,ion_water_balance,Ion / water balance,58,1.354436850026627,1.2617858318343576,,vascular_like_or_transport,
+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,58,0.7777946780794797,0.7672990532422836,,vascular_like_or_transport,
+final_label,,nutrient_transport,Nutrient transport,58,0.45295407610964156,0.4071463415825093,,vascular_like_or_transport,
+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,58,3.422156902030912,3.484331154783032,,vascular_like_or_transport,
+final_label,,rna_binding_regulatory,RNA-binding / regulatory,58,1.5175852565201684,1.4568502214015147,,vascular_like_or_transport,
+final_label,,stress_chaperone_response,Stress / chaperone response,58,0.7648911151042185,0.712531154018715,,vascular_like_or_transport,
+final_label,,unknown_high_marker,Unknown high-ranking marker,58,0.7658076198001097,0.6081569989743241,,vascular_like_or_transport,
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,1194,3.7643732602976083,3.8106460124254227,,,0
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,1194,1.3856131051697937,1.3813861030271846,,,0
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,1194,1.2579544839756396,1.2643383693332912,,,0
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,1194,0.8930755362218236,0.8480458212734652,,,0
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,1194,0.7845933633540292,0.5718380357195347,,,0
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,1194,3.161556537846192,3.1837878048783796,,,0
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,1194,2.554228835180342,2.5092878341674805,,,0
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,1194,1.1838109568994564,1.1439817973966184,,,0
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,1194,0.9068968135488686,0.7926729977130891,,,0
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,1131,3.0996821079337846,3.0976082384586334,,,1
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,1131,1.7218427591526688,1.6982085555791855,,,1
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,1131,1.0102617248144585,1.004032782145909,,,1
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,1131,1.6451703368789092,1.7136213582896582,,,1
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,1131,0.8107760054050108,0.8300837516784668,,,1
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,1131,2.5427169415571007,2.5134102944884535,,,1
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,1131,3.530937578096643,3.661516984303792,,,1
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,1131,1.5162661025157325,1.5408275891101728,,,1
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,1131,1.8478781380882248,1.86467903606161,,,1
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,991,3.4421053297626276,3.4667507829827424,,,2
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,991,1.9604472407795384,1.9336199997747068,,,2
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,991,1.2496364488186835,1.2579438618101906,,,2
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,991,1.6174239109291988,1.6779377056059772,,,2
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,991,0.42884757598270246,0.4388441057231055,,,2
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,991,3.6687014020318247,3.6961274783550677,,,2
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,991,0.9913286251150432,1.009252652145028,,,2
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,991,1.1571332083695054,1.1750774687161647,,,2
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,991,2.3560590543329503,2.402085615891682,,,2
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,949,3.6844775455976886,3.74126333966619,,,3
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,949,1.8360938121257937,1.6554281002486375,,,3
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,949,1.518812502426269,1.5428350492755407,,,3
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,949,1.1035978588972393,1.0769875099293316,,,3
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,949,0.9424219671470926,0.7234330985025249,,,3
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,949,3.7949256386596244,3.8711447157963503,,,3
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,949,1.116523358953778,0.9933971931140944,,,3
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,949,0.8505330715646823,0.8195110680815276,,,3
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,949,1.175535205745693,1.1700268453420832,,,3
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,947,3.6626772292610004,3.7136921726121113,,,4
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,947,1.8265012801494303,1.8251668512821198,,,4
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,947,2.36692477141124,2.4524769395069512,,,4
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,947,0.6741192883621349,0.6671047922639389,,,4
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,947,0.5988724653829497,0.5571460050376649,,,4
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,947,3.5165003054656045,3.5582449585199356,,,4
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,947,2.524453808708076,2.7547430262976467,,,4
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,947,0.9967576115081112,0.9875746650932788,,,4
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,947,0.7463416718820988,0.7144807815551758,,,4
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,898,2.8956521950795824,2.9058135076837655,,,5
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,898,1.71648537248544,1.661460715039143,,,5
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,898,1.7485183446382047,1.810500481301478,,,5
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,898,1.7004353913180426,1.7287629429938987,,,5
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,898,2.6838215632241997,2.8997515047654767,,,5
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,898,2.433487377106542,2.4223482536521215,,,5
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,898,2.984654258371652,3.152020255724589,,,5
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,898,1.4518668012110136,1.483146149699891,,,5
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,898,1.689563257152769,1.6673003279742316,,,5
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,872,3.731096915058553,3.818922942322436,,,6
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,872,2.1044102049547893,2.1194571432314264,,,6
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,872,1.461047924365681,1.4739579948139494,,,6
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,872,1.0483619582303474,1.041836414692826,,,6
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,872,0.4724384313730086,0.4132252958388892,,,6
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,872,3.2597492624058124,3.2942308071611515,,,6
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,872,2.4521342287927914,2.6062461389070073,,,6
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,872,1.404851368467346,1.43149874595944,,,6
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,872,0.8106083220019161,0.7992499334455552,,,6
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,855,3.4248539535464917,3.49224571572073,,,7
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,855,4.4574849209557,4.543080205522086,,,7
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,855,1.0142562293847293,0.9937346298919887,,,7
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,855,0.5122106016771615,0.4476958532607175,,,7
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,855,0.20448150131068601,0.0,,,7
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,855,3.4516933060909945,3.505206412011235,,,7
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,855,0.7969748457439004,0.791824269580846,,,7
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,855,0.5727314279986706,0.5727411368510785,,,7
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,855,0.4961012904315869,0.4747409759660241,,,7
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,738,3.9405959422833785,3.9561690954744906,,,8
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,738,2.4645557183204785,2.4918426100092868,,,8
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,738,1.5849049722874073,1.5643692615945752,,,8
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,738,0.8164716850826704,0.7881497991050388,,,8
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,738,0.2742516980580658,0.24425242183291396,,,8
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,738,4.0427945473480245,4.060881553390283,,,8
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,738,1.3768129738806385,1.3993095204733002,,,8
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,738,1.1008836124744195,1.1200510291887493,,,8
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,738,0.8784142484223892,0.8829843354058464,,,8
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,639,4.21862806328204,4.283353580091888,,,9
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,639,1.7881038208988644,1.7972789931396298,,,9
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,639,1.4835578575835735,1.4879161819614068,,,9
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,639,0.3374418345747925,0.2977856206770909,,,9
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,639,0.21214576893537884,0.1880871975257667,,,9
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,639,4.521521691284644,4.575998969145595,,,9
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,639,1.2670207698938858,1.2047795711458198,,,9
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,639,0.6540328021062435,0.6683956573716732,,,9
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,639,0.47087277876523553,0.4497717762547232,,,9
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,616,3.4361133188534887,3.458795302881432,,,10
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,616,1.7445006626191641,1.6724832639799274,,,10
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,616,2.2344930675813077,2.2388621772649597,,,10
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,616,1.8871922673074557,1.902316426353495,,,10
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,616,2.2463678466411965,2.3378999972172987,,,10
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,616,3.370798247977225,3.3858155587865033,,,10
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,616,1.5795304034140911,1.6010932076742934,,,10
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,616,1.1785711018976133,1.1918825061273812,,,10
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,616,1.7937580969796498,1.7916322232862973,,,10
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,495,3.7819034100622466,3.8083750009536743,,,11
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,495,3.6947607500434354,3.7054786124362558,,,11
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,495,1.2039954747822983,1.2066930021558488,,,11
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,495,0.7700009382748274,0.7391824126243591,,,11
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,495,0.4796127702390136,0.44889073402929985,,,11
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,495,3.1972448268086517,3.222202569246292,,,11
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,495,2.702975724485621,2.877991199493408,,,11
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,495,1.086831196388901,1.0499599351112079,,,11
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,495,0.7606474002867012,0.6273957053961081,,,11
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,440,4.187949354349881,4.32919374886551,,,12
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,440,1.9323557631882895,1.9541585824672052,,,12
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,440,1.3703079731757948,1.3903130165168216,,,12
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,440,0.47764518145613893,0.42486885003745556,,,12
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,440,0.3508019756037599,0.3600264843420701,,,12
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,440,3.6723922086530467,3.7579529383393098,,,12
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,440,3.149294853047042,3.2181208708936153,,,12
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,440,1.0354982656256058,1.0533602081556852,,,12
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,440,0.49606406482036286,0.4810388387210373,,,12
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,273,2.8642026896523802,2.929823923240904,,,13
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,273,1.4618949801924608,1.4017839186514194,,,13
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,273,1.9294314994319919,1.9442696863756082,,,13
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,273,2.001033525220624,2.0148812532424927,,,13
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,273,2.240487867293467,2.2730444328025046,,,13
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,273,2.644196674499276,2.6162744015455246,,,13
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,273,2.3917752126938905,2.3606953189228292,,,13
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,273,1.743217496937901,1.7195672826522186,,,13
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,273,2.4564661678118864,2.482508993148804,,,13
+leiden_trusted_panel,,carbon_fixation_assimilation,Carbon fixation / assimilation,46,2.334699400824412,2.198866054112422,,,14
+leiden_trusted_panel,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,46,1.2023544018441155,1.1151585321202298,,,14
+leiden_trusted_panel,,ion_water_balance,Ion / water balance,46,1.348398660999829,1.3782808236571518,,,14
+leiden_trusted_panel,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,46,0.47808703969349353,0.43166889212822757,,,14
+leiden_trusted_panel,,nutrient_transport,Nutrient transport,46,0.20966688756880875,0.16822222480723134,,,14
+leiden_trusted_panel,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,46,2.4105462701379143,2.290854969538466,,,14
+leiden_trusted_panel,,rna_binding_regulatory,RNA-binding / regulatory,46,1.691653197682353,1.727483550707499,,,14
+leiden_trusted_panel,,stress_chaperone_response,Stress / chaperone response,46,1.225699555647354,1.1533647924661636,,,14
+leiden_trusted_panel,,unknown_high_marker,Unknown high-ranking marker,46,1.3457811328912543,1.3343192398548127,,,14
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,4823,3.669627449832986,3.6898248624896763,dawn,ambiguous,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,4823,2.229262815202432,2.0396602168682954,dawn,ambiguous,
+timepoint+final_label,,ion_water_balance,Ion / water balance,4823,1.5967133737982098,1.5417054542861937,dawn,ambiguous,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,4823,1.0776889130453056,0.9926253093804269,dawn,ambiguous,
+timepoint+final_label,,nutrient_transport,Nutrient transport,4823,0.707039823699395,0.43113203058299376,dawn,ambiguous,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,4823,3.806513679952468,3.832355426735779,dawn,ambiguous,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,4823,1.2401699102026829,1.2061138377682434,dawn,ambiguous,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,4823,0.9737785833300626,0.9702090018849945,dawn,ambiguous,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,4823,1.2715567171538456,1.1417220204961915,dawn,ambiguous,
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,669,3.584084150089691,3.6823334399077794,dawn,photosynthetic_or_assimilation,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,669,2.5988441101674304,2.180507716002193,dawn,photosynthetic_or_assimilation,
+timepoint+final_label,,ion_water_balance,Ion / water balance,669,1.3684713870677454,1.3419987496124088,dawn,photosynthetic_or_assimilation,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,669,0.7809501919624663,0.7128675019564028,dawn,photosynthetic_or_assimilation,
+timepoint+final_label,,nutrient_transport,Nutrient transport,669,0.3929434664764537,0.08004908243435147,dawn,photosynthetic_or_assimilation,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,669,3.6732584873252807,3.766138522945147,dawn,photosynthetic_or_assimilation,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,669,0.9435531142083504,0.9297164362991551,dawn,photosynthetic_or_assimilation,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,669,0.727167930849035,0.7122980473857099,dawn,photosynthetic_or_assimilation,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,669,0.8998539745591312,0.6320234812868826,dawn,photosynthetic_or_assimilation,
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,1,3.6784820897692683,3.6784820897692683,dawn,review_required,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,1,4.371225360688748,4.371225360688748,dawn,review_required,
+timepoint+final_label,,ion_water_balance,Ion / water balance,1,0.41046476255882935,0.41046476255882935,dawn,review_required,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,1,0.4422170264743275,0.4422170264743275,dawn,review_required,
+timepoint+final_label,,nutrient_transport,Nutrient transport,1,0.0,0.0,dawn,review_required,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,1,3.3193254225302926,3.3193254225302926,dawn,review_required,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,1,0.9577511126372685,0.9577511126372685,dawn,review_required,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,1,0.8013736937133031,0.8013736937133031,dawn,review_required,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,1,0.0,0.0,dawn,review_required,
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,2,3.6222193225473474,3.6222193225473474,dawn,transport_interface_or_water_balance,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,2,2.6023904278172107,2.6023904278172107,dawn,transport_interface_or_water_balance,
+timepoint+final_label,,ion_water_balance,Ion / water balance,2,1.907126768071847,1.907126768071847,dawn,transport_interface_or_water_balance,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,2,1.993758702905525,1.993758702905525,dawn,transport_interface_or_water_balance,
+timepoint+final_label,,nutrient_transport,Nutrient transport,2,1.5761389573648124,1.5761389573648124,dawn,transport_interface_or_water_balance,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,2,3.6380933306485708,3.6380933306485708,dawn,transport_interface_or_water_balance,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,2,0.42140782938038496,0.42140782938038496,dawn,transport_interface_or_water_balance,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,2,1.313336234715793,1.313336234715793,dawn,transport_interface_or_water_balance,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,2,2.523858560936265,2.523858560936265,dawn,transport_interface_or_water_balance,
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,37,3.6606129675225745,3.6863431345991806,dawn,vascular_like_or_transport,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,37,3.010869140484,3.335727737873761,dawn,vascular_like_or_transport,
+timepoint+final_label,,ion_water_balance,Ion / water balance,37,1.355752761875519,1.3083392565139278,dawn,vascular_like_or_transport,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,37,0.7099544083037834,0.6965720534340865,dawn,vascular_like_or_transport,
+timepoint+final_label,,nutrient_transport,Nutrient transport,37,0.4304023967339812,0.0,dawn,vascular_like_or_transport,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,37,3.675001246809901,3.680250749243565,dawn,vascular_like_or_transport,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,37,0.9403968557646162,0.9795281275504718,dawn,vascular_like_or_transport,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,37,0.6141106496415647,0.591448878129437,dawn,vascular_like_or_transport,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,37,0.7280995718365597,0.5877168765302831,dawn,vascular_like_or_transport,
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,5121,3.4543680578320637,3.5441781849812584,dusk,ambiguous,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,5121,1.9278434191242884,1.800325021147728,dusk,ambiguous,
+timepoint+final_label,,ion_water_balance,Ion / water balance,5121,1.4290649860859934,1.379557796886989,dusk,ambiguous,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,5121,1.1918867862173208,1.145184949040413,dusk,ambiguous,
+timepoint+final_label,,nutrient_transport,Nutrient transport,5121,1.0744353678197278,0.7254620945996687,dusk,ambiguous,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,5121,2.9116166038118627,2.9467755556106567,dusk,ambiguous,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,5121,3.013817273103303,3.1575331687927246,dusk,ambiguous,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,5121,1.3334636376296165,1.3418599230469437,dusk,ambiguous,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,5121,1.2146453439205585,1.1774328708648683,dusk,ambiguous,
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,407,3.6031727432303975,3.689285784959793,dusk,photosynthetic_or_assimilation,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,407,2.039046790366921,1.6797741976394247,dusk,photosynthetic_or_assimilation,
+timepoint+final_label,,ion_water_balance,Ion / water balance,407,1.3245430535052483,1.255499858962536,dusk,photosynthetic_or_assimilation,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,407,0.8827275688107212,0.8330712174569834,dusk,photosynthetic_or_assimilation,
+timepoint+final_label,,nutrient_transport,Nutrient transport,407,0.6516353593280524,0.5225558670648586,dusk,photosynthetic_or_assimilation,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,407,3.029572355323684,3.0841306452931767,dusk,photosynthetic_or_assimilation,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,407,2.661255337433022,2.693908299419931,dusk,photosynthetic_or_assimilation,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,407,1.1394480519199892,1.0826715262399609,dusk,photosynthetic_or_assimilation,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,407,0.8659883126367881,0.7339439868927002,dusk,photosynthetic_or_assimilation,
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,1,2.938633062289891,2.938633062289891,dusk,review_required,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,1,1.1150484841158992,1.1150484841158992,dusk,review_required,
+timepoint+final_label,,ion_water_balance,Ion / water balance,1,0.8433951973333691,0.8433951973333691,dusk,review_required,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,1,0.737970797666698,0.737970797666698,dusk,review_required,
+timepoint+final_label,,nutrient_transport,Nutrient transport,1,1.0495114461865211,1.0495114461865211,dusk,review_required,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,1,2.905712278005682,2.905712278005682,dusk,review_required,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,1,2.1926399871652285,2.1926399871652285,dusk,review_required,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,1,1.220905111626958,1.220905111626958,dusk,review_required,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,1,0.5247557230932606,0.5247557230932606,dusk,review_required,
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,2,3.362144783139229,3.362144783139229,dusk,transport_interface_or_water_balance,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,2,2.4903622567653656,2.4903622567653656,dusk,transport_interface_or_water_balance,
+timepoint+final_label,,ion_water_balance,Ion / water balance,2,0.7898987191064016,0.7898987191064016,dusk,transport_interface_or_water_balance,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,2,0.8119311481714249,0.8119311481714249,dusk,transport_interface_or_water_balance,
+timepoint+final_label,,nutrient_transport,Nutrient transport,2,0.5582903146743774,0.5582903146743774,dusk,transport_interface_or_water_balance,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,2,2.8626031279563904,2.8626031279563904,dusk,transport_interface_or_water_balance,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,2,3.719160556793213,3.719160556793213,dusk,transport_interface_or_water_balance,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,2,1.2395574152469635,1.2395574152469635,dusk,transport_interface_or_water_balance,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,2,1.1546835899353027,1.1546835899353027,dusk,transport_interface_or_water_balance,
+timepoint+final_label,,carbon_fixation_assimilation,Carbon fixation / assimilation,21,3.5515985254866393,3.610222202752945,dusk,vascular_like_or_transport,
+timepoint+final_label,,chloroplast_gene_expression,Chloroplast gene expression / plastid translation,21,2.5793593131148884,2.2516791820526123,dusk,vascular_like_or_transport,
+timepoint+final_label,,ion_water_balance,Ion / water balance,21,1.3521183386738183,1.2190640313284737,dusk,vascular_like_or_transport,
+timepoint+final_label,,lipid_surface_cell_wall,Lipid / surface / cell-wall biology,21,0.8973227724461826,0.9259410261768255,dusk,vascular_like_or_transport,
+timepoint+final_label,,nutrient_transport,Nutrient transport,21,0.49268798739056713,0.5168734886637277,dusk,vascular_like_or_transport,
+timepoint+final_label,,photosynthesis_light_harvesting,Photosynthesis / light harvesting,21,2.9766692469441205,2.9595431089401245,dusk,vascular_like_or_transport,
+timepoint+final_label,,rna_binding_regulatory,RNA-binding / regulatory,21,2.5345362483275706,2.300458749135335,dusk,vascular_like_or_transport,
+timepoint+final_label,,stress_chaperone_response,Stress / chaperone response,21,1.0305519352050847,1.0049764551670326,dusk,vascular_like_or_transport,
+timepoint+final_label,,unknown_high_marker,Unknown high-ranking marker,21,0.8322456090692218,0.6589748804044857,dusk,vascular_like_or_transport,
