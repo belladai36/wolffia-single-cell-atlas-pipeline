@@ -1,0 +1,4 @@
+run,cells,waus8730_genes,mapped_model_features,real_feature_coverage,median_raw_umis_per_cell,median_raw_genes_per_cell,leaf_acceptance_rate,root_acceptance_rate,label_ambiguous,label_photosynthetic_or_assimilation,label_vascular_like_or_transport,label_transport_interface_or_water_balance,label_review_required,status_both_models_ambiguous,status_primary_leaf_supported_root_ambiguous,status_secondary_root_like_signal_only,status_leaf_root_disagreement
+SRR29417746,2718,15080,309,0.9088235294117647,2595.5,902.5,0.13539367181751288,0.0003679175864606328,2350,347,21,0,0,2349,368,1,0
+SRR29417745,2814,15080,309,0.9088235294117647,3727.0,1134.5,0.12117981520966596,0.0010660980810234541,2473,322,16,2,1,2471,340,2,1
+SRR29417744,2886,15080,309,0.9088235294117647,2376.0,1023.5,0.08177408177408177,0.0010395010395010396,2650,224,11,0,1,2648,235,2,1
