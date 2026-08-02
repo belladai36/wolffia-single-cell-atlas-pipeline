@@ -68,6 +68,8 @@ These scripts are the main computational core of the current project:
 
 `40_score_future_wolffia_dataset.py` scores a future normalized Waus8730 `.h5ad` file with the trusted native marker panel and summarizes program scores by available metadata columns such as condition, sample, replicate, cluster, or Leiden group.
 
+`41_freeze_reviewed_native_marker_panel_v1.py` freezes the current manual-review recommendations into `data/metadata/wolffia_reviewed_native_marker_panel_v1.csv`, the current best Wolffia-native marker panel for future program scoring.
+
 ### 3. Wolffia public-data preparation helpers
 
 These support later Wolffia-native training:

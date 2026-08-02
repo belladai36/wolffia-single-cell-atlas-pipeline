@@ -87,6 +87,7 @@ The clearest current progress summary is here:
 - [Public Wolffia native program scoring](docs/public_wolffia_native_program_scoring.md)
 - [Wolffia trusted native marker panel](docs/wolffia_trusted_native_marker_panel.md)
 - [Wolffia marker-panel review and future scoring](docs/wolffia_marker_panel_review_and_future_scoring.md)
+- [Wolffia reviewed native marker panel v1](docs/wolffia_reviewed_native_marker_panel_v1.md)
 - [Public Wolffia three-run reproducibility summary](docs/public_wolffia_three_run_reproducibility_summary.md)
 - [Public Wolffia two-run reproducibility summary](docs/public_wolffia_two_run_reproducibility_summary.md)
 - [Frozen Wolffia transfer model v1](docs/final_wolffia_transfer_model.md)

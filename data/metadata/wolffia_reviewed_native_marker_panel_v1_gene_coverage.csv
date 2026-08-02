@@ -1,0 +1,10 @@
+native_program_id,native_program_name,panel_genes,genes_present_in_matrix,coverage_fraction,reviewed_core,reviewed_supporting,reviewed_unknown_watchlist
+carbon_fixation_assimilation,Carbon fixation / assimilation,8,8,1.0,7,1,0
+chloroplast_gene_expression,Chloroplast gene expression / plastid translation,8,8,1.0,7,1,0
+lipid_surface_cell_wall,Lipid / surface / cell-wall biology,8,8,1.0,6,2,0
+photosynthesis_light_harvesting,Photosynthesis / light harvesting,8,8,1.0,8,0,0
+stress_chaperone_response,Stress / chaperone response,8,8,1.0,6,2,0
+ion_water_balance,Ion / water balance,7,7,1.0,6,1,0
+nutrient_transport,Nutrient transport,5,5,1.0,4,1,0
+unknown_high_marker,Unknown high-ranking marker,5,5,1.0,0,1,4
+rna_binding_regulatory,RNA-binding / regulatory,3,3,1.0,3,0,0

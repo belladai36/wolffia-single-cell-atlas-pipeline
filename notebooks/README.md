@@ -111,3 +111,10 @@ Thirteenth notebook:
 2. Review marker-level expression, detection, dawn/dusk differences, cluster dot plots, and representative marker UMAPs.
 3. Use the visualizations to fill in the manual-decision columns in `data/metadata/wolffia_trusted_native_marker_panel_review.csv`.
 4. Treat this as the bridge from first-pass computational markers to a manually reviewed marker panel.
+
+Fourteenth notebook:
+
+1. Open [14_public_wolffia_reviewed_marker_panel_v1_scoring.ipynb](14_public_wolffia_reviewed_marker_panel_v1_scoring.ipynb).
+2. Score the four public Waus8730 runs using the frozen reviewed native marker panel v1.
+3. Review program-score heatmaps by run, dawn/dusk group, and transfer final label.
+4. Use this notebook as the current reference for applying reviewed Wolffia-native program scores to future experimental data.
