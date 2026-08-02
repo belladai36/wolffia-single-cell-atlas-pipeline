@@ -29,6 +29,13 @@ tmp/
 
 # Local presentation materials
 docs/wolffia_public_sc_research_brief.md
+.ppt_build/
+.ppt_update/
+Wolffia_single_cell_atlas_project*/
+Wolffia_single_cell_atlas_project*.pptx
+*.pptx.inspect.ndjson
+output/
+data/metadata/wolffia_trusted_native_marker_panel_review.xlsx
 
 # Finder noise in generated export folders
 output/.DS_Store

@@ -1,13 +1,14 @@
 # Wolffia Single-Cell Atlas Analysis Framework
 
-This repository is a beginner-friendly, prediction-first scaffold for a `Wolffia australiana` single-cell analysis project before the real data arrive. The repo focuses on:
+This repository is a beginner-friendly, prediction-first framework for a `Wolffia australiana` single-cell analysis project. It combines public Wolffia data processing, conservative Arabidopsis-to-Wolffia transfer modeling, and Wolffia-native marker-program scoring. The repo focuses on:
 
 - a comparative public-reference workflow for biological prediction and label transfer
 - Wolffia-facing model-building and validation documents
 - a leaf/aerial-first interpretation strategy, because Wolffia is expected to be closer to a reduced photosynthetic frond than to a canonical root
+- a reviewed Waus8730 native marker panel for scoring public and future Wolffia datasets
 - a legacy FASTQ-level alignment-and-counting scaffold that can still be useful for full-length or custom raw-data workflows
 
-The paths are placeholders. Replace the example FASTQ, genome, annotation, and metadata paths with your project files when they are available.
+Large raw data, count matrices, and normalized AnnData files are stored outside GitHub. Replace example FASTQ, genome, annotation, matrix, and metadata paths with local or cluster paths when running the workflow.
 
 ## 1. Start Here
 
@@ -36,7 +37,7 @@ For most viewers, the easiest way through the repository is:
 
 ## 3. Current Status
 
-The project is currently in the **Wolffia-facing transfer preparation stage**.
+The project is currently in the **public Wolffia analysis and future-data preparation stage**.
 
 What that means:
 
@@ -44,13 +45,14 @@ What that means:
 - the broad program set has been refined into a more interpretable working ontology
 - the current root-derived reference layer is ready as a conservative benchmark and proof-of-concept
 - the provisional 340-feature root-derived transfer model and conservative decision rule are frozen as v1 baseline artifacts
-- the next reference refinement is to promote Arabidopsis leaf/aerial references into the primary Wolffia-facing interpretation layer
-- actual Wolffia training is waiting on download, preprocessing, or arrival of new Wolffia single-cell expression matrices
+- public Waus8730 single-cell runs from `PRJNA1124135` have been processed into STARsolo count matrices outside the repository
+- a reviewed Wolffia-native marker panel v1 is available for program scoring
+- future control-versus-treatment Wolffia datasets can be analyzed once their matrices or FASTQs are available
 
-Current public Wolffia plan:
+Current public Wolffia data:
 
-- `PRJNA1124135` as the first training dataset
-- `PRJNA809022` as the validation dataset
+- `PRJNA1124135` is the first public Waus8730 dataset processed through the current workflow
+- `PRJNA809022` remains a candidate external validation dataset
 
 Current lab-data plan:
 
@@ -290,7 +292,7 @@ For a first real dataset, run step by step instead of using `run_all.sh`; it is 
 
 ## 10. Statistical Prediction on Public References
 
-Before Wolffia data arrive, you can run a public-reference statistical workflow that:
+As a reference-building step, you can run a public-reference statistical workflow that:
 
 1. reads two annotated public plant `.h5ad` datasets
 2. collapses detailed labels into broad biological programs
