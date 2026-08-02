@@ -16,8 +16,10 @@ If you are opening this repository for the first time, these are the most useful
 1. [Project progress summary](docs/project_progress_summary.md)
 2. [Project aims](docs/project_aims.md)
 3. [Docs guide](docs/README.md)
-4. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md)
-5. [Ortholog-aware model comparison](docs/ortholog_aware_model_comparison.md)
+4. [Current Wolffia analysis workflow v1](docs/current_wolffia_analysis_workflow_v1.md)
+5. [Future Wolffia salt-stress analysis checklist](docs/future_salt_stress_analysis_checklist.md)
+6. [Wolffia first transfer note](docs/wolffia_first_transfer_note.md)
+7. [Ortholog-aware model comparison](docs/ortholog_aware_model_comparison.md)
 
 ## 2. Recommended Reading Order
 
@@ -71,6 +73,8 @@ Current model snapshot:
 The clearest current progress summary is here:
 
 - [Project progress summary](docs/project_progress_summary.md)
+- [Current Wolffia analysis workflow v1](docs/current_wolffia_analysis_workflow_v1.md)
+- [Future Wolffia salt-stress analysis checklist](docs/future_salt_stress_analysis_checklist.md)
 - [Arabidopsis leaf reference extension plan](docs/leaf_reference_extension_plan.md)
 - [Leaf-primary ortholog model summary](docs/leaf_primary_ortholog_model_summary.md)
 - [Ortholog-aware model comparison](docs/ortholog_aware_model_comparison.md)
